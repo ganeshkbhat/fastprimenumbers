@@ -2,50 +2,24 @@ import time
 import math
 
 
-def isPrimeConventionalWay(n):
-    count = 0
-    if (n <= 1):
-        return False
-    # Check from 2 to n-1
-    # Max iterations 99998 for n == 100000
-    for i in range(2, n):
-        # Counting Iterations
-        count += 1
-        if (n % i == 0):
-            # print("count: Prime Conventional way", count)
-            return False
-    # print("count: Prime Conventional way", count)
-    return True
-
-
-def isPrimeSquarerootWay(num):
-    count = 0
-    # if not is_number num return False
-    if (num < 2):
-        # print("count: Prime Squareroot way", count)
-        return False
-
-    s = math.sqrt(num)
-    for i in range(2, num):
-        # Counting Iterations
-        count += 1
-        if (num % i == 0):
-            # print("count: Prime Squareroot way", count)
-            return False
-    # print("count: Prime Squareroot way", count)
-    return True
-
-
 def prime(n):
+    """
+    RECOMMENDED WAY
+    FASTEST Calculation method for prime number checks
+
+    Args:
+        n (int): Number which has to be checked for being prime or not
+
+    Returns:
+        boolean: Returns whether the number of Prime (True) or not (False)
+    """
     count = 0
     if ((n == 2 or n == 3 or n == 5 or n == 7)):
         # print("count: Prime Unconventional way", count)
         return True
-
     if (n == 1 or ((n > 7) and (n % 5 == 0 or n % 7 == 0 or n % 2 == 0 or n % 3 == 0))):
         # print("count: Prime Unconventional way", count)
         return False
-
     if (type((n - 1) / 6) == int or type((n + 1) / 6) == int):
         for i in range(1, n):
             # Counting Iterations
@@ -63,13 +37,72 @@ def prime(n):
 
         # print("count: Prime Unconventional way", count)
         return True
-
     # print("count: Prime Unconventional way", count)
     return False
 
 
+def isPrimeConventionalWay(n):
+    """
+    ALTERNATE WAY
+
+    Args:
+        n (int): Number which has to be checked for being prime or not
+
+    Returns:
+        boolean: Returns whether the number of Prime (True) or not (False)
+    """
+    count = 0
+    if (n <= 1):
+        return False
+    # Check from 2 to n-1
+    # Max iterations 99998 for n == 100000
+    for i in range(2, n):
+        # Counting Iterations
+        count += 1
+        if (n % i == 0):
+            # print("count: Prime Conventional way", count)
+            return False
+    # print("count: Prime Conventional way", count)
+    return True
+
+
+def isPrimeSquarerootWay(num):
+    """
+    ALTERNATE WAY
+
+    Args:
+        num (int): Number which has to be checked for being prime or not
+
+    Returns:
+        boolean: Returns whether the number of Prime (True) or not (False)
+    """
+    count = 0
+    # if not is_number num return False
+    if (num < 2):
+        # print("count: Prime Squareroot way", count)
+        return False
+
+    s = math.sqrt(num)
+    for i in range(2, num):
+        # Counting Iterations
+        count += 1
+        if (num % i == 0):
+            # print("count: Prime Squareroot way", count)
+            return False
+    # print("count: Prime Squareroot way", count)
+    return True
+
+
 def isprimeAKSWay(n):
-    """Returns True if n is prime."""
+    """
+    ALTERNATE WAY
+
+    Args:
+        n (int): Number which has to be checked for being prime or not
+
+    Returns:
+        boolean: Returns whether the number of Prime (True) or not (False)
+    """
     count = 0
     if n == 2:
         return True
@@ -200,7 +233,7 @@ print("isprimeAKSWayArr: ", sum(isprimeAKSWayArr)/len(isprimeAKSWayArr))
 
 # def generate_prime(from, to):
 #     arr = [2, 3, 5, 7];
-# 
+#
 #     return arr
 #
 # print(generate_prime(1, 100))
