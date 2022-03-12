@@ -1,7 +1,7 @@
 # Fast Prime Calculations
 Fastest Prime Number Calculations
 
-## Code Base 
+### Code Base 
 ![Javascript Codebase](./Fastest_Prime_Number_Calculations_codebase_javascript.jpeg)
 
 ![Python Codebase](./Fastest_Prime_Number_Calculations_codebase_python.jpeg)
