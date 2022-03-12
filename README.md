@@ -2,8 +2,11 @@
 Fastest Prime Number Calculations
 
 ### Code Base 
+
+##### Javascript
 ![Javascript Codebase](./Fastest_Prime_Number_Calculations_codebase_javascript.jpeg)
 
+##### Python
 ![Python Codebase](./Fastest_Prime_Number_Calculations_codebase_python.jpeg)
 
 Stack overflow Link for Calculations
