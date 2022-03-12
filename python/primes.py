@@ -1,3 +1,15 @@
+##
+# 
+# Ganesh Bhat
+# https://github.com/ganeshkbhat/fastprimecalculations
+# Fastest method of Prime Number Calculations
+# Functions and Alternate ways for calculation of Prime Numbers
+# 
+# ** prime(n) ** is the Recommended Way for calculation checks of prime numbers
+# All others are alternative ways
+#
+##
+
 import time
 import math
 
@@ -9,7 +21,6 @@ def prime(n):
 
     Args:
         n (int): Number which has to be checked for being prime or not
-
     Returns:
         boolean: Returns whether the number of Prime (True) or not (False)
     """
@@ -47,7 +58,6 @@ def isPrimeConventionalWay(n):
 
     Args:
         n (int): Number which has to be checked for being prime or not
-
     Returns:
         boolean: Returns whether the number of Prime (True) or not (False)
     """
@@ -72,7 +82,6 @@ def isPrimeSquarerootWay(num):
 
     Args:
         num (int): Number which has to be checked for being prime or not
-
     Returns:
         boolean: Returns whether the number of Prime (True) or not (False)
     """
@@ -99,7 +108,6 @@ def isprimeAKSWay(n):
 
     Args:
         n (int): Number which has to be checked for being prime or not
-
     Returns:
         boolean: Returns whether the number of Prime (True) or not (False)
     """
