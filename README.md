@@ -1,7 +1,7 @@
 # Fast Prime Calculations
 
 
-Fastest Prime Number Calculation and `This probably is the BEST solution in the internet as of today 11th March 2022`
+Fastest Prime Number Calculation (checks) logic and `This probably is the BEST solution in the internet as of today 11th March 2022`
 
 
 This same code can be applied in any languages like `C`, `C++`, `Go` Lang, `Java`, `php`, `.NET`, `Python`, `Rust`, etc with the same logic and have performance benefits. It is pretty fast. I have not seen this implemented before and has been indigenously done. Feedback and usage is welcome.
