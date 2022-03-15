@@ -26,10 +26,10 @@ def prime(n):
     """
     count = 0
     if ((n == 2 or n == 3 or n == 5 or n == 7)):
-        print("count: Prime Unconventional way for ", n, "is ", count)
+        # print("count: Prime Unconventional way for ", n, "is ", count)
         return True
     if (n == 1 or ((n > 7) and (n % 5 == 0 or n % 7 == 0 or n % 2 == 0 or n % 3 == 0))):
-        print("count: Prime Unconventional way for ", n, "is ", count)
+        # print("count: Prime Unconventional way for ", n, "is ", count)
         return False
     factorminusone = (n-1)/6
     factorplusone = (n+1)/6
@@ -41,16 +41,16 @@ def prime(n):
             fivebase = n / (5 + factorsix)
             sevenbase = n / (7 + factorsix)
             if (((fivebase > 1) and not ( fivebase > int(fivebase) ) ) or ((sevenbase > 1) and not ( sevenbase > int(sevenbase) ) )):
-                print("count: Prime Unconventional way for ", n, "is ", count)
+                # print("count: Prime Unconventional way for ", n, "is ", count)
                 return False
 
             if (factorsix > n):
                 # Max iterations 16666 for n == 100000 instead of 100000
                 break
 
-        print("count: Prime Unconventional way for ", n, "is ", count)
+        # print("count: Prime Unconventional way for ", n, "is ", count)
         return True
-    print("count: Prime Unconventional way for ", n, "is ", count)
+    # print("count: Prime Unconventional way for ", n, "is ", count)
     return False
 
 
@@ -72,9 +72,9 @@ def isPrimeConventionalWay(n):
         # Counting Iterations
         count += 1
         if (n % i == 0):
-            print("count: Prime Conventional way for ", n, "is ", count)
+            # print("count: Prime Conventional way for ", n, "is ", count)
             return False
-    print("count: Prime Conventional way for ", n, "is ", count)
+    # print("count: Prime Conventional way for ", n, "is ", count)
     return True
 
 
@@ -90,7 +90,7 @@ def isPrimeSquarerootWay(num):
     count = 0
     # if not is_number num return False
     if (num < 2):
-        print("count: Prime Squareroot way ", num, "is ", count)
+        # print("count: Prime Squareroot way ", num, "is ", count)
         return False
 
     s = math.sqrt(num)
@@ -98,9 +98,9 @@ def isPrimeSquarerootWay(num):
         # Counting Iterations
         count += 1
         if (num % i == 0):
-            print("count: Prime Squareroot way ", num, "is ", count)
+            # print("count: Prime Squareroot way ", num, "is ", count)
             return False
-    print("count: Prime Squareroot way ", num, "is ", count)
+    # print("count: Prime Squareroot way ", num, "is ", count)
     return True
 
 
@@ -129,12 +129,12 @@ def isprimeAKSWay(n):
     while i * i <= n:
         count += 1
         if n % i == 0:
-            print("count: Prime AKS - Mersenne primes - Fermat's little theorem or whatever way ", n, "is ", count)
+            # print("count: Prime AKS - Mersenne primes - Fermat's little theorem or whatever way ", n, "is ", count)
             return False
 
         i += w
         w = 6 - w
-    print("count: Prime AKS - Mersenne primes - Fermat's little theorem or whatever way ", n, "is ", count)
+    # print("count: Prime AKS - Mersenne primes - Fermat's little theorem or whatever way ", n, "is ", count)
     return True
 
 
