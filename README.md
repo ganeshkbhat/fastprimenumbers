@@ -10,13 +10,55 @@ This same code can be applied in any languages like `C`, `C++`, `Go` Lang, `Java
 `Max iterations 16666 for n == 100000 instead of 100000 of conventional way`. The `iterations` counts for different ways for Prime number check 100007 can be seen as follows:
 
 
-    count: Prime (RECOMMENDED) Unconventional way 15
-    Is Prime 100007:  false
-    count: Prime Conventional way 96
-    Is Prime 100007:  false
-    count: Prime Squareroot way 96
-    Is Prime 100007:  false
+        count: Prime Conventional way for  83 is  81
+        Is Prime 83 isPrimeConventionalWay:  True
+
+        count: Prime Squareroot way  83 is  81
+        Is Prime 83 isPrimeSquarerootWay:  True
+
+        count: Prime Unconventional way for  83 is  14
+        Is Prime 83 prime (SUGGESTED):  True
+
+        count: Prime AKS - Mersenne primes - Fermat's little theorem or whatever way  83 is  2
+        Is Prime 83 isprimeAKSWay:  True
+
+        count: Prime Conventional way for  169 is  12
+        Is Prime 169 isPrimeConventionalWay:  False
+
+        count: Prime Squareroot way  169 is  12
+        Is Prime 169 isPrimeSquarerootWay:  False
+
+        count: Prime Unconventional way for  169 is  1
+        Is Prime 169 prime (SUGGESTED):  False
+
+        count: Prime AKS - Mersenne primes - Fermat's little theorem or whatever way  169 is  4
+        Is Prime 169 isprimeAKSWay:  False
+
+        count: Prime Conventional way for  100007 is  96
+        Is Prime 100007 isPrimeConventionalWay:  False
+
+        count: Prime Squareroot way  100007 is  96
+        Is Prime 100007 isPrimeSquarerootWay:  False
+
+        count: Prime Unconventional way for  100007 is  15
+        Is Prime 100007 prime (SUGGESTED):  False
+
+        count: Prime AKS - Mersenne primes - Fermat's little theorem or whatever way  100007 is  32
+        Is Prime 100007 isprimeAKSWay:  False
+
+        count: Prime Conventional way for  300530164787 is  1180
+        Is Prime 300530164787 isPrimeConventionalWay:  False
+
+        count: Prime Squareroot way  300530164787 is  1180
+        Is Prime 300530164787 isPrimeSquarerootWay:  False
+
+        count: Prime Unconventional way for  300530164787 is  196
+        Is Prime 300530164787 prime (SUGGESTED):  False
+
+        count: Prime AKS - Mersenne primes - Fermat's little theorem or whatever way  300530164787 is  393
+        Is Prime 300530164787 isprimeAKSWay:  False
     
+
 
 ### Code Base 
 
