@@ -60,3 +60,7 @@ function prime(n) {
 // }
 // console.log(generate_primes(1, 100))
 
+
+module.exports = {
+    prime
+}

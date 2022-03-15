@@ -31,14 +31,16 @@ def prime(n):
     if (n == 1 or ((n > 7) and (n % 5 == 0 or n % 7 == 0 or n % 2 == 0 or n % 3 == 0))):
         # print("count: Prime Unconventional way", count)
         return False
-    if (type((n - 1) / 6) == int or type((n + 1) / 6) == int):
+    factorminusone = (n-1)/6
+    factorplusone = (n+1)/6
+    if ( not ( factorminusone > int(factorminusone) )  or not ( factorplusone > int(factorplusone) ) ):
         for i in range(1, n):
             # Counting Iterations
             count += 1
             factorsix = (i * 6)
             fivebase = n / (5 + factorsix)
             sevenbase = n / (7 + factorsix)
-            if (((fivebase > 1) and type(fivebase) == int) or ((sevenbase > 1) and type(sevenbase) == int)):
+            if (((fivebase > 1) and not ( fivebase > int(fivebase) ) ) or ((sevenbase > 1) and not ( sevenbase > int(sevenbase) ) )):
                 # print("count: Prime Unconventional way", count)
                 return False
 
@@ -136,24 +138,43 @@ def isprimeAKSWay(n):
     return True
 
 
-print("Is Prime 100007: ", isPrimeConventionalWay(100007))
-print("Is Prime 100007: ", isPrimeSquarerootWay(100007))
-print("Is Prime 100007: ", prime(100007))
-print("Is Prime 100007: ", isprimeAKSWay(100007))
+print("Is Prime 83 isPrimeConventionalWay: ", isPrimeConventionalWay(83))
+print("Is Prime 83 isPrimeSquarerootWay: ", isPrimeSquarerootWay(83))
+print("Is Prime 83 prime (SUGGESTED): ", prime(83))
+print("Is Prime 83 isprimeAKSWay: ", isprimeAKSWay(83))
+
+
+print("Is Prime 169 isPrimeConventionalWay: ", isPrimeConventionalWay(169))
+print("Is Prime 169 isPrimeSquarerootWay: ", isPrimeSquarerootWay(169))
+print("Is Prime 169 prime (SUGGESTED): ", prime(169))
+print("Is Prime 169 isprimeAKSWay: ", isprimeAKSWay(169))
+
+
+print("Is Prime 100007 isPrimeConventionalWay: ", isPrimeConventionalWay(100007))
+print("Is Prime 100007 isPrimeSquarerootWay: ", isPrimeSquarerootWay(100007))
+print("Is Prime 100007 prime (SUGGESTED): ", prime(100007))
+print("Is Prime 100007 isprimeAKSWay: ", isprimeAKSWay(100007))
+
+
+print("Is Prime 300530164787 isPrimeConventionalWay: ", isPrimeConventionalWay(300530164787))
+print("Is Prime 300530164787 isPrimeSquarerootWay: ", isPrimeSquarerootWay(300530164787))
+print("Is Prime 300530164787 prime (SUGGESTED): ", prime(300530164787))
+print("Is Prime 300530164787 isprimeAKSWay: ", isprimeAKSWay(300530164787))
 
 
 def test_primecalculations():
     count = 0
     iterations = 100000
     arr = []
-    for i in range(1, iterations):
+    for i in range(1, (iterations+1)):
         traditional = isPrimeConventionalWay(i)
         newer = prime(i)
         if (traditional == newer):
             count = count + 1
         else:
             arr.append([traditional, newer, i])
-    print("[count, iterations, arr] list: ", count, iterations, arr)
+    print("[count, iterations, Error Array] list: ", count, iterations, arr)
+    # print("[count, iterations, Error Items] list: ", count, iterations, len(arr))
     if (count == iterations):
         return True
     return False
@@ -171,9 +192,9 @@ isprimeAKSWayArr = []
 def tests_performance_isPrimeConventionalWayArr():
     global isPrimeConventionalWayArr
     for i in range(1, 1000000):
-        start = time.perf_counter_ns()
+        start = time.perf_counter()
         isPrimeConventionalWay(30000239)
-        end = time.perf_counter_ns()
+        end = time.perf_counter()
         isPrimeConventionalWayArr.append(end - start)
 
 
@@ -183,60 +204,62 @@ tests_performance_isPrimeConventionalWayArr()
 def tests_performance_isPrimeSquarerootWayArr():
     global isPrimeSquarerootWayArr
     for i in range(1, 1000000):
-        start = time.perf_counter_ns()
+        start = time.perf_counter()
         isPrimeSquarerootWay(30000239)
-        end = time.perf_counter_ns()
+        end = time.perf_counter()
         isPrimeSquarerootWayArr.append(end - start)
 
 
 tests_performance_isPrimeSquarerootWayArr()
 
 
+def tests_performance_isprimeAKSWayArr():
+    global isprimeAKSWayArr
+    for i in range(1, 1000000):
+        start = time.perf_counter()
+        isprimeAKSWay(30000239)
+        end = time.perf_counter()
+        isprimeAKSWayArr.append(end - start)
+
+
+tests_performance_isprimeAKSWayArr()
+
+
 def tests_performance_primeArr():
     global primeArr
     for i in range(1, 1000000):
-        start = time.perf_counter_ns()
+        start = time.perf_counter()
         prime(30000239)
-        end = time.perf_counter_ns()
+        end = time.perf_counter()
         primeArr.append(end - start)
 
 
 tests_performance_primeArr()
 
 
-def tests_performance_isprimeAKSWayArr():
-    global isprimeAKSWayArr
-    for i in range(1, 1000000):
-        start = time.perf_counter_ns()
-        isprimeAKSWay(30000239)
-        end = time.perf_counter_ns()
-        isprimeAKSWayArr.append(end - start)
+
+# # # PRINT RESULTS OF PERFORMANCE TO FILES
+# # #
+# # with open("./isPrimeConventionalWayFile.log", 'w') as f:
+# #     for item in isPrimeConventionalWayArr:
+# #         f.write("%s\n" % item)
+# # with open("./isPrimeSquarerootWayFile.log", 'w') as f:
+# #     for item in isPrimeSquarerootWayArr:
+# #         f.write("%s\n" % item)
+# # with open("./primeFile.log", 'w') as f:
+# #     for item in primeArr:
+# #         f.write("%s\n" % item)
+# # with open("./isprimeAKSWayFile.log", 'w') as f:
+# #     for item in isprimeAKSWayArr:
+# #         f.write("%s\n" % item)
 
 
-tests_performance_isprimeAKSWayArr()
-
-# # PRINT RESULTS OF PERFORMANCE TO FILES
-# #
-# with open("./isPrimeConventionalWayFile.log", 'w') as f:
-#     for item in isPrimeConventionalWayArr:
-#         f.write("%s\n" % item)
-# with open("./isPrimeSquarerootWayFile.log", 'w') as f:
-#     for item in isPrimeSquarerootWayArr:
-#         f.write("%s\n" % item)
-# with open("./primeFile.log", 'w') as f:
-#     for item in primeArr:
-#         f.write("%s\n" % item)
-# with open("./isprimeAKSWayFile.log", 'w') as f:
-#     for item in isprimeAKSWayArr:
-#         f.write("%s\n" % item)
-
-
-print("primeArr: ", sum(primeArr)/len(primeArr))
-print("isPrimeConventionalWayArr: ", sum(
+print("isPrimeConventionalWayArr Average: ", sum(
     isPrimeConventionalWayArr)/len(isPrimeConventionalWayArr))
-print("isPrimeSquarerootWayArr: ", sum(
+print("isPrimeSquarerootWayArr Average: ", sum(
     isPrimeSquarerootWayArr)/len(isPrimeSquarerootWayArr))
-print("isprimeAKSWayArr: ", sum(isprimeAKSWayArr)/len(isprimeAKSWayArr))
+print("isprimeAKSWayArr Average: ", sum(isprimeAKSWayArr)/len(isprimeAKSWayArr))
+print("primeArr Average: ", sum(primeArr)/len(primeArr))
 
 
 # def generate_prime(from, to):

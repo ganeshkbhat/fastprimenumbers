@@ -82,3 +82,11 @@ const isPrimeSquarerootWayTwo = num => {
     return num > 1;
 }
 
+
+module.exports = {
+    isPrimeConventionalWay,
+    isPrimeSquarerootWay,
+    isPrimeSquarerootWayTwo
+}
+
+
