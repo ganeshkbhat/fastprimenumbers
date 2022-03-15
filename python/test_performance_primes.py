@@ -16,14 +16,6 @@ import time
 import math
 
 
-1.940599238979692e-06
-
-
-4.111346501763623e-06
-2.0435583430845877e-06
-1.9665250797781405e-06
-
-
 isPrimeConventionalWayArr = []
 isPrimeSquarerootWayArr = []
 primeArr = []
