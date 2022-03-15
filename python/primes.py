@@ -162,79 +162,79 @@ print("Is Prime 300530164787 prime (SUGGESTED): ", prime(300530164787))
 print("Is Prime 300530164787 isprimeAKSWay: ", isprimeAKSWay(300530164787))
 
 
-# def test_primecalculations():
-#     count = 0
-#     iterations = 100000
-#     arr = []
-#     for i in range(1, (iterations+1)):
-#         traditional = isPrimeConventionalWay(i)
-#         newer = prime(i)
-#         if (traditional == newer):
-#             count = count + 1
-#         else:
-#             arr.append([traditional, newer, i])
-#     print("[count, iterations, Error Array] list: ", count, iterations, arr)
-#     # print("[count, iterations, Error Items] list: ", count, iterations, len(arr))
-#     if (count == iterations):
-#         return True
-#     return False
+def test_primecalculations():
+    count = 0
+    iterations = 100000
+    arr = []
+    for i in range(1, (iterations+1)):
+        traditional = isPrimeConventionalWay(i)
+        newer = prime(i)
+        if (traditional == newer):
+            count = count + 1
+        else:
+            arr.append([traditional, newer, i])
+    print("[count, iterations, Error Array] list: ", count, iterations, arr)
+    # print("[count, iterations, Error Items] list: ", count, iterations, len(arr))
+    if (count == iterations):
+        return True
+    return False
 
 
-# print("Tests Passed: ", test_primecalculations())
+print("Tests Passed: ", test_primecalculations())
 
 
-# isPrimeConventionalWayArr = []
-# isPrimeSquarerootWayArr = []
-# primeArr = []
-# isprimeAKSWayArr = []
+isPrimeConventionalWayArr = []
+isPrimeSquarerootWayArr = []
+primeArr = []
+isprimeAKSWayArr = []
 
 
-# def tests_performance_isPrimeConventionalWayArr():
-#     global isPrimeConventionalWayArr
-#     for i in range(1, 1000000):
-#         start = time.perf_counter()
-#         isPrimeConventionalWay(30000239)
-#         end = time.perf_counter()
-#         isPrimeConventionalWayArr.append(end - start)
+def tests_performance_isPrimeConventionalWayArr():
+    global isPrimeConventionalWayArr
+    for i in range(1, 1000000):
+        start = time.perf_counter()
+        isPrimeConventionalWay(30000239)
+        end = time.perf_counter()
+        isPrimeConventionalWayArr.append(end - start)
 
 
-# tests_performance_isPrimeConventionalWayArr()
+tests_performance_isPrimeConventionalWayArr()
 
 
-# def tests_performance_isPrimeSquarerootWayArr():
-#     global isPrimeSquarerootWayArr
-#     for i in range(1, 1000000):
-#         start = time.perf_counter()
-#         isPrimeSquarerootWay(30000239)
-#         end = time.perf_counter()
-#         isPrimeSquarerootWayArr.append(end - start)
+def tests_performance_isPrimeSquarerootWayArr():
+    global isPrimeSquarerootWayArr
+    for i in range(1, 1000000):
+        start = time.perf_counter()
+        isPrimeSquarerootWay(30000239)
+        end = time.perf_counter()
+        isPrimeSquarerootWayArr.append(end - start)
 
 
-# tests_performance_isPrimeSquarerootWayArr()
+tests_performance_isPrimeSquarerootWayArr()
 
 
-# def tests_performance_isprimeAKSWayArr():
-#     global isprimeAKSWayArr
-#     for i in range(1, 1000000):
-#         start = time.perf_counter()
-#         isprimeAKSWay(30000239)
-#         end = time.perf_counter()
-#         isprimeAKSWayArr.append(end - start)
+def tests_performance_isprimeAKSWayArr():
+    global isprimeAKSWayArr
+    for i in range(1, 1000000):
+        start = time.perf_counter()
+        isprimeAKSWay(30000239)
+        end = time.perf_counter()
+        isprimeAKSWayArr.append(end - start)
 
 
-# tests_performance_isprimeAKSWayArr()
+tests_performance_isprimeAKSWayArr()
 
 
-# def tests_performance_primeArr():
-#     global primeArr
-#     for i in range(1, 1000000):
-#         start = time.perf_counter()
-#         prime(30000239)
-#         end = time.perf_counter()
-#         primeArr.append(end - start)
+def tests_performance_primeArr():
+    global primeArr
+    for i in range(1, 1000000):
+        start = time.perf_counter()
+        prime(30000239)
+        end = time.perf_counter()
+        primeArr.append(end - start)
 
 
-# tests_performance_primeArr()
+tests_performance_primeArr()
 
 
 
@@ -254,12 +254,12 @@ print("Is Prime 300530164787 isprimeAKSWay: ", isprimeAKSWay(300530164787))
 # #         f.write("%s\n" % item)
 
 
-# print("isPrimeConventionalWayArr Average: ", sum(
-#     isPrimeConventionalWayArr)/len(isPrimeConventionalWayArr))
-# print("isPrimeSquarerootWayArr Average: ", sum(
-#     isPrimeSquarerootWayArr)/len(isPrimeSquarerootWayArr))
-# print("isprimeAKSWayArr Average: ", sum(isprimeAKSWayArr)/len(isprimeAKSWayArr))
-# print("primeArr Average: ", sum(primeArr)/len(primeArr))
+print("isPrimeConventionalWayArr Average: ", sum(
+    isPrimeConventionalWayArr)/len(isPrimeConventionalWayArr))
+print("isPrimeSquarerootWayArr Average: ", sum(
+    isPrimeSquarerootWayArr)/len(isPrimeSquarerootWayArr))
+print("isprimeAKSWayArr Average: ", sum(isprimeAKSWayArr)/len(isprimeAKSWayArr))
+print("primeArr Average: ", sum(primeArr)/len(primeArr))
 
 
 # def generate_prime(from, to):
