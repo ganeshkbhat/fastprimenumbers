@@ -14,15 +14,6 @@ $iterations = 10000000;
 
 // For Average (removing this due to memory related issues in php during calculation of 10 Million records)
 // Average calculation is being used for all other languages
-$isPrimeConventionalWayArr = [];
-$isPrimeSquarerootWayArr = [];
-$primeArr = [];
-$isPrimeSquarerootWayTwoArr = [];
-
-$isPrimeConventionalWaySum = 0;
-$isPrimeSquarerootWaySum = 0;
-$primeSum = 0;
-$isPrimeSquarerootWayTwoSum = 0;
 
 function calculateAverage($arr) {
     return array_sum($arr) / count($arr);
@@ -31,8 +22,8 @@ function calculateAverage($arr) {
 function tests_performance_isPrimeConventionalWayArr(){
     global $iterations;
     global $isPrimeConventionalWay;
-    global $isPrimeConventionalWayArr;
-    global $isPrimeConventionalWaySum;
+    $isPrimeConventionalWayArr = [];
+    $isPrimeConventionalWaySum = 0;
     for ($i = 1; $i <= $iterations; $i++){
         $start = microtime(true);
         isPrimeConventionalWay(30000239);
@@ -40,21 +31,21 @@ function tests_performance_isPrimeConventionalWayArr(){
         // array_push($isPrimeConventionalWayArr, $time);
         $isPrimeConventionalWaySum = $isPrimeConventionalWaySum + ($end - $start);
     }
+    return $isPrimeConventionalWaySum;
 }
-tests_performance_isPrimeConventionalWayArr();
 
 // $result = calculateAverage($isPrimeConventionalWayArr);
 // echo "isPrimeConventionalWayArr: ", $result, "\n";
 // $isPrimeConventionalWayArr = [];
-echo "isPrimeConventionalWaySum: ", $isPrimeConventionalWaySum, "\n";
+echo "isPrimeConventionalWaySum: ", tests_performance_isPrimeConventionalWayArr(), "\n";
 clearstatcache();
 
 
 function tests_performance_isPrimeSquarerootWayArr(){
     global $iterations;
     global $isPrimeSquarerootWay;
-    global $isPrimeSquarerootWayArr;
-    global $isPrimeSquarerootWaySum;
+    $isPrimeSquarerootWayArr = [];
+    $isPrimeSquarerootWaySum = 0;
     for ($i = 1; $i <= $iterations; $i++){
         $start = microtime(true);
         isPrimeSquarerootWay(30000239);
@@ -62,21 +53,21 @@ function tests_performance_isPrimeSquarerootWayArr(){
         // array_push($isPrimeSquarerootWayArr, $time);
         $isPrimeSquarerootWaySum = $isPrimeSquarerootWaySum + ($end - $start);
     } 
+    return $isPrimeSquarerootWaySum;
 }
-tests_performance_isPrimeSquarerootWayArr();
 
 // $result = calculateAverage($isPrimeSquarerootWayArr);
 // echo "isPrimeSquarerootWayArr: ", $result, "\n";
 // $isPrimeSquarerootWayArr = [];
-echo "isPrimeSquarerootWaySum: ", $isPrimeSquarerootWaySum, "\n";
+echo "isPrimeSquarerootWaySum: ", tests_performance_isPrimeSquarerootWayArr(), "\n";
 clearstatcache();
 
 
 function tests_performance_isPrimeSquarerootWayTwoArr(){
     global $iterations;
     global $isPrimeSquarerootWayTwo;
-    global $isPrimeSquarerootWayTwoArr;
-    global $isPrimeSquarerootWayTwoSum;
+    $isPrimeSquarerootWayTwoArr = [];
+    $isPrimeSquarerootWayTwoSum = 0;
     for ($i = 1; $i <= $iterations; $i++){
         $start = microtime(true);
         isPrimeSquarerootWayTwo(30000239);
@@ -84,21 +75,21 @@ function tests_performance_isPrimeSquarerootWayTwoArr(){
         // array_push($isPrimeSquarerootWayTwoArr, $time);
         $isPrimeSquarerootWayTwoSum = $isPrimeSquarerootWayTwoSum + ($end - $start);
     }
+    return $isPrimeSquarerootWayTwoSum;
 }
-tests_performance_isPrimeSquarerootWayTwoArr();
 
 // $result = calculateAverage($isPrimeSquarerootWayTwoArr);
 // echo "isPrimeSquarerootWayTwoArr: ", $result, "\n";
 // $isPrimeSquarerootWayTwoArr = [];
-echo "isPrimeSquarerootWayTwoSum: ", $isPrimeSquarerootWayTwoSum, "\n";
+echo "isPrimeSquarerootWayTwoSum: ", tests_performance_isPrimeSquarerootWayTwoArr(), "\n";
 clearstatcache();
 
 
 function tests_performance_primeArr(){
     global $iterations;
     global $prime;
-    global $primeArr;
-    global $primeSum;
+    $primeArr = [];
+    $primeSum = 0;
     for ($i = 1; $i <= $iterations; $i++){
         $start = microtime(true);
         prime(30000239);
@@ -106,12 +97,12 @@ function tests_performance_primeArr(){
         // array_push($primeArr, $time);
         $primeSum = $primeSum + ($end - $start);
     }
+    return $primeSum;
 }
-tests_performance_primeArr();
 
 // $result = calculateAverage($primeArr);
 // echo "primeArr: ", $result, "\n";
 // $primeArr = [];
-echo "primeSum: ", $primeSum, "\n";
+echo "primeSum: ", tests_performance_primeArr(), "\n";
 clearstatcache();
 

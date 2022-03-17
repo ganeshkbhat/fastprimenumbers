@@ -16,59 +16,52 @@ import time
 import math
 
 
-isPrimeConventionalWayArr = []
-isPrimeSquarerootWayArr = []
-primeArr = []
-isprimeAKSWayArr = []
-
-
 def tests_performance_isPrimeConventionalWayArr():
-    global isPrimeConventionalWayArr
+    isPrimeConventionalWayArr = []
     for i in range(1, 1000000):
         start = time.perf_counter()
         isPrimeConventionalWay(30000239)
         end = time.perf_counter()
         isPrimeConventionalWayArr.append(end - start)
+    return sum(isPrimeConventionalWayArr)
 
-
-tests_performance_isPrimeConventionalWayArr()
+print( "isPrimeConventionalWayArr Sum: ", tests_performance_isPrimeConventionalWayArr() )
 
 
 def tests_performance_isPrimeSquarerootWayArr():
-    global isPrimeSquarerootWayArr
+    isPrimeSquarerootWayArr = []
     for i in range(1, 1000000):
         start = time.perf_counter()
         isPrimeSquarerootWay(30000239)
         end = time.perf_counter()
         isPrimeSquarerootWayArr.append(end - start)
+    return sum(isPrimeSquarerootWayArr)
 
-
-tests_performance_isPrimeSquarerootWayArr()
+print( "isPrimeSquarerootWayArr Sum: ", tests_performance_isPrimeSquarerootWayArr() )
 
 
 def tests_performance_isprimeAKSWayArr():
-    global isprimeAKSWayArr
+    isprimeAKSWayArr = []
     for i in range(1, 1000000):
         start = time.perf_counter()
         isprimeAKSWay(30000239)
         end = time.perf_counter()
         isprimeAKSWayArr.append(end - start)
+    return sum(isprimeAKSWayArr)
 
-
-tests_performance_isprimeAKSWayArr()
+print( "isprimeAKSWayArr Sum: ", tests_performance_isprimeAKSWayArr() )
 
 
 def tests_performance_primeArr():
-    global primeArr
+    primeArr = []
     for i in range(1, 1000000):
         start = time.perf_counter()
         prime(30000239)
         end = time.perf_counter()
         primeArr.append(end - start)
+    return sum(primeArr)
 
-
-tests_performance_primeArr()
-
+print( "primeArr Sum: ", tests_performance_primeArr() )
 
 
 # # # PRINT RESULTS OF PERFORMANCE TO FILES
@@ -86,11 +79,4 @@ tests_performance_primeArr()
 # #     for item in isprimeAKSWayArr:
 # #         f.write("%s\n" % item)
 
-
-print("isPrimeConventionalWayArr Average: ", sum(
-    isPrimeConventionalWayArr)/len(isPrimeConventionalWayArr))
-print("isPrimeSquarerootWayArr Average: ", sum(
-    isPrimeSquarerootWayArr)/len(isPrimeSquarerootWayArr))
-print("isprimeAKSWayArr Average: ", sum(isprimeAKSWayArr)/len(isprimeAKSWayArr))
-print("primeArr Average: ", sum(primeArr)/len(primeArr))
 

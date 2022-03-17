@@ -54,7 +54,8 @@ def isPrimeSquarerootWay(num):
         return False
 
     s = math.sqrt(num)
-    for i in range(2, num):
+    s = int(s+1)
+    for i in range(2, s):
         # Counting Iterations
         count += 1
         if (num % i == 0):
@@ -74,19 +75,15 @@ def isprimeAKSWay(n):
         boolean: Returns whether the number of Prime (True) or not (False)
     """
     count = 0
-    if n == 2:
+    if ( (n == 2) or (n == 3) ):
         return True
-    if n == 3:
-        return True
-    if n % 2 == 0:
-        return False
-    if n % 3 == 0:
+    if ( ( (n % 2) == 0 ) or ( (n % 3) == 0 ) ):
         return False
 
     i = 5
     w = 2
 
-    while i * i <= n:
+    while ( (i * i) <= n ):
         count += 1
         if n % i == 0:
             # print("count: Prime AKS - Mersenne primes - Fermat's little theorem or whatever way ", n, "is ", count)

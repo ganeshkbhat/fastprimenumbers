@@ -40,17 +40,17 @@ function test_primecalculations() {
     for (let i = 1; i <= iterations; i++) {
         let traditional = isPrimeConventionalWay(i), newer = prime(i);
         if (traditional == newer) {
-            count = count + 1
+            count += 1;
         } else {
-            arr.push([traditional, newer, i])
+            arr.push([traditional, newer, i]);
         }
     }
-    console.log("[count, iterations, arr] list: ", count, iterations, arr)
+    console.log("[count, iterations, arr] list: ", count, iterations, arr);
     if (count === iterations) {
         return true;
     }
     return false;
 }
 
-console.log("Tests Passed: ", test_primecalculations())
+console.log( "Tests Passed: ", test_primecalculations() );
 

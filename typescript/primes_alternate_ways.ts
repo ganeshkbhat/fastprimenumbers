@@ -2,8 +2,9 @@
  * Ganesh Bhat
  * https://github.com/ganeshkbhat/fastprimecalculations
  * Fastest method of Prime Number Calculations
- * Alternate ways for calculation of Prime Numbers
+ * Functions and Alternate ways for calculation of Prime Numbers
  * 
+ * ** prime(n) ** is the Recommended Way for calculation checks of prime numbers
  * 
 */
 
@@ -17,14 +18,14 @@
  * @return {*} 
  * 
  */
-function isPrimeConventionalWay(n) {
-    count = 0;
+export function isPrimeConventionalWay(n: number): boolean {
+    let count: number = 0;
     if (n <= 1) {
         return false;
     }
     // Check from 2 to n-1
     // Max iterations 99998 for n == 100000 
-    for (let i = 2; i < n; i++) {
+    for (let i: number = 2; i < n; i++) {
         // Counting Iterations
         count += 1;
         if (n % i == 0) {
@@ -45,8 +46,8 @@ function isPrimeConventionalWay(n) {
  * @return {*} 
  * 
  */
-function isPrimeSquarerootWay(num) {
-    count = 0;
+export function isPrimeSquarerootWay(num: number): boolean {
+    let count: number = 0;
     // if not is_number num return false
     if (num < 2) {
         // console.log("count: Prime Squareroot way", count);
@@ -74,20 +75,13 @@ function isPrimeSquarerootWay(num) {
  * @return {*} 
  * 
  */
-const isPrimeSquarerootWayTwo = num => {
-    for (let i = 2, s = Math.sqrt(num); i <= s; i++) {
+export const isPrimeSquarerootWayTwo = (num: number): boolean => {
+    for (let i: number = 2, s: number = Math.sqrt(num); i <= s; i++) {
         if (num % i === 0) {
             return false;
         }
     }
     return num > 1;
-}
-
-
-module.exports = {
-    isPrimeConventionalWay,
-    isPrimeSquarerootWay,
-    isPrimeSquarerootWayTwo
 }
 
 

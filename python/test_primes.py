@@ -58,5 +58,5 @@ def test_primecalculations():
     return False
 
 
-print("Tests Passed: ", test_primecalculations())
+print( "Tests Passed: ", test_primecalculations() )
 

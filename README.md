@@ -4,7 +4,7 @@
 Fastest Prime Number Calculation (checks) logic and `This probably is the BEST solution in the internet as of today 11th March 2022`
 
 
-This same code can be applied in any languages like `C`, `C++`, `Go` Lang, `Java`, `php`, `.NET`, `Python`, `Rust`, etc with the same logic and have performance benefits. It is pretty fast. I have not seen this implemented before and has been indigenously done. Feedback and usage is welcome.
+This same code can be applied in any languages like `Python`, `Go` Lang, `Java`, `PHP`, `Node.js`, `Javascript`, `C`, `C++`, `.NET`, `Rust`, etc with the same logic and have performance benefits. It is pretty fast. I have not seen this implemented before and has been indigenously done. Feedback and usage is welcome.
 
 
 `Max iterations 16666 for n == 100000 instead of 100000 of conventional way`. The `iterations` counts for different ways for Prime number check 100007 can be seen as follows:
@@ -13,7 +13,7 @@ This same code can be applied in any languages like `C`, `C++`, `Go` Lang, `Java
         count: Prime Conventional way for  83 is  81
         Is Prime 83 isPrimeConventionalWay:  True
 
-        count: Prime Squareroot way  83 is  81
+        count: Prime Squareroot way  83 is  8
         Is Prime 83 isPrimeSquarerootWay:  True
 
         count: Prime Unconventional way for  83 is  14

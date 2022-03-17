@@ -20,22 +20,22 @@
  * @return {*} 
  * 
  */
-function prime(n) {
-    count = 0;
-    if ((n === 2 || n === 3 || n === 5 || n === 7)) {
+export function prime(n: number): boolean {
+    let count: number = 0;
+    if ( (n === 2) || (n === 3) || (n === 5) || (n === 7) ) {
         // console.log("count: Prime Unconventional way", count);
         return true;
     }
-    if (n === 1 || ((n > 7) && (n % 5 == 0 || n % 7 == 0 || n % 2 == 0 || n % 3 == 0))) {
+    if ( (n === 1) || ( (n > 7) && ( ( (n % 5) == 0) || ((n % 7) == 0) || ((n % 2) == 0) || ((n % 3) == 0) ) ) ) {
         // console.log("count: Prime Unconventional way", count);
         return false;
     }
     if ((Number.isInteger(((n - 1) / 6))) || (Number.isInteger((n + 1) / 6))) {
-        for (let i = 1; i < n; i++) {
+        for (let i: number = 1; i < n; i++) {
             // Counting Iterations
             count += 1;
-            let factorsix = (i * 6);
-            let fivebase = n / (5 + factorsix), sevenbase = n / (7 + factorsix);
+            let factorsix: number = (i * 6);
+            let fivebase: number = n / (5 + factorsix), sevenbase: number = n / (7 + factorsix);
             if (((fivebase > 1) && Number.isInteger(fivebase)) || ((sevenbase > 1) && (Number.isInteger(sevenbase)))) {
                 // console.log("count: Prime Unconventional way", count);
                 return false;
@@ -52,15 +52,3 @@ function prime(n) {
     return false;
 }
 
-
-// TODO
-// function generate_primes(from, to) {
-//     let arr = [2, 3, 5, 7];
-//     return arr
-// }
-// console.log(generate_primes(1, 100))
-
-
-module.exports = {
-    prime
-}

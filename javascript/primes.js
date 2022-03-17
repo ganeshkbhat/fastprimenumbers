@@ -21,7 +21,7 @@
  * 
  */
  function prime(n) {
-    count = 0;
+    let count = 0;
     if ((n === 2 || n === 3 || n === 5 || n === 7)) {
         // console.log("count: Prime Unconventional way", count);
         return true;
@@ -45,10 +45,10 @@
                 break;
             }
         }
-        // console.log("count: Prime Unconventional way", count)
+        // console.log("count: Prime Unconventional way", count);
         return true;
     }
-    // console.log("count: Prime Unconventional way", count)
+    // console.log("count: Prime Unconventional way", count);
     return false;
 }
 
@@ -63,9 +63,10 @@
  * 
  */
 function isPrimeConventionalWay(n) {
-    count = 0;
-    if (n <= 1)
+    let count = 0;
+    if (n <= 1) {
         return false;
+    }
     // Check from 2 to n-1
     // Max iterations 99998 for n == 100000 
     for (let i = 2; i < n; i++) {
@@ -90,10 +91,10 @@ function isPrimeConventionalWay(n) {
  * 
  */
 function isPrimeSquarerootWay(num) {
-    count = 0;
+    let count = 0;
     // if not is_number num return false
     if (num < 2) {
-        // console.log("count: Prime Squareroot way", count)
+        // console.log("count: Prime Squareroot way", count);
         return false;
     }
 
@@ -127,20 +128,33 @@ const isPrimeSquarerootWayTwo = num => {
     return num > 1;
 }
 
-console.log("Is Prime 100007: ", isPrimeConventionalWay(100007))
-console.log("Is Prime 100007: ", isPrimeSquarerootWay(100007))
-console.log("Is Prime 100007: ", prime(100007))
-console.log("Is Prime 100007: ", isPrimeSquarerootWayTwo(100007))
 
-console.log("Is Prime 300530164787: ", isPrimeConventionalWay(300530164787))
-console.log("Is Prime 300530164787: ", isPrimeSquarerootWay(300530164787))
-console.log("Is Prime 300530164787: ", prime(300530164787))
-console.log("Is Prime 300530164787: ", isPrimeSquarerootWayTwo(300530164787))
+console.log("Is Prime 83: ", isPrimeConventionalWay(83));
+console.log("Is Prime 83: ", isPrimeSquarerootWay(83));
+console.log("Is Prime 83: ", prime(83));
+console.log("Is Prime 83: ", isPrimeSquarerootWayTwo(83));
+
+
+console.log("Is Prime 169: ", isPrimeConventionalWay(169));
+console.log("Is Prime 169: ", isPrimeSquarerootWay(169));
+console.log("Is Prime 169: ", prime(169));
+console.log("Is Prime 169: ", isPrimeSquarerootWayTwo(169));
+
+
+console.log("Is Prime 100007: ", isPrimeConventionalWay(100007));
+console.log("Is Prime 100007: ", isPrimeSquarerootWay(100007));
+console.log("Is Prime 100007: ", prime(100007));
+console.log("Is Prime 100007: ", isPrimeSquarerootWayTwo(100007));
+
+
+console.log("Is Prime 300530164787: ", isPrimeConventionalWay(300530164787));
+console.log("Is Prime 300530164787: ", isPrimeSquarerootWay(300530164787));
+console.log("Is Prime 300530164787: ", prime(300530164787));
+console.log("Is Prime 300530164787: ", isPrimeSquarerootWayTwo(300530164787));
 
 
 let iterations = 10000000;
-let isPrimeConventionalWayArr = [], isPrimeSquarerootWayArr = [], primeArr = [], isPrimeSquarerootWayTwoArr = []
-let performance = window.performance;
+let performance = require('perf_hooks').performance;
 
 
 function test_primecalculations() {
@@ -149,63 +163,23 @@ function test_primecalculations() {
     for (let i = 1; i <= iterations; i++) {
         let traditional = isPrimeConventionalWay(i), newer = prime(i);
         if (traditional == newer) {
-            count = count + 1
+            count += 1;
         } else {
-            arr.push([traditional, newer, i])
+            arr.push([traditional, newer, i]);
         }
     }
-    console.log("[count, iterations, arr] list: ", count, iterations, arr)
+    console.log("[count, iterations, arr] list: ", count, iterations, arr);
     if (count === iterations) {
         return true;
     }
     return false;
 }
-console.log("Tests Passed: ", test_primecalculations())
-
-function tests_performance_isPrimeConventionalWayArr(){
-    for (let i = 1; i <= iterations; i++){
-        let start = performance.now()
-        isPrimeConventionalWay(30000239)
-        let end = performance.now()
-        isPrimeConventionalWayArr.push(end - start)
-    }
-}
-tests_performance_isPrimeConventionalWayArr()
-
-function tests_performance_isPrimeSquarerootWayArr(){
-    for (let i = 1; i <= iterations; i++){
-        let start = performance.now()
-        isPrimeSquarerootWay(30000239)
-        let end = performance.now()
-        isPrimeSquarerootWayArr.push(end - start)
-    } 
-}
-tests_performance_isPrimeSquarerootWayArr()
-
-function tests_performance_primeArr(){
-    for (let i = 1; i <= iterations; i++){
-        let start = performance.now()
-        prime(30000239)
-        let end = performance.now()
-        primeArr.push(end - start)
-    }
-}
-tests_performance_primeArr()
-
-function tests_performance_isPrimeSquarerootWayTwoArr(){
-    for (let i = 1; i <= iterations; i++){
-        let start = performance.now()
-        isPrimeSquarerootWayTwo(30000239)
-        let end = performance.now()
-        isPrimeSquarerootWayTwoArr.push(end - start)
-    }
-}  
-tests_performance_isPrimeSquarerootWayTwoArr()  
+console.log( "Tests Passed: ", test_primecalculations() );
 
 
 function calculateAverage(array) {
-    var total = 0;
-    var count = 0;
+    let total = 0;
+    let count = 0;
     array.forEach(function(item, index) {
         total += item;
         count++;
@@ -213,7 +187,54 @@ function calculateAverage(array) {
     return total / count;
 }
 
-console.log("isPrimeConventionalWayArr: ", calculateAverage(isPrimeConventionalWayArr))
-console.log("isPrimeSquarerootWayArr: ", calculateAverage(isPrimeSquarerootWayArr))
-console.log("primeArr: ", calculateAverage(primeArr))
-console.log("isPrimeSquarerootWayTwoArr: ", calculateAverage(isPrimeSquarerootWayTwoArr))
+
+function tests_performance_isPrimeConventionalWayArr(){
+    let isPrimeConventionalWayArr = [];
+    for (let i = 1; i <= iterations; i++){
+        let start = performance.now();
+        isPrimeConventionalWay(30000239);
+        let end = performance.now();
+        isPrimeConventionalWayArr.push(end - start);
+    }
+    return calculateAverage(isPrimeConventionalWayArr);
+}
+console.log( "isPrimeConventionalWay: ", tests_performance_isPrimeConventionalWayArr() );
+
+
+function tests_performance_isPrimeSquarerootWayArr(){
+    let isPrimeSquarerootWayArr = [];
+    for (let i = 1; i <= iterations; i++){
+        let start = performance.now();
+        isPrimeSquarerootWay(30000239);
+        let end = performance.now();
+        isPrimeSquarerootWayArr.push(end - start);
+    } 
+    return calculateAverage(isPrimeSquarerootWayArr);
+}
+console.log( "isPrimeSquarerootWay: ", tests_performance_isPrimeSquarerootWayArr() );
+
+
+function tests_performance_primeArr(){
+    let primeArr = [];
+    for (let i = 1; i <= iterations; i++){
+        let start = performance.now();
+        prime(30000239);
+        let end = performance.now();
+        primeArr.push(end - start);
+    }
+    return calculateAverage(primeArr);
+}
+console.log( "prime (SUGGESTED): ", tests_performance_primeArr() );
+
+
+function tests_performance_isPrimeSquarerootWayTwoArr(){
+    let isPrimeSquarerootWayTwoArr = [];
+    for (let i = 1; i <= iterations; i++){
+        let start = performance.now();
+        isPrimeSquarerootWayTwo(30000239);
+        let end = performance.now();
+        isPrimeSquarerootWayTwoArr.push(end - start);
+    }
+    return calculateAverage(isPrimeSquarerootWayTwoArr);
+}  
+console.log( "isPrimeSquarerootWayTwo: ", tests_performance_isPrimeSquarerootWayTwoArr() );
