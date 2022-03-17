@@ -29,7 +29,7 @@ function tests_performance_isPrimeConventionalWayArr(){
         isPrimeConventionalWay(30000239);
         $end = microtime(true);
         // array_push($isPrimeConventionalWayArr, $time);
-        $isPrimeConventionalWaySum = $isPrimeConventionalWaySum + ($end - $start);
+        $isPrimeConventionalWaySum += ($end - $start);
     }
     return $isPrimeConventionalWaySum;
 }
@@ -51,7 +51,7 @@ function tests_performance_isPrimeSquarerootWayArr(){
         isPrimeSquarerootWay(30000239);
         $end = microtime(true);
         // array_push($isPrimeSquarerootWayArr, $time);
-        $isPrimeSquarerootWaySum = $isPrimeSquarerootWaySum + ($end - $start);
+        $isPrimeSquarerootWaySum += ($end - $start);
     } 
     return $isPrimeSquarerootWaySum;
 }
@@ -73,7 +73,7 @@ function tests_performance_isPrimeSquarerootWayTwoArr(){
         isPrimeSquarerootWayTwo(30000239);
         $end = microtime(true);
         // array_push($isPrimeSquarerootWayTwoArr, $time);
-        $isPrimeSquarerootWayTwoSum = $isPrimeSquarerootWayTwoSum + ($end - $start);
+        $isPrimeSquarerootWayTwoSum += ($end - $start);
     }
     return $isPrimeSquarerootWayTwoSum;
 }
@@ -95,7 +95,7 @@ function tests_performance_primeArr(){
         prime(30000239);
         $end = microtime(true);
         // array_push($primeArr, $time);
-        $primeSum = $primeSum + ($end - $start);
+        $primeSum += ($end - $start);
     }
     return $primeSum;
 }

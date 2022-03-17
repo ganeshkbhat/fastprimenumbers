@@ -24,55 +24,55 @@ function calculateAverage(array) {
 }
 
 
-function tests_performance_isPrimeConventionalWayArr(){
-    let isPrimeConventionalWayArr = [];
+function tests_performance_isPrimeConventionalWayArr(iterations){
+    let isPrimeConventionalWaySum = 0;
     for (let i = 1; i <= iterations; i++){
         let start = performance.now();
         isPrimeConventionalWay(30000239);
         let end = performance.now();
-        isPrimeConventionalWayArr.push(end - start);
+        isPrimeConventionalWaySum += (end - start);
     }
-    return calculateAverage(isPrimeConventionalWayArr);
+    return isPrimeConventionalWaySum;
 }
-console.log( "isPrimeConventionalWay: ", tests_performance_isPrimeConventionalWayArr() );
+console.log( "isPrimeConventionalWay: ", tests_performance_isPrimeConventionalWayArr(iterations) );
 
 
-function tests_performance_isPrimeSquarerootWayArr(){
-    let isPrimeSquarerootWayArr = [];
+function tests_performance_isPrimeSquarerootWayArr(iterations){
+    let isPrimeSquarerootWaySum = 0;
     for (let i = 1; i <= iterations; i++){
         let start = performance.now();
         isPrimeSquarerootWay(30000239);
         let end = performance.now();
-        isPrimeSquarerootWayArr.push(end - start);
+        isPrimeSquarerootWaySum += (end - start);
     } 
-    return calculateAverage(isPrimeSquarerootWayArr);
+    return isPrimeSquarerootWaySum;
 }
-console.log( "isPrimeSquarerootWay: ", tests_performance_isPrimeSquarerootWayArr() );
+console.log( "isPrimeSquarerootWay: ", tests_performance_isPrimeSquarerootWayArr(iterations) );
 
 
-function tests_performance_primeArr(){
-    let primeArr = [];
+function tests_performance_primeArr(iterations){
+    let primeSum = 0;
     for (let i = 1; i <= iterations; i++){
         let start = performance.now();
         prime(30000239);
         let end = performance.now();
-        primeArr.push(end - start);
+        primeSum += (end - start);
     }
-    return calculateAverage(primeArr);
+    return primeSum;
 }
-console.log( "prime (SUGGESTED): ", tests_performance_primeArr() );
+console.log( "prime (SUGGESTED): ", tests_performance_primeArr(iterations) );
 
 
-function tests_performance_isPrimeSquarerootWayTwoArr(){
-    let isPrimeSquarerootWayTwoArr = [];
+function tests_performance_isPrimeSquarerootWayTwoArr(iterations){
+    let isPrimeSquarerootWayTwoSum = 0;
     for (let i = 1; i <= iterations; i++){
         let start = performance.now();
         isPrimeSquarerootWayTwo(30000239);
         let end = performance.now();
-        isPrimeSquarerootWayTwoArr.push(end - start);
+        isPrimeSquarerootWayTwoSum += (end - start);
     }
-    return calculateAverage(isPrimeSquarerootWayTwoArr);
+    return isPrimeSquarerootWayTwoSum;
 }  
-console.log( "isPrimeSquarerootWayTwo: ", tests_performance_isPrimeSquarerootWayTwoArr() );
+console.log( "isPrimeSquarerootWayTwo: ", tests_performance_isPrimeSquarerootWayTwoArr(iterations) );
 
 

@@ -18,9 +18,9 @@ function strbool($value){
 $result = isPrimeConventionalWay(83);
 echo "Is Prime 83 (isPrimeConventionalWay): ", strbool($result), "\n";
 $result = isPrimeSquarerootWay(83);
-echo "Is Prime 83 (prime): ", strbool($result), "\n";
-$result = isPrimeSquarerootWay(83);
 echo "Is Prime 83 (isPrimeSquarerootWay): ", strbool($result), "\n";
+$result = isPrimeSquarerootWayTwo(83);
+echo "Is Prime 83 (isPrimeSquarerootWayTwo): ", strbool($result), "\n";
 $result = prime(83);
 echo "Is Prime 83 (prime): ", strbool($result), "\n";
 
@@ -28,9 +28,9 @@ echo "Is Prime 83 (prime): ", strbool($result), "\n";
 $result = isPrimeConventionalWay(169);
 echo "Is Prime 169 (isPrimeConventionalWay): ", strbool($result), "\n";
 $result = isPrimeSquarerootWay(169);
-echo "Is Prime 169 (prime): ", strbool($result), "\n";
-$result = isPrimeSquarerootWay(169);
 echo "Is Prime 169 (isPrimeSquarerootWay): ", strbool($result), "\n";
+$result = isPrimeSquarerootWayTwo(169);
+echo "Is Prime 169 (isPrimeSquarerootWayTwo): ", strbool($result), "\n";
 $result = prime(169);
 echo "Is Prime 169 (prime): ", strbool($result), "\n";
 
@@ -38,18 +38,18 @@ echo "Is Prime 169 (prime): ", strbool($result), "\n";
 $result = isPrimeConventionalWay(100007);
 echo "Is Prime 100007 (isPrimeConventionalWay): ", strbool($result), "\n";
 $result = isPrimeSquarerootWay(100007);
-echo "Is Prime 100007 (prime): ", strbool($result), "\n";
-$result = isPrimeSquarerootWay(100007);
 echo "Is Prime 100007 (isPrimeSquarerootWay): ", strbool($result), "\n";
+$result = isPrimeSquarerootWayTwo(100007);
+echo "Is Prime 100007 (isPrimeSquarerootWayTwo): ", strbool($result), "\n";
 $result = prime(100007);
 echo "Is Prime 100007 (prime): ", strbool($result), "\n";
 
 $result = isPrimeConventionalWay(300530164787);
 echo "Is Prime 300530164787 (isPrimeConventionalWay): ", strbool($result), "\n";
 $result = isPrimeSquarerootWay(300530164787);
-echo "Is Prime 300530164787 (prime): ", strbool($result), "\n";
-$result = isPrimeSquarerootWay(300530164787);
 echo "Is Prime 300530164787 (isPrimeSquarerootWay): ", strbool($result), "\n";
+$result = isPrimeSquarerootWayTwo(300530164787);
+echo "Is Prime 300530164787 (isPrimeSquarerootWayTwo): ", strbool($result), "\n";
 $result = prime(300530164787);
 echo "Is Prime 300530164787 (prime): ", strbool($result), "\n";
 

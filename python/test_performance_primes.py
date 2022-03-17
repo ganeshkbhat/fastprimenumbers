@@ -17,49 +17,49 @@ import math
 
 
 def tests_performance_isPrimeConventionalWayArr():
-    isPrimeConventionalWayArr = []
+    isPrimeConventionalWaySum = 0
     for i in range(1, 1000000):
         start = time.perf_counter()
         isPrimeConventionalWay(30000239)
         end = time.perf_counter()
-        isPrimeConventionalWayArr.append(end - start)
-    return sum(isPrimeConventionalWayArr)
+        isPrimeConventionalWaySum += (end - start)
+    return isPrimeConventionalWaySum
 
 print( "isPrimeConventionalWayArr Sum: ", tests_performance_isPrimeConventionalWayArr() )
 
 
 def tests_performance_isPrimeSquarerootWayArr():
-    isPrimeSquarerootWayArr = []
+    isPrimeSquarerootWaySum = 0
     for i in range(1, 1000000):
         start = time.perf_counter()
         isPrimeSquarerootWay(30000239)
         end = time.perf_counter()
-        isPrimeSquarerootWayArr.append(end - start)
-    return sum(isPrimeSquarerootWayArr)
+        isPrimeSquarerootWaySum += (end - start)
+    return isPrimeSquarerootWaySum
 
 print( "isPrimeSquarerootWayArr Sum: ", tests_performance_isPrimeSquarerootWayArr() )
 
 
 def tests_performance_isprimeAKSWayArr():
-    isprimeAKSWayArr = []
+    isprimeAKSWaySum = 0
     for i in range(1, 1000000):
         start = time.perf_counter()
         isprimeAKSWay(30000239)
         end = time.perf_counter()
-        isprimeAKSWayArr.append(end - start)
-    return sum(isprimeAKSWayArr)
+        isprimeAKSWaySum += (end - start)
+    return isprimeAKSWaySum
 
 print( "isprimeAKSWayArr Sum: ", tests_performance_isprimeAKSWayArr() )
 
 
 def tests_performance_primeArr():
-    primeArr = []
+    primeSum = 0
     for i in range(1, 1000000):
         start = time.perf_counter()
         prime(30000239)
         end = time.perf_counter()
-        primeArr.append(end - start)
-    return sum(primeArr)
+        primeSum += (end - start)
+    return primeSum
 
 print( "primeArr Sum: ", tests_performance_primeArr() )
 

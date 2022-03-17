@@ -24,52 +24,52 @@ function calculateAverage(array: number[]): number {
 
 
 function tests_performance_isPrimeConventionalWayArr(iterations: number): number {
-    let isPrimeConventionalWayArr: number[] = [];
+    let isPrimeConventionalWaySum: number = 0;
     for (let i: number = 1; i <= iterations; i++) {
         let start: number = performance.now();
         isPrimeConventionalWay(30000239);
         let end: number = performance.now();
-        isPrimeConventionalWayArr.push(end - start);
+        isPrimeConventionalWaySum += (end - start);
     }
-    return calculateAverage(isPrimeConventionalWayArr);
+    return isPrimeConventionalWaySum;
 }
 console.log("isPrimeConventionalWay: ", tests_performance_isPrimeConventionalWayArr(iterations));
 
 
 function tests_performance_isPrimeSquarerootWayArr(iterations: number): number {
-    let isPrimeSquarerootWayArr: number[] = [];
+    let isPrimeSquarerootWaySum: number = 0;
     for (let i: number = 1; i <= iterations; i++) {
         let start: number = performance.now();
         isPrimeSquarerootWay(30000239);
         let end: number = performance.now();
-        isPrimeSquarerootWayArr.push(end - start);
+        isPrimeSquarerootWaySum += (end - start);
     }
-    return calculateAverage(isPrimeSquarerootWayArr);
+    return isPrimeSquarerootWaySum;
 }
 console.log("isPrimeSquarerootWay: ", tests_performance_isPrimeSquarerootWayArr(iterations));
 
 
 function tests_performance_primeArr(iterations: number): number {
-    let primeArr: number[] = [];
+    let primeSum: number = 0;
     for (let i: number = 1; i <= iterations; i++) {
         let start: number = performance.now();
         prime(30000239);
         let end: number = performance.now();
-        primeArr.push(end - start);
+        primeSum += (end - start);
     }
-    return calculateAverage(primeArr);
+    return primeSum;
 }
 console.log("prime (SUGGESTED): ", tests_performance_primeArr(iterations));
 
 
 function tests_performance_isPrimeSquarerootWayTwoArr(iterations: number): number {
-    let isPrimeSquarerootWayTwoArr: number[] = [];
+    let isPrimeSquarerootWayTwoSum: number = 0;
     for (let i: number = 1; i <= iterations; i++) {
         let start: number = performance.now();
         isPrimeSquarerootWayTwo(30000239);
         let end: number = performance.now();
-        isPrimeSquarerootWayTwoArr.push(end - start);
+        isPrimeSquarerootWayTwoSum += (end - start);
     }
-    return calculateAverage(isPrimeSquarerootWayTwoArr);
+    return isPrimeSquarerootWayTwoSum;
 }
 console.log("isPrimeSquarerootWayTwo: ", tests_performance_isPrimeSquarerootWayTwoArr(iterations));
