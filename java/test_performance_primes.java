@@ -16,72 +16,76 @@ public class TestPerformancePrimes {
         long total = 0;
         int count = 0;
         for (long element: primeArray) {
-            total += primeArray[i];
+            total += element;
             count++;
         }
         return total / count;
     }
     
-    public static double testPrimesConventionalWay()  {
-        long[] isPrimeConventionalWayArr = [];
+    public static double testPrimesConventionalWay(long iterations)  {
+        long isPrimeConventionalWaySum = 0;
         for (int i = 1; i <= iterations; i++){
             long start = System.nanoTime();
             PrimesAlternateWays.conventionalWay(30000239);
             long end = System.nanoTime();
-            isPrimeConventionalWayArr.add(end - start);
+            isPrimeConventionalWaySum += (end - start);
         }
-        return TestPerformancePrimes.calculateAverage(isPrimeConventionalWayArr);
+        return isPrimeConventionalWaySum;
     }
 
-    public static double testPrimesSquarerootWay()  {
-        long[] isPrimeSquarerootWayArr = [];
+    public static double testPrimesSquarerootWay(long iterations)  {
+        long isPrimeSquarerootWaySum = 0;
         for (int i = 1; i <= iterations; i++){
             long start = System.nanoTime();
             PrimesAlternateWays.squarerootWay(30000239);
             long end = System.nanoTime();
-            isPrimeSquarerootWayArr.add(end - start);
+            isPrimeSquarerootWaySum += (end - start);
         }
-        return TestPerformancePrimes.calculateAverage(isPrimeSquarerootWayArr);
+        return isPrimeSquarerootWaySum;
     }
 
-    public static double testPrimesSquarerootWayTwo()  {
-        long[] isPrimeSquarerootWayTwoArr = [];
+    public static double testPrimesSquarerootWayTwo(long iterations)  {
+        long isPrimeSquarerootWayTwoSum = 0;
         for (int i = 1; i <= iterations; i++){
             long start = System.nanoTime();
             PrimesAlternateWays.squarerootWayTwo(30000239);
             long end = System.nanoTime();
-            isPrimeSquarerootWayTwoArr.add(end - start);
+            isPrimeSquarerootWayTwoSum += (end - start);
         }
-        return TestPerformancePrimes.calculateAverage(isPrimeSquarerootWayTwoArr);
+        return isPrimeSquarerootWayTwoSum;
     }
 
-    public static double testPrimeAKSWay()  {
-        long[] isPrimeAKSWayArr = [];
+    public static double testPrimeAKSWay(long iterations)  {
+        long isPrimeAKSWaySum = 0;
         for (int i = 1; i <= iterations; i++){
             long start = System.nanoTime();
             PrimesAlternateWays.primesAKSWay(30000239);
             long end = System.nanoTime();
-            isPrimeAKSWayArr.add(end - start);
+            isPrimeAKSWaySum += (end - start);
         }
-        return TestPerformancePrimes.calculateAverage(isPrimeAKSWayArr);
+        return isPrimeAKSWaySum;
     }
 
-    public static double testPrimes() {
-        long[] isPrimeArr = [];
+    public static double testPrimes(long iterations) {
+        long isPrimeSum = 0;
         for (int i = 1; i <= iterations; i++){
             long start = System.nanoTime();
             Primes.primes(30000239);
             long end = System.nanoTime();
-            isPrimeArr.add(end - start);
+            isPrimeSum += (end - start);
         }
-        return TestPerformancePrimes.calculateAverage(isPrimeArr);
+        return isPrimeSum;
     }
 
     public static void main(String args[]) {
-        System.out.println( "isPrimeConventionalWay Average : " + TestPerformancePrimes.testPrimesConventionalWay() );
-        System.out.println( "isPrimeSquarerootWay Average : " + TestPerformancePrimes.testPrimesSquarerootWay() );
-        System.out.println( "isPrimeSquarerootWayTwo Average : " + TestPerformancePrimes.testPrimesSquarerootWayTwo() );
-        System.out.println( "isPrimeAKSWay Average : " + TestPerformancePrimes.testPrimeAKSWay() );
-        System.out.println( "isPrime Average : " + TestPerformancePrimes.testPrimes() );
+        
+        long iterations = 10000000;
+
+        System.out.println( "isPrimeConventionalWay Average : " + TestPerformancePrimes.testPrimesConventionalWay(iterations) );
+        System.out.println( "isPrimeSquarerootWay Average : " + TestPerformancePrimes.testPrimesSquarerootWay(iterations) );
+        System.out.println( "isPrimeSquarerootWayTwo Average : " + TestPerformancePrimes.testPrimesSquarerootWayTwo(iterations) );
+        System.out.println( "isPrimeAKSWay Average : " + TestPerformancePrimes.testPrimeAKSWay(iterations) );
+        System.out.println( "isPrime Average : " + TestPerformancePrimes.testPrimes(iterations) );
+
     }
 }

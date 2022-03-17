@@ -11,15 +11,16 @@
 import java.lang.*;
 
 public class PrimesAlternateWays {
-    public static boolean conventionalWay(int n)  {
-        int count = 0
+    
+    public static boolean conventionalWay(long n)  {
+        long count = 0;
         if (n <= 1) {
             return false;
         }
         // Check from 2 to n-1
         // Max iterations 99998 for n == 100000
-        for (int i = 1; i <= n; i++) {
-            count += 1
+        for (long i = 1; i <= n; i++) {
+            count += 1;
             if (n % i == 0){
                 System.out.println("count: Prime Conventional way for " + n + "is " + count);
                 return false;
@@ -29,15 +30,15 @@ public class PrimesAlternateWays {
         return true;
     }
 
-    public static boolean squarerootWay(int num)  {
-        int count = 0;
+    public static boolean squarerootWay(long num)  {
+        long count = 0;
         if (num < 2){
             System.out.println("count: Prime Squareroot way " + num + "is " + count);
             return false;
         }
 
         double s = Math.sqrt(num);
-        for (int i = 1; i <= s; i++){
+        for (long i = 1; i <= s; i++){
             count += 1;
             if (num % i == 0){
                 System.out.println("count: Prime Squareroot way " + num + "is " + count);
@@ -48,22 +49,22 @@ public class PrimesAlternateWays {
         return true;
     }
 
-    public static boolean squarerootWayTwo(int num)  {
-        int count = 0;
+    public static boolean squarerootWayTwo(long num)  {
+        long count = 0;
         double s = Math.sqrt(num);
-        for ( int i = 2, ; i <= s; i++ ) {
+        for ( long i = 2; i <= s; i++ ) {
             count += 1;
-            if (num % i === 0) {
-                System.out.println("count: Prime Squareroot Way Two " + n + "is " + count);
+            if (num % i == 0) {
+                System.out.println("count: Prime Squareroot Way Two " + num + "is " + count);
                 return false;
             }
         }
-        System.out.println("count: Prime Squareroot Way Two " + n + "is " + count);
+        System.out.println("count: Prime Squareroot Way Two " + num + "is " + count);
         return num > 1;
     }
 
-    public static boolean primesAKSWay(int n) {
-        int count = 0;
+    public static boolean primesAKSWay(long n) {
+        long count = 0;
         if ( (n == 2) || (n == 3) ) {
             System.out.println("count: Prime AKS - Mersenne primes - Fermat's little theorem or whatever way " + n + "is " + count);
             return true;
@@ -72,8 +73,8 @@ public class PrimesAlternateWays {
             System.out.println("count: Prime AKS - Mersenne primes - Fermat's little theorem or whatever way " + n + "is " + count);
             return false;
         }
-        int i = 5;
-        int w = 2;
+        long i = 5;
+        long w = 2;
         while ( (i * i) <= n ) {
             count += 1;
             if ( (n % i) == 0 ){
@@ -88,6 +89,7 @@ public class PrimesAlternateWays {
     }
 
     public static void main(String args[]) {
+
         System.out.println("Importing Primes Alternate Way ");
 
         // System.out.println("Is Prime 83: conventionalWay is " +  conventionalWay(83));
@@ -114,4 +116,3 @@ public class PrimesAlternateWays {
 
     }
 }
-
