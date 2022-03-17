@@ -53,14 +53,14 @@ public class TestPerformancePrimes {
     }
 
     public static boolean testPrimeAKSWay()  {
-        long[] isPrimeAKSWay = [];
+        long[] isPrimeAKSWayArr = [];
         for (int i = 1; i <= iterations; i++){
             long start = System.nanoTime();
             PrimesAlternateWays.primesAKSWay(30000239);
             long end = System.nanoTime();
-            isPrimeAKSWay.add(end - start);
+            isPrimeAKSWayArr.add(end - start);
         }
-        return TestPerformancePrimes.calculateAverage(isPrimeAKSWay);
+        return TestPerformancePrimes.calculateAverage(isPrimeAKSWayArr);
     }
 
     public static boolean testPrimes() {
