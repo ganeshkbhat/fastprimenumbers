@@ -4,7 +4,6 @@
  * Fastest method of Prime Number Calculations
  * Comparision results for correctness for Prime Numbers
  * 
- * TODO - INCOMPLETE
  * 
 */
 
