@@ -19,7 +19,7 @@ public class TestPerformancePrimes {
         return total / count;
     }
     
-    public static boolean testPrimesConventionalWay()  {
+    public static double testPrimesConventionalWay()  {
         long[] isPrimeConventionalWayArr = [];
         for (int i = 1; i <= iterations; i++){
             long start = System.nanoTime();
@@ -30,7 +30,7 @@ public class TestPerformancePrimes {
         return TestPerformancePrimes.calculateAverage(isPrimeConventionalWayArr);
     }
 
-    public static boolean testPrimesSquarerootWay()  {
+    public static double testPrimesSquarerootWay()  {
         long[] isPrimeSquarerootWayArr = [];
         for (int i = 1; i <= iterations; i++){
             long start = System.nanoTime();
@@ -41,7 +41,7 @@ public class TestPerformancePrimes {
         return TestPerformancePrimes.calculateAverage(isPrimeSquarerootWayArr);
     }
 
-    public static boolean testPrimesSquarerootWayTwo()  {
+    public static double testPrimesSquarerootWayTwo()  {
         long[] isPrimeSquarerootWayTwoArr = [];
         for (int i = 1; i <= iterations; i++){
             long start = System.nanoTime();
@@ -52,7 +52,7 @@ public class TestPerformancePrimes {
         return TestPerformancePrimes.calculateAverage(isPrimeSquarerootWayTwoArr);
     }
 
-    public static boolean testPrimeAKSWay()  {
+    public static double testPrimeAKSWay()  {
         long[] isPrimeAKSWayArr = [];
         for (int i = 1; i <= iterations; i++){
             long start = System.nanoTime();
@@ -63,7 +63,7 @@ public class TestPerformancePrimes {
         return TestPerformancePrimes.calculateAverage(isPrimeAKSWayArr);
     }
 
-    public static boolean testPrimes() {
+    public static double testPrimes() {
         long[] isPrimeArr = [];
         for (int i = 1; i <= iterations; i++){
             long start = System.nanoTime();
