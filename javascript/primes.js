@@ -157,25 +157,6 @@ let iterations = 10000000;
 let performance = require('perf_hooks').performance;
 // let performance = window.performance;
 
-function test_primecalculations() {
-    let count = 0;
-    let arr = [];
-    for (let i = 1; i <= iterations; i++) {
-        let traditional = isPrimeConventionalWay(i), newer = prime(i);
-        if (traditional == newer) {
-            count += 1;
-        } else {
-            arr.push([traditional, newer, i]);
-        }
-    }
-    console.log("[count, iterations, arr] list: ", count, iterations, arr);
-    if (count === iterations) {
-        return true;
-    }
-    return false;
-}
-console.log( "Tests Passed: ", test_primecalculations() );
-
 
 function calculateAverage(array) {
     let total = 0;
@@ -238,3 +219,24 @@ function tests_performance_isPrimeSquarerootWayTwoArr(iterations){
     return isPrimeSquarerootWayTwoSum;
 }  
 console.log( "isPrimeSquarerootWayTwo: ", tests_performance_isPrimeSquarerootWayTwoArr(iterations) );
+
+
+function test_primecalculations() {
+    let count = 0;
+    let arr = [];
+    for (let i = 1; i <= iterations; i++) {
+        let traditional = isPrimeConventionalWay(i), newer = prime(i);
+        if (traditional == newer) {
+            count += 1;
+        } else {
+            arr.push([traditional, newer, i]);
+        }
+    }
+    console.log("[count, iterations, arr] list: ", count, iterations, arr.length());
+    if (count === iterations) {
+        return true;
+    }
+    return false;
+}
+console.log( "Tests Passed: ", test_primecalculations() );
+
