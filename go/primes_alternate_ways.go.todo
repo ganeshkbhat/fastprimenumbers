@@ -1,0 +1,92 @@
+/**
+ * Ganesh Bhat
+ * https://github.com/ganeshkbhat/fastprimecalculations
+ * Fastest method of Prime Number Calculations
+ * Alternate ways for calculation of Prime Numbers
+ * 
+ * TODO - INCOMPLETE
+ * 
+*/
+
+package fastprimescalculations
+
+import "fmt"
+
+
+/**
+ * 
+ * ALTERNATE WAY 
+ * for Calculation of Prime Numbers
+ *
+ * @param {*} n
+ * @return {*} 
+ * 
+ */
+ func isPrimeConventionalWay(n uint) bool {
+    var count uint = 0;
+    if (n <= 1) {
+        return false;
+    }
+    // Check from 2 to n-1
+    // Max iterations 99998 for n == 100000 
+    var i uint;
+    for i = 2; i < n; i++ {
+        // Counting Iterations
+        count += 1;
+        if (n % i == 0) {
+            // fmt.Printf("count: Prime Conventional way", count);
+            return false;
+        }
+    }
+    i = 0;
+    // fmt.Printf("count: Prime Conventional way", count);
+    return true;
+}
+
+/**
+ * 
+ * ALTERNATE WAY 
+ * for Calculation of Prime Numbers
+ *
+ * @param {*} num
+ * @return {*} 
+ * 
+ */
+func isPrimeSquarerootWay(num uint) bool {
+    var count uint = 0;
+    if (num < 2) {
+        // fmt.Printf("count: Prime Squareroot way", count);
+        return false;
+    }
+    var s float64 = Math.sqrt(num);
+    for (var i uint = 2; i <= s; i++) {
+        // Counting Iterations
+        count += 1;
+        if (num % i === 0) {
+            // fmt.Printf("count: Prime Squareroot way", count);
+            return false;
+        }
+    }
+    // fmt.Printf("count: Prime Squareroot way", count);
+    return true;
+}
+
+/**
+ * 
+ * ALTERNATE WAY 
+ * for Calculation of Prime Numbers
+ *
+ * @param {*} num
+ * @return {*} 
+ * 
+ */
+func isPrimeSquarerootWayTwo (num uint) bool {
+    var s float64 = Math.sqrt(num);
+    for (var i uint = 2; i <= s; i++) {
+        if (num % i === 0) {
+            return false;
+        }
+    }
+    return num > 1;
+}
+

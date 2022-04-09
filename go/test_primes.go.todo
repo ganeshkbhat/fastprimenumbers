@@ -1,0 +1,91 @@
+// /**
+//  * Ganesh Bhat
+//  * https://github.com/ganeshkbhat/fastprimecalculations
+//  * Fastest method of Prime Number Calculations
+//  * Comparision results for correctness for Prime Numbers
+// */
+
+
+package main
+
+import (
+    "fmt"
+    P "github.com/gb/fastprimescalculations"
+)
+
+// const { prime } = require("./primes");
+// const { isPrimeConventionalWay, isPrimeSquarerootWay, isPrimeSquarerootWayTwo } = require("./primes_alternate_ways")
+
+
+func test_primecalculations(iterations uint) bool {
+    var count uint = 0;
+    arr := []interface{}{[]interface{}{}}
+    var i uint;
+    for i = 1; i <= iterations; i++ {
+        var traditional bool = P.isPrimeConventionalWay(i);
+        var newer bool = P.prime(i);
+        if (traditional == newer) {
+            count += 1;
+        } else {
+            tmp := []interface{}{traditional, newer, i}
+            arr = append(arr, tmp);
+        }
+    }
+    i = 0;
+    fmt.Printf("[count, iterations, arr] list: ", count, iterations, arr);
+    if (count == iterations) {
+        return true;
+    }
+    return false;
+}
+
+func main() {
+
+        
+    var iterations uint = 1000000;
+
+
+    fmt.Printf("Is Prime 83: ", P.isPrimeConventionalWay(83))
+    fmt.Printf("Is Prime 83: ", P.isPrimeSquarerootWay(83))
+    fmt.Printf("Is Prime 83: ", P.prime(83))
+    fmt.Printf("Is Prime 83: ", P.isPrimeSquarerootWayTwo(83))
+
+
+    fmt.Printf("Is Prime 169: ", P.isPrimeConventionalWay(169))
+    fmt.Printf("Is Prime 169: ", P.isPrimeSquarerootWay(169))
+    fmt.Printf("Is Prime 169: ", P.prime(169))
+    fmt.Printf("Is Prime 169: ", P.isPrimeSquarerootWayTwo(169))
+
+
+    fmt.Printf("Is Prime 100007: ", P.isPrimeConventionalWay(100007))
+    fmt.Printf("Is Prime 100007: ", P.isPrimeSquarerootWay(100007))
+    fmt.Printf("Is Prime 100007: ", P.prime(100007))
+    fmt.Printf("Is Prime 100007: ", P.isPrimeSquarerootWayTwo(100007))
+
+
+    fmt.Printf("Is Prime 300530164787: ", P.isPrimeConventionalWay(300530164787))
+    fmt.Printf("Is Prime 300530164787: ", P.isPrimeSquarerootWay(300530164787))
+    fmt.Printf("Is Prime 300530164787: ", P.prime(300530164787))
+    fmt.Printf("Is Prime 300530164787: ", P.isPrimeSquarerootWayTwo(300530164787))
+
+
+    fmt.Printf( "Tests Passed: ", test_primecalculations(iterations) );
+
+}
+
+// package main
+
+// import "fmt"
+
+// func main() {
+//     // var primes uint
+//     arr := []interface{}{[]interface{}{}}
+//     // fmt.Println(mixed...)
+
+// //   test := map[string]interface{} {
+// //     "omar":mixed,
+// //   }
+
+//   fmt.Println(arr)
+// //   fmt.Println(test["omar"])
+// }

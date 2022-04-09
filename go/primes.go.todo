@@ -1,0 +1,66 @@
+
+/**
+ * Ganesh Bhat
+ * https://github.com/ganeshkbhat/fastprimecalculations
+ * Fastest method of Prime Number Calculations
+ * Functions and Alternate ways for calculation of Prime Numbers
+ * 
+ * ** prime(n) ** is the Recommended Way for calculation checks of prime numbers
+ * 
+*/
+
+package fastprimescalculations
+
+import "fmt"
+
+/**
+ * 
+ * RECOMMENDED WAY
+ * for Calculation of Prime Numbers
+ * 
+ * ** FASTEST ** Calculation checks for prime numbers **
+ *
+ * @param {*} n
+ * @return {*} 
+ * 
+ */
+ func prime(n uint) bool {
+    var count uint = 0;
+    if ((n == 2 || n == 3 || n == 5 || n == 7)) {
+        // fmt.Printf("count: Prime Unconventional way", count);
+        return true;
+    }
+    if (n == 1 || ((n > 7) && (n % 5 == 0 || n % 7 == 0 || n % 2 == 0 || n % 3 == 0))) {
+        // fmt.Printf("count: Prime Unconventional way", count);
+        return false;
+    }
+    if ((Number.isInteger(((n - 1) / 6))) || (Number.isInteger((n + 1) / 6))) {
+        for var i uint = 1; i < n; i++ {
+            // Counting Iterations
+            count += 1;
+            var factorsix uint = (i * 6);
+            var fivebase float64 = n / (5 + factorsix), sevenbase = n / (7 + factorsix);
+            if (((fivebase > 1) && Number.isInteger(fivebase)) || ((sevenbase > 1) && (Number.isInteger(sevenbase)))) {
+                // fmt.Printf("count: Prime Unconventional way", count);
+                return false;
+            }
+            if (factorsix > n) {
+                // Max iterations 16666 for n == 100000 instead of 100000
+                break;
+            }
+        }
+        // fmt.Printf("count: Prime Unconventional way", count);
+        return true;
+    }
+    // fmt.Printf("count: Prime Unconventional way", count);
+    return false;
+}
+
+
+// TODO
+// func generate_primes(from uint, to uint) []uint {
+//     var arr []uint = [2, 3, 5, 7];
+//     return arr
+// }
+// fmt.Printf(generate_primes(1, 100))
+

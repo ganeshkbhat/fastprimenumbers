@@ -1,0 +1,90 @@
+/**
+ * Ganesh Bhat
+ * https://github.com/ganeshkbhat/fastprimecalculations
+ * Fastest method of Prime Number Calculations
+ * Tests for Prime Numbers
+*/
+
+
+package fastprimescalculations
+
+import (
+    "fmt"
+    "time"
+)
+
+
+// const { prime } = require("./primes");
+// const { isPrimeConventionalWay, isPrimeSquarerootWay, isPrimeSquarerootWayTwo } = require("./primes_alternate_ways");
+
+
+func calculateAverage(array []uint) float64 {
+    var total uint = 0;
+    var count uint = 0;
+    array.forEach(func(item uint, index uint) {
+        total += item;
+        count++;
+    });
+    return total / count;
+}
+
+
+func tests_performance_isPrimeConventionalWayArr(iterations uint) float64{
+    var isPrimeConventionalWayArr []uint = [];
+    for var i uint = 1; i <= iterations; i++ {
+        var start := time.Now();
+        isPrimeConventionalWay(30000239);
+        var end := time.Since(start);
+        append(isPrimeConventionalWayArr, end - start);
+    }
+    return calculateAverage(isPrimeConventionalWayArr);
+}
+
+
+func tests_performance_isPrimeSquarerootWayArr(iterations uint) float64{
+    var isPrimeSquarerootWayArr []uint = [];
+    for var i uint = 1; i <= iterations; i++ {
+        var start := time.Now();
+        isPrimeSquarerootWay(30000239);
+        var end := time.Since(start);
+        append(isPrimeSquarerootWayArr, end - start);
+    } 
+    return calculateAverage(isPrimeSquarerootWayArr);
+}
+
+
+func tests_performance_primeArr(iterations uint) float64{
+    var primeArr []uint = [];
+    for var i = 1; i <= iterations; i++ {
+        var start := time.Now();
+        prime(30000239);
+        var end := time.Since(start);
+        append(primeArr, end - start);
+    }
+    return calculateAverage(primeArr);
+}
+
+
+
+// func tests_performance_isPrimeSquarerootWayTwoArr(iterations uint) float64{
+//     var isPrimeSquarerootWayTwoArr []uint = [];
+//     for var i uint = 1; i <= iterations; i++ {
+//         var start := time.Now();
+//         isPrimeSquarerootWayTwo(30000239);
+//         var end := time.Since(start);
+//         append(isPrimeSquarerootWayTwoArr, end - start);
+//     }
+//     return calculateAverage(isPrimeSquarerootWayTwoArr);
+// }  
+
+
+
+func main() {
+
+    var iterations uint = 10000000;
+    fmt.Printf( "isPrimeConventionalWay: ", tests_performance_isPrimeConventionalWayArr(iterations) );
+    fmt.Printf( "isPrimeSquarerootWay: ", tests_performance_isPrimeSquarerootWayArr(iterations) );
+
+    fmt.Printf( "prime (SUGGESTED): ", tests_performance_primeArr(iterations) );
+    // fmt.Printf( "isPrimeSquarerootWayTwo: ", tests_performance_isPrimeSquarerootWayTwoArr(iterations) );
+}
