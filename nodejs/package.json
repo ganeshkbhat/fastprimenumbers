@@ -1,0 +1,21 @@
+{
+  "name": "fastprimes",
+  "version": "0.0.1",
+  "description": "Fastest Prime Number Calculation (checks) logic for node and browser",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./tests/test_primes.js",
+    "test_primesAlternativeWay": "node ./tests/test_performance_primes.js"
+  },
+  "keywords": [
+    "Fastest",
+    "Prime",
+    "Number",
+    "Calculation",
+    "fast",
+    "primes",
+    "numbers"
+  ],
+  "author": "Ganesh Bhat",
+  "license": "MIT"
+}

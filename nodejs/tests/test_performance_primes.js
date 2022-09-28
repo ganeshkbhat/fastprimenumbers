@@ -5,8 +5,8 @@
  * Tests for Prime Numbers
 */
 
-const { prime } = require("./primes");
-const { isPrimeConventionalWay, isPrimeSquarerootWay, isPrimeSquarerootWayTwo } = require("./primes_alternate_ways");
+const { prime } = require("../src/node/primes");
+const { isPrimeConventionalWay, isPrimeSquarerootWay, isPrimeSquarerootWayTwo } = require("../src/node/primes_alternate_ways");
 
 
 let iterations = 10000000;
