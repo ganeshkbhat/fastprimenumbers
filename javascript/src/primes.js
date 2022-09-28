@@ -9,6 +9,8 @@
 */
 
 
+function primes() {
+
 /**
  * 
  * RECOMMENDED WAY
@@ -129,3 +131,11 @@ const isPrimeSquarerootWayTwo = num => {
 }
 
 
+
+    return {
+        primes: prime,
+        recurisive: isPrimeConventionalWay,
+        sqrootExpressive: isPrimeSquarerootWay,
+        sqroot: isPrimeSquarerootWayTwo
+    }
+}
