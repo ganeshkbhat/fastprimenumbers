@@ -62,15 +62,15 @@ This same code can be applied in any languages like `Python`, `Go` Lang, `Java`,
 
 ### Code Base 
 
+
 ##### Javascript
-![Javascript Codebase](./Fastest_Prime_Number_Calculations_codebase_javascript.jpeg)
+![Javascript Codebase](https://github.com/ganeshkbhat/fastprimecalculations/blob/main/Fastest_Prime_Number_Calculations_codebase_javascript.jpeg)
 
         - Access Node code using require(""fastprime)
         - Access client (browser code) using `./node_modules/src/client/primes.js` and `node_modules/src/client/primes.min.js`
 
-
 ##### Python
-![Python Codebase](./Fastest_Prime_Number_Calculations_codebase_python.jpeg)
+![Python Codebase](https://github.com/ganeshkbhat/fastprimecalculations/blob/main/Fastest_Prime_Number_Calculations_codebase_python.jpeg)
 
 Stack overflow Link for Calculations
 
@@ -81,4 +81,4 @@ Stack overflow Link for Calculations
 
 ### LICENSE
 
-[`PROPRIETARY LICENSE AGREEMENT ONLY`](./LICENSE)
+[`PROPRIETARY LICENSE AGREEMENT ONLY`](https://github.com/ganeshkbhat/fastprimecalculations/blob/main/LICENSE)
