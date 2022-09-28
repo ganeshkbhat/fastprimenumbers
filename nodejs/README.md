@@ -66,7 +66,7 @@ This same code can be applied in any languages like `Python`, `Go` Lang, `Java`,
 ##### Javascript
 ![Javascript Codebase](https://github.com/ganeshkbhat/fastprimecalculations/blob/main/Fastest_Prime_Number_Calculations_codebase_javascript.jpeg)
 
-        - Access Node code using require(""fastprime)
+        - Access Node code using require("fast-prime")
         - Access client (browser code) using `./node_modules/src/client/primes.js` and `node_modules/src/client/primes.min.js`
 
 ##### Python
