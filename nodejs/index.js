@@ -13,6 +13,8 @@ const primesAlternateWay = require("./src/node/primes_alternate_ways");
 
 module.exports = {
     fast: primes.prime,
+    prime: primes.prime,
+    recursive: isPrimeConventionalWay,
     sqroot: primesAlternateWay.isPrimeSquarerootWayTwo,
     sqrootExpressive: primesAlternateWay.isPrimeSquarerootWay,
 }

@@ -134,7 +134,7 @@ const isPrimeSquarerootWayTwo = num => {
 
     return {
         primes: prime,
-        recurisive: isPrimeConventionalWay,
+        recursive: isPrimeConventionalWay,
         sqrootExpressive: isPrimeSquarerootWay,
         sqroot: isPrimeSquarerootWayTwo
     }

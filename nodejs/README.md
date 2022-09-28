@@ -69,6 +69,34 @@ This same code can be applied in any languages like `Python`, `Go` Lang, `Java`,
         - Access Node code using require("fast-prime")
         - Access client (browser code) using `./node_modules/src/client/primes.js` and `node_modules/src/client/primes.min.js`
 
+```
+
+
+// Usage API for node.js
+
+require("fast-prime").fast
+require("fast-prime").prime
+require("fast-prime").recursive
+require("fast-prime").sqrootExpressive
+require("fast-prime").sqroot
+
+
+```
+
+
+```
+
+
+// Usage API for client
+
+primes().primes
+primes().recursive
+primes().sqrootExpressive
+primes().sqroot
+
+
+```
+
 ##### Python
 ![Python Codebase](https://github.com/ganeshkbhat/fastprimecalculations/blob/main/Fastest_Prime_Number_Calculations_codebase_python.jpeg)
 
