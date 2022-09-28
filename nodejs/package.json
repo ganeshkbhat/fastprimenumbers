@@ -1,5 +1,5 @@
 {
-  "name": "fastprimes",
+  "name": "fast-prime",
   "version": "0.0.1",
   "description": "Fastest Prime Number Calculation (checks) logic for node and browser",
   "main": "index.js",
