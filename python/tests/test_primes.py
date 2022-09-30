@@ -10,8 +10,11 @@
 #
 ##
 
-from primes import *
-from primes_alternate_ways import *
+import sys
+sys.path.append("../primes/")
+
+from primes.primes import *
+from primes.primes_alternate_ways import *
 import time
 import math
 

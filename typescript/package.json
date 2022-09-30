@@ -1,0 +1,26 @@
+{
+  "name": "fast-prime-ts",
+  "version": "0.0.5",
+  "description": "Fastest Prime Number Calculation (checks) logic for node and browser - Typescript version",
+  "main": "index.ts",
+  "scripts": {
+    "test": "node ./tests/test_primes.ts",
+    "test_primesAlternativeWay": "node ./tests/test_performance_primes.ts"
+  },
+  "keywords": [
+    "Fastest",
+    "Prime",
+    "Number",
+    "Calculation",
+    "fast",
+    "primes",
+    "numbers"
+  ],
+  "author": "Ganesh Bhat",
+  "license": "MIT",
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "tsc": "^2.0.4",
+    "typescript": "^4.8.4"
+  }
+}

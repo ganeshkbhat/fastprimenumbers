@@ -5,8 +5,8 @@
  * Tests for Prime Numbers
 */
 
-import { prime } from './primes';
-import { isPrimeConventionalWay, isPrimeSquarerootWay, isPrimeSquarerootWayTwo } from './primes_alternate_ways';
+import { prime } from '../src/primes';
+import { isPrimeConventionalWay, isPrimeSquarerootWay, isPrimeSquarerootWayTwo } from '../src/primes_alternate_ways';
 import { performance } from 'perf_hooks';
 
 
