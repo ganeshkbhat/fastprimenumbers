@@ -1,5 +1,5 @@
 {
-  "name": "fast-prime-ts",
+  "name": "ts-primes",
   "version": "0.0.5",
   "description": "Fastest Prime Number Calculation (checks) logic for node and browser - Typescript version",
   "main": "index.ts",
@@ -10,7 +10,7 @@
   "keywords": [
     "Fastest",
     "Prime",
-    "Number",
+    "Number", "ts-primes",
     "Calculation",
     "fast",
     "primes",
