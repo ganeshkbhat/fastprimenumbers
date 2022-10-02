@@ -17,5 +17,8 @@
     "numbers"
   ],
   "author": "Ganesh Bhat",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "unimported": "^1.22.0"
+  }
 }
