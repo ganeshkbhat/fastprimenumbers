@@ -5,7 +5,8 @@
   "main": "index.ts",
   "scripts": {
     "test": "node ./tests/test_primes.ts",
-    "test_primesAlternativeWay": "node ./tests/test_performance_primes.ts"
+    "test_primesAlternativeWay": "node ./tests/test_performance_primes.ts",
+    "mochatest": "mocha --reporter spec --recursive --config ./mocha.test.config.js"
   },
   "keywords": [
     "Fastest",
