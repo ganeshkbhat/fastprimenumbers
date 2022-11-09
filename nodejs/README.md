@@ -93,6 +93,12 @@ primes().primes
 primes().recursive
 primes().sqrootExpressive
 primes().sqroot
+primes().isPrime
+primes().sum
+primes().range
+primes().count
+primes().factorial
+
 
 
 ```
