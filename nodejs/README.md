@@ -116,3 +116,20 @@ Stack overflow Link for Calculations
 ### LICENSE
 
 [`PROPRIETARY LICENSE AGREEMENT ONLY`](https://github.com/ganeshkbhat/fastprimecalculations/blob/main/LICENSE)
+
+
+### TODO
+
+- Adding following APIs to Javascript, Typescript, Python, Java
+- Adding all APIs to Go, TS (Consider C#, Rust, C, Cpp)
+
+```
+
+primes().isPrime
+primes().sum
+primes().range
+primes().count
+primes().factorial
+
+```
+
