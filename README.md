@@ -119,6 +119,12 @@ Custom Crediting License [`PROPRIETARY LICENSE AGREEMENT ONLY`](https://github.c
 
 - Adding following APIs to Javascript, Typescript, Python, Java
 - Adding all APIs to Go, TS (Consider C#, Rust, C, Cpp)
+- Consider adding random prime generator
+- Consider adding generator using generator functions
+- Consider adding fetching primes from remote api for stored primes
+- Consider adding support for very large prime numbers (checks, range, count, sum, factorial, random) and related generators
+- Consider adding support for very large random prime generator
+
 
 ```
 
