@@ -6,7 +6,7 @@
 */
 
 const { prime } = require("../src/node/primes");
-const { isPrimeConventionalWay, isPrimeSquarerootWay, isPrimeSquarerootWayTwo } = require("../src/node/primes_alternate_ways")
+const { isPrimeConventionalWay, isPrimeSquarerootWay, isPrimeSquarerootWayTwo } = require("../src/node/primes_alternate")
 
 let iterations = 1000000;
 

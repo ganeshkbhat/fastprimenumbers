@@ -6,6 +6,24 @@
  * 
  * ** prime(n) ** is the Recommended Way for calculation checks of prime numbers
  * 
+ * Compare for performance:
+ * 
+ * prime:
+ *      Weakness: More if statements (3) without loops,
+ *      Weakness: More multiplications within loops (1 multiplication and 2 divisions for every loop even if exponentially reduced loops))
+ *      Considerations: Convert divisions to mod for checks to reduce speed of calculations and related checks
+ * 
+ *      let fivebase = n / (5 + factorsix), sevenbase = n / (7 + factorsix);
+ *      if (((fivebase > 1) && Number.isInteger(fivebase)) || ((sevenbase > 1) && (Number.isInteger(sevenbase)))) {}
+ * 
+ * 
+ * Baillie Primality Tests:
+ *      https://en.wikipedia.org/wiki/Baillie%E2%80%93PSW_primality_test (Weakness: )
+ * 
+ * (x.pow(num) - x)/num => Prime
+ *      (Weakness: Space complexity)
+ *      https://www.quantamagazine.org/teenager-solves-stubborn-riddle-about-prime-number-look-alikes-20221013/ 
+ * 
 */
 
 
@@ -21,7 +39,7 @@
  * 
  */
 function prime(n) {
-    count = 0;
+    var count = 0;
     if ((n === 2 || n === 3 || n === 5 || n === 7)) {
         // console.log("count: Prime Unconventional way", count);
         return true;
@@ -61,6 +79,5 @@ function prime(n) {
 // console.log(generate_primes(1, 100))
 
 
-module.exports = {
-    prime
-}
+module.exports.prime = prime
+module.exports.fast = prime

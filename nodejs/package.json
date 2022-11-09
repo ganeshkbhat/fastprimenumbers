@@ -1,12 +1,27 @@
 {
   "name": "fast-prime",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Fastest Prime Number Calculation (checks) logic for node and browser",
   "main": "index.js",
   "scripts": {
     "test": "node ./tests/test_primes.js",
     "test_primesAlternativeWay": "node ./tests/test_performance_primes.js",
     "mochatest": "mocha --reporter spec --recursive --config ./mocha.test.config.js"
+  },
+  "exports": {
+    "require": "./index.js",
+    "import": "./index.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.3",
+    "chai": "^4.3.6",
+    "hpp": "^0.2.3",
+    "mocha": "^10.0.0",
+    "nsp": "^2.8.1",
+    "nsp-api": "^1.0.3",
+    "safe-regex": "^2.1.1",
+    "sinon": "^14.0.0",
+    "unimported": "^1.22.0"
   },
   "keywords": [
     "Fastest",
@@ -18,8 +33,5 @@
     "numbers"
   ],
   "author": "Ganesh Bhat",
-  "license": "MIT",
-  "devDependencies": {
-    "unimported": "^1.22.0"
-  }
+  "license": "MIT"
 }

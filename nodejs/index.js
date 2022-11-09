@@ -9,13 +9,63 @@
 */
 
 const primes = require("./src/node/primes");
-const primesAlternateWay = require("./src/node/primes_alternate_ways");
+const primesAlternateWay = require("./src/node/primes_alternate");
+const getBetweenRange = require("./src/node/range");
+const getCount = require("./src/node/count");
+const getSum = require("./src/node/sum");
+const getFactorial = require("./src/node/factorial");
 
-module.exports = {
-    fast: primes.prime,
+
+module.exports.fast = primes.fast
+module.exports.prime = primes.prime
+module.exports.recursive = primesAlternateWay.isPrimeConventionalWay
+module.exports.sqroot = primesAlternateWay.isPrimeSquarerootWayTwo
+module.exports.sqrootExpressive = primesAlternateWay.isPrimeSquarerootWay
+
+const isPrime = {
+    fast: primes.fast,
     prime: primes.prime,
-    recursive: isPrimeConventionalWay,
+    recursive: primesAlternateWay.isPrimeConventionalWay,
     sqroot: primesAlternateWay.isPrimeSquarerootWayTwo,
-    sqrootExpressive: primesAlternateWay.isPrimeSquarerootWay,
+    sqrootExpressive: primesAlternateWay.isPrimeSquarerootWay
 }
 
+module.exports.isPrime = isPrime;
+
+module.exports.range = {
+    alternates: getBetweenRange.alternateWays,
+    alternatesOptimized: getBetweenRange.alternateWaysOptimized,
+    fast: getBetweenRange.fast,
+    fastOptimized: getBetweenRange.fastOptimized
+}
+
+module.exports.sum = {
+    alternatesCount: getSum.alternatesCount,
+    alternatesCountOptimized: getSum.alternatesCountOptimized,
+    alternatesRange: getSum.alternatesRange,
+    alternatesRangeOptimized: getSum.alternatesRangeOptimized,
+    fastCount: getSum.fastCount,
+    fastCountOptimized: getSum.fastCountOptimized,
+    fastRange: getSum.fastRange,
+    fastRangeOptimized: getSum.fastRangeOptimized
+}
+
+module.exports.count = {
+    alternates: getCount.alternates,
+    alternatesOptimized: getCount.alternatesOptimized,
+    fast: getCount.fast,
+    fastOptimized: getCount.fastOptimized
+}
+
+module.exports.factorial = {
+    alternatesCount: getFactorial.alternatesCount,
+    alternatesCountOptimized: getFactorial.alternatesCountOptimized,
+    alternatesRange: getFactorial.alternatesRange,
+    alternatesRangeOptimized: getFactorial.alternatesRangeOptimized,
+    fastCount: getFactorial.fastCount,
+    fastCountOptimized: getFactorial.fastCountOptimized,
+    fastRange: getFactorial.fastRange,
+    fastRangeOptimized: getFactorial.fastRangeOptimized
+}
+
+module.exports.default = isPrime;

@@ -18,7 +18,7 @@
  * 
  */
 function isPrimeConventionalWay(n) {
-    count = 0;
+    var count = 0;
     if (n <= 1) {
         return false;
     }
@@ -46,7 +46,7 @@ function isPrimeConventionalWay(n) {
  * 
  */
 function isPrimeSquarerootWay(num) {
-    count = 0;
+    var count = 0;
     // if not is_number num return false
     if (num < 2) {
         // console.log("count: Prime Squareroot way", count);
@@ -84,10 +84,6 @@ const isPrimeSquarerootWayTwo = num => {
 }
 
 
-module.exports = {
-    isPrimeConventionalWay,
-    isPrimeSquarerootWay,
-    isPrimeSquarerootWayTwo
-}
-
-
+module.exports.isPrimeConventionalWay = isPrimeConventionalWay
+module.exports.isPrimeSquarerootWay = isPrimeSquarerootWay
+module.exports.isPrimeSquarerootWayTwo = isPrimeSquarerootWayTwo
