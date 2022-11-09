@@ -1,6 +1,6 @@
 {
   "name": "fast-prime",
-  "version": "0.0.6",
+  "version": "0.0.61",
   "description": "Fastest Prime Number Calculation (checks) logic for node and browser",
   "main": "index.js",
   "scripts": {
