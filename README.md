@@ -60,6 +60,41 @@ This same code can be applied in any languages like `Python`, `Go` Lang, `Java`,
     
 
 
+```
+
+
+// Usage API for node.js
+
+require("fast-prime").fast
+require("fast-prime").prime
+require("fast-prime").recursive
+require("fast-prime").sqrootExpressive
+require("fast-prime").sqroot
+require("fast-prime").isPrime
+require("fast-prime").sum
+require("fast-prime").range
+require("fast-prime").count
+require("fast-prime").factorial
+
+
+
+```
+
+
+```
+
+
+// Usage API for client
+
+primes().primes
+primes().recursive
+primes().sqrootExpressive
+primes().sqroot
+
+
+```
+
+
 ### Code Base 
 
 ##### Javascript
@@ -78,4 +113,20 @@ Stack overflow Link for Calculations
 ### LICENSE
 
 Custom Crediting License [`PROPRIETARY LICENSE AGREEMENT ONLY`](https://github.com/ganeshkbhat/fastprimecalculations/blob/main/LICENSE) 
+
+
+### TODO
+
+- Adding following APIs to Javascript, Typescript, Python, Java
+- Adding all APIs to Go, TS (Consider C#, Rust, C, Cpp)
+
+```
+
+primes().isPrime
+primes().sum
+primes().range
+primes().count
+primes().factorial
+
+```
 
