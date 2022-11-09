@@ -77,4 +77,5 @@ Stack overflow Link for Calculations
 
 ### LICENSE
 
-[`PROPRIETARY LICENSE AGREEMENT ONLY`](https://github.com/ganeshkbhat/fastprimecalculations/blob/main/LICENSE)
+Custom Crediting License [`PROPRIETARY LICENSE AGREEMENT ONLY`](https://github.com/ganeshkbhat/fastprimecalculations/blob/main/LICENSE) 
+
