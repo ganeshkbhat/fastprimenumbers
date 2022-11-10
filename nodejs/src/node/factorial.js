@@ -13,13 +13,12 @@ const rangejs = require("./range.js");
 const countjs = require("./count.js");
 
 function factorial(num) {
-    let factorial = 1;
+    num = BigInt(num);
+    let factorial = BigInt(1);
     if (num < 0) { return false; }
     else if (num === 0) { return false; }
     else {
-        for (i = 1; i <= num; i++) {
-            factorial *= i;
-        }
+        for (i = 1; i <= num; i++) { factorial *= i; }
     }
     return factorial;
 }
@@ -56,6 +55,10 @@ function fastRangeOptimized(start, end) {
     return rangejs.fastOptimized(start, end).primes.map(factorial);
 }
 
+function fast() { }
+
+function fastOptimized() { }
+
 module.exports.alternatesRange = alternateWaysRange;
 module.exports.alternatesRangeOptimized = alternateWaysRangeOptimized;
 module.exports.alternatesCount = alternateWaysCount;
@@ -66,8 +69,5 @@ module.exports.fastRange = fastRange;
 module.exports.fastRangeOptimized = fastRangeOptimized;
 
 
-// module.exports.fast = fast;
-// module.exports.fastOptimized = fastOptimized;
-
-
-// console.log(alternateWaysCountOptimized(10, 1000));
+module.exports.fast = fast;
+module.exports.fastOptimized = fastOptimized;
