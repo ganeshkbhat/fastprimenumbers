@@ -79,7 +79,7 @@ function alternateWaysOptimized(start, count, functionName = "isPrimeSquarerootW
 function fast(start, count) {
     let primes = [], counter = 0, i = start;
     let apiPrimes = require("./primes");
-    
+
     while (counter != count) {
         console.log(start, counter, count);
         if ((i === 2 || i === 3 || i === 5 || i === 7)) {
@@ -100,7 +100,7 @@ function fast(start, count) {
         }
         i++;
     }
-    
+
     if (counter !== count && primes.length !== count) {
         throw new Error("[fast-prime]: count.js: fastOptimized: Prime numbers checks issue with the provided function: ");
     }

@@ -48,9 +48,9 @@ function alternateWays(start, end, functionName = "isPrimeSquarerootWayTwo") {
 function alternateWaysOptimized(start, end, functionName = "isPrimeSquarerootWayTwo") {
     let primes = [];
     if (start > end) { throw new Error("Start cannot be greater than end. Start: ", start, ", end: ", end); }
-    if (end < 10000) { primes = require("./10000") }
-    if (end < 100000) { primes = require("./100000") };
-    if (end < 1000000) { primes = require("./1000000") };
+    if (end < 10000) { primes = require("./10000.js") }
+    if (end < 100000) { primes = require("./100000.js") };
+    if (end < 1000000) { primes = require("./1000000.js") };
     if (!(end > 1000000)) {
         primes = primes.filter(i => { return (i > start && i < end) });
         return { count: primes.length, primes: primes };
@@ -86,9 +86,9 @@ function fast(start, end) {
 function fastOptimized(start, end) {
     let primes = [];
     if (start > end) { throw new Error("Start cannot be greater than end. Start: ", start, ", end: ", end); }
-    if (end < 10000) { primes = require("./10000"); }
-    if (end < 100000) { primes = require("./100000"); };
-    if (end < 1000000) { primes = require("./1000000") };
+    if (end < 10000) { primes = require("./10000.js"); }
+    if (end < 100000) { primes = require("./100000.js"); };
+    if (end < 1000000) { primes = require("./1000000.js") };
     if (!(end > 1000000)) {
         primes = primes.filter(i => { return (i > start && i < end) });
         return { count: primes.length, primes: primes };

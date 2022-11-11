@@ -22,7 +22,7 @@ function primes() {
      * @return {*} 
      * 
      */
-     function prime(n) {
+    function prime(n) {
         let count = 0;
         if ((n === 2 || n === 3 || n === 5 || n === 7)) {
             // console.log("count: Prime Unconventional way", count);
@@ -53,8 +53,7 @@ function primes() {
         // console.log("count: Prime Unconventional way", count);
         return false;
     }
-    
-    
+
     /**
      * 
      * ALTERNATE WAY 
@@ -82,7 +81,7 @@ function primes() {
         // console.log("count: Prime Conventional way", count);
         return true;
     }
-    
+
     /**
      * 
      * ALTERNATE WAY 
@@ -99,7 +98,7 @@ function primes() {
             // console.log("count: Prime Squareroot way", count);
             return false;
         }
-    
+
         for (let i = 2, s = Math.sqrt(num); i <= s; i++) {
             // Counting Iterations
             count += 1;
@@ -111,7 +110,7 @@ function primes() {
         // console.log("count: Prime Squareroot way", count);
         return true;
     }
-    
+
     /**
      * 
      * ALTERNATE WAY 
@@ -129,14 +128,11 @@ function primes() {
         }
         return num > 1;
     }
-    
-    
-    
-        return {
-            primes: prime,
-            recurisive: isPrimeConventionalWay,
-            sqrootExpressive: isPrimeSquarerootWay,
-            sqroot: isPrimeSquarerootWayTwo
-        }
+
+    return {
+        primes: prime,
+        recurisive: isPrimeConventionalWay,
+        sqrootExpressive: isPrimeSquarerootWay,
+        sqroot: isPrimeSquarerootWayTwo
     }
-    
+}
