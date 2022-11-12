@@ -130,8 +130,9 @@ function primes() {
     }
 
     return {
-        primes: prime,
-        recurisive: isPrimeConventionalWay,
+        fast: prime,
+        prime: prime,
+        recursive: isPrimeConventionalWay,
         sqrootExpressive: isPrimeSquarerootWay,
         sqroot: isPrimeSquarerootWayTwo
     }
@@ -145,9 +146,9 @@ async function primesCount() {
         console.log("Primes API files missing");
         throw new Error("Primes API files missing");
     }
-    let { isPrimeConventionalWay, isPrimeSquarerootWay, isPrimeSquarerootWayTwo, prime } = apiPrimes();
+    let { recursive, sqrootExpressive, sqroot, prime } = apiPrimes();
 
-    function alternateWays(start, count, functionName = "isPrimeSquarerootWayTwo") {
+    function alternateWays(start, count, functionName = "sqroot") {
         let primes = [], counter = 0, i = start;
         if (!functionName) {
             throw new Error("[fast-prime]: range.js: AlternateWays: Invalid Option: ", functionName)
@@ -162,18 +163,18 @@ async function primesCount() {
                 i++;
                 continue;
             }
-            if (functionName === "isPrimeConventionalWay") {
-                if (isPrimeConventionalWay(i)) {
+            if (functionName === "recursive" || functionName === "conventional") {
+                if (recursive(i)) {
                     primes.push(i);
                     counter++;
                 };
-            } else if (functionName === "isPrimeSquarerootWay") {
-                if (isPrimeSquarerootWay(i)) {
+            } else if (functionName === "sqrootExpressive") {
+                if (sqrootExpressive(i)) {
                     primes.push(i);
                     counter++;
                 };
-            } else if (functionName === "isPrimeSquarerootWayTwo") {
-                if (isPrimeSquarerootWayTwo(i)) {
+            } else if (functionName === "sqroot") {
+                if (sqroot(i)) {
                     primes.push(i);
                     counter++;
                 };
@@ -191,7 +192,7 @@ async function primesCount() {
         return { count: primes.length, primes: primes };
     }
 
-    async function alternateWaysOptimized(start, count, functionName = "isPrimeSquarerootWayTwo") {
+    async function alternateWaysOptimized(start, count, functionName = "sqroot") {
         let primes = [], counter = 0, i = start;
 
         if (start < 10000) {
@@ -299,9 +300,9 @@ async function primesRange() {
         console.log("Primes API files missing");
         throw new Error("Primes API files missing");
     }
-    let { isPrimeConventionalWay, isPrimeSquarerootWay, isPrimeSquarerootWayTwo, prime } = apiPrimes();
+    let { recursive, sqrootExpressive, sqroot, prime } = apiPrimes();
 
-    function alternateWays(start, end, functionName = "isPrimeSquarerootWayTwo") {
+    function alternateWays(start, end, functionName = "sqroot") {
         let primes = [];
         for (let i = start; i < end; i++) {
             if ((i === 2 || i === 3 || i === 5 || i === 7)) {
@@ -311,16 +312,16 @@ async function primesRange() {
             if (i === 1 || ((i > 7) && (i % 5 == 0 || i % 7 == 0 || i % 2 == 0 || i % 3 == 0))) {
                 continue;
             }
-            if (functionName === "isPrimeConventionalWay") {
-                if (isPrimeConventionalWay(i)) {
+            if (functionName === "recursive" || functionName === "conventional") {
+                if (recursive(i)) {
                     primes.push(i);
                 };
-            } else if (functionName === "isPrimeSquarerootWay") {
-                if (isPrimeSquarerootWay(i)) {
+            } else if (functionName === "sqrootExpressive") {
+                if (sqrootExpressive(i)) {
                     primes.push(i);
                 };
-            } else if (functionName === "isPrimeSquarerootWayTwo") {
-                if (isPrimeSquarerootWayTwo(i)) {
+            } else if (functionName === "sqroot") {
+                if (sqroot(i)) {
                     primes.push(i);
                 };
             } else if (functionName === "primes") {
@@ -334,7 +335,7 @@ async function primesRange() {
         return { count: primes.length, primes: primes };
     }
 
-    async function alternateWaysOptimized(start, end, functionName = "isPrimeSquarerootWayTwo") {
+    async function alternateWaysOptimized(start, end, functionName = "sqroot") {
         let primes = [];
         if (start > end) { throw new Error("Start cannot be greater than end. Start: ", start, ", end: ", end); }
 
@@ -428,19 +429,19 @@ async function primesSum() {
         throw new Error("Primes Count API files missing");
     }
 
-    function alternateWaysCount(start, count, functionName = "isPrimeSquarerootWayTwo") {
+    function alternateWaysCount(start, count, functionName = "sqroot") {
         return countjs.alternates(start, count, functionName).primes.reduce((p, i) => { return p + i });
     }
 
-    function alternateWaysCountOptimized(start, count, functionName = "isPrimeSquarerootWayTwo") {
+    function alternateWaysCountOptimized(start, count, functionName = "sqroot") {
         return countjs.alternatesOptimized(start, count, functionName).primes.reduce((p, i) => { return p + i });
     }
 
-    function alternateWaysRange(start, end, functionName = "isPrimeSquarerootWayTwo") {
+    function alternateWaysRange(start, end, functionName = "sqroot") {
         return rangejs.alternates(start, end, functionName).primes.reduce((p, i) => { return p + i });
     }
 
-    function alternateWaysRangeOptimized(start, end, functionName = "isPrimeSquarerootWayTwo") {
+    function alternateWaysRangeOptimized(start, end, functionName = "sqroot") {
         return rangejs.alternatesOptimized(start, end, functionName).primes.reduce((p, i) => { return p + i });
     }
 
@@ -500,19 +501,19 @@ async function primesFactorial() {
         return factorial;
     }
 
-    function alternateWaysCount(start, count, functionName = "isPrimeSquarerootWayTwo") {
+    function alternateWaysCount(start, count, functionName = "sqroot") {
         return countjs.alternates(start, count, functionName).primes.map(factorial);
     }
 
-    function alternateWaysCountOptimized(start, count, functionName = "isPrimeSquarerootWayTwo") {
+    function alternateWaysCountOptimized(start, count, functionName = "sqroot") {
         return countjs.alternatesOptimized(start, count, functionName).primes.map(factorial);
     }
 
-    function alternateWaysRange(start, end, functionName = "isPrimeSquarerootWayTwo") {
+    function alternateWaysRange(start, end, functionName = "sqroot") {
         return rangejs.alternates(start, end, functionName).primes.map(factorial);
     }
 
-    function alternateWaysRangeOptimized(start, end, functionName = "isPrimeSquarerootWayTwo") {
+    function alternateWaysRangeOptimized(start, end, functionName = "sqroot") {
         return rangejs.alternatesOptimized(start, end, functionName).primes.map(factorial);
     }
 

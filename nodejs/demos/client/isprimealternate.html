@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>npm i fast-prime-client</title>
+</head>
+
+<body>
+    <div>
+        <script src="https://unpkg.com/fast-prime-client@0.0.5/src/primes.min.js"></script>
+
+        <div id="isPrime"></div>
+        <div id="isPrimealtconventional"></div>
+        <div id="isPrimealtsqroot"></div>
+    </div>
+    <script>
+        let p = primes(), n = 11;
+        const { primes, fast, recursive, sqroot } = p;
+        let pn = primes(n);
+        let altconventional = recursive(n);
+        let altsqroot = sqroot(n);
+
+        document.getElementById("isPrimefast").innerHTML = "prime number " + n + " is prime: " + pn.toString() + "\n";
+        document.getElementById("isPrimealtconventional").innerHTML = "Alternate ways Conventional is number " + n + " a prime: " + altconventional.toString() + "\n";
+        document.getElementById("isPrimealtsqroot").innerHTML = "Alternate ways SQROOT is number " + n + " a prime: " + altsqroot.toString() + "\n";
+
+
+    </script>
+</body>
+
+</html>

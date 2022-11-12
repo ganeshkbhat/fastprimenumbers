@@ -10,28 +10,72 @@
 
 <body>
     <div>
-        <script src="https://unpkg.com/fast-prime-client@0.0.5/src/primes.min.js"></script>
-        <script src="https://unpkg.com/fast-prime-client@0.0.5/src/primes.range.min.js"></script>
-        <script src="https://unpkg.com/fast-prime-client@0.0.5/src/primes.count.min.js"></script>
-        <script src="https://unpkg.com/fast-prime-client@0.0.5/src/primes.sum.min.js"></script>
+        <script src="https://unpkg.com/fast-prime-client@0.0.51/src/primes.all.min.js"></script>
+        <script src="https://unpkg.com/fast-prime-client@0.0.51/src/count.min.js"></script>
+        <script src="https://unpkg.com/fast-prime-client@0.0.51/src/range.min.js"></script>
+        <script src="https://unpkg.com/fast-prime-client@0.0.51/src/sum.min.js"></script>
+        <script src="https://unpkg.com/fast-prime-client@0.0.51/src/factorial.min.js"></script>
 
-        <div id="isPrime">
 
-        </div>
+        <div id="isPrime"></div>
+        <div id="isPrimealtconventional"></div>
+        <div id="isPrimealtsqroot"></div>
+
+        <div id="primesCount"></div>
+        <div id="primesRange"></div>
+        <div id="primesSum"></div>
+        <div id="primesFactorial"></div>
     </div>
     <script>
+        let p = primes(), n = 11;
+        const { prime, fast, recursive, sqroot } = p;
+        let pn = prime(n);
+        let altconventional = recursive(n);
+        let altsqroot = sqroot(n);
 
-        document.getElementById("isPrime").innerHTML = `
-        prime numbers range, count sum :  
-        primesSum.alternates(11, 13),
-        primesSum.alternatesOptimized(11, 13),
-        primesSum.fast(11, 13),
-        primesSum.fastOptimized(11, 13) : 
-        ` + primesSum.alternates(11, 13).toString() + " , "
-            + primesSum.alternatesOptimized(11, 13).toString() + " , "
-            + primesSum.fast(11, 13).toString() + " , "
-            + primesSum.fastOptimized(11, 13).toString()
+        document.getElementById("isPrimefast").innerHTML = "prime number " + n + " is prime: " + pn.toString() + "\n";
+        document.getElementById("isPrimealtconventional").innerHTML = "Alternate ways Conventional is number " + n + " a prime: " + altconventional.toString() + "\n";
+        document.getElementById("isPrimealtsqroot").innerHTML = "Alternate ways SQROOT is number " + n + " a prime: " + altsqroot.toString() + "\n";
 
+
+        document.getElementById("primesCount").innerHTML = `
+        prime numbers - count primes in range:  \n
+        primesCount().alternates(11, 13), primesCount().alternatesOptimized(11, 13),  \n
+        primesCount().fast(11, 13), primesCount().fastOptimized(11, 13) : \n
+        ` + JSON.stringify(primesCount().alternates(11, 13)) + " , "
+            + JSON.stringify(primesCount().alternatesOptimized(11, 13)) + " , "
+            + JSON.stringify(primesCount().fast(11, 13)) + " , "
+            + JSON.stringify(primesCount().fastOptimized(11, 13))
+
+
+        document.getElementById("primesRange").innerHTML = `
+        prime numbers in range:  \n
+        primesRange().alternates(11, 13), primesRange().alternatesOptimized(11, 13), \n
+        primesRange().fast(11, 13), primesRange().fastOptimized(11, 13) :  \n
+        ` + JSON.stringify(primesRange().alternates(11, 13)) + " , \n"
+            + JSON.stringify(primesRange().alternatesOptimized(11, 13)) + " , \n"
+            + JSON.stringify(primesRange().fast(11, 13)) + " , \n"
+            + JSON.stringify(primesRange().fastOptimized(11, 13))
+
+
+        document.getElementById("primesSum").innerHTML = `
+        prime numbers in range:  \n
+        primesSum().alternates(11, 13), primesSum().alternatesOptimized(11, 13), \n
+        primesSum().fast(11, 13), primesSum().fastOptimized(11, 13) :  \n
+        ` + JSON.stringify(primesSum().alternates(11, 13)) + " , \n"
+            + JSON.stringify(primesSum().alternatesOptimized(11, 13)) + " , \n"
+            + JSON.stringify(primesSum().fast(11, 13)) + " , \n"
+            + JSON.stringify(primesSum().fastOptimized(11, 13))
+
+
+        document.getElementById("primesFactorial").innerHTML = `
+        prime numbers range, count factorial -  \n
+        primesFactorial().alternates(11, 13), primesFactorial().alternatesOptimized(11, 13), \n
+        primesFactorial().fast(11, 13), primesFactorial().fastOptimized(11, 13) : \n 
+        ` + JSON.stringify(primesFactorial().alternates(11, 13)) + " , \n"
+            + JSON.stringify(primesFactorial().alternatesOptimized(11, 13)) + " , \n"
+            + JSON.stringify(primesFactorial().fast(11, 13)) + " , \n"
+            + JSON.stringify(primesFactorial().fastOptimized(11, 13))
     </script>
 
 </body>
