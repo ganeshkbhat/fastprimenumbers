@@ -20,7 +20,18 @@
         </div>
     </div>
     <script>
-        document.getElementById("isPrime").innerHTML = "prime number " + n + " is prime: " + pn.toString();
+
+        document.getElementById("isPrime").innerHTML = `
+        prime numbers range, count sum :  
+        primesFactorial.alternates(11, 13),
+        primesFactorial.alternatesOptimized(11, 13),
+        primesFactorial.fast(11, 13),
+        primesFactorial.fastOptimized(11, 13) : 
+        ` + primesFactorial.alternates(11, 13).toString() + " , "
+            + primesFactorial.alternatesOptimized(11, 13).toString() + " , "
+            + primesFactorial.fast(11, 13).toString() + " , "
+            + primesFactorial.fastOptimized(11, 13).toString()
+
     </script>
 </body>
 

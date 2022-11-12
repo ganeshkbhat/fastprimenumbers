@@ -18,8 +18,17 @@
         </div>
     </div>
     <script>
+        document.getElementById("isPrime").innerHTML = `
+        prime numbers count in range:  
+        primesCount.alternates(11, 13),
+        primesCount.alternatesOptimized(11, 13),
+        primesCount.fast(11, 13),
+        primesCount.fastOptimized(11, 13) : 
+        ` + JSON.stringify(primesCount.alternates(11, 13)) + " , "
+            + JSON.stringify(primesCount.alternatesOptimized(11, 13)) + " , "
+            + JSON.stringify(primesCount.fast(11, 13)) + " , "
+            + JSON.stringify(primesCount.fastOptimized(11, 13))
 
-        document.getElementById("isPrime").innerHTML = "prime number " + n + " is prime: " + pn.toString();
     </script>
 </body>
 
