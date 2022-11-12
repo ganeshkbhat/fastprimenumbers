@@ -9,16 +9,19 @@
 */
 
 
+// const { prime } = require("./primes.js");
+// const { isPrimeConventionalWay, isPrimeSquarerootWay, isPrimeSquarerootWayTwo } = require("./primes_alternate.js");
 const rangejs = require("./range.js");
 const countjs = require("./count.js");
 
 function factorial(num) {
-    num = BigInt(num);
-    let factorial = BigInt(1);
+    let factorial = 1;
     if (num < 0) { return false; }
     else if (num === 0) { return false; }
     else {
-        for (i = 1; i <= num; i++) { factorial *= i; }
+        for (i = 1; i <= num; i++) {
+            factorial *= i;
+        }
     }
     return factorial;
 }
@@ -69,5 +72,6 @@ module.exports.fastRange = fastRange;
 module.exports.fastRangeOptimized = fastRangeOptimized;
 
 
-module.exports.fast = fast;
-module.exports.fastOptimized = fastOptimized;
+// module.exports.fast = fast;
+// module.exports.fastOptimized = fastOptimized;
+

@@ -11,31 +11,20 @@
 
 async function primesFactorial() {
 
-    let apiPrimes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/primes.ip.min.js");
-    let { isPrimeConventionalWay, isPrimeSquarerootWay, isPrimeSquarerootWayTwo, prime } = apiPrimes();
+    let rangejs, countjs;
+    if (!!primesRange) {
+        rangejs = primesRange();
+    } else {
+        console.log("Primes Range API files missing");
+        throw new Error("Primes Range API files missing");
+    }
 
-    var rangejs = async function primesRange() {
-        var range = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/range.min.js");
-        const { alternateWays, alternateWaysOptimized, fast, fastOptimized } = range();
-        return {
-            alternateWays,
-            alternateWaysOptimized,
-            fast,
-            fastOptimized
-        }
-    }();
-
-    var countjs = async function primesCount() {
-        var count = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/count.min.js");
-        const { alternateWays, alternateWaysOptimized, fast, fastOptimized } = count();
-
-        return {
-            alternateWays,
-            alternateWaysOptimized,
-            fast,
-            fastOptimized
-        }
-    }();
+    if (!!primesCount) {
+        countjs = primesCount();
+    } else {
+        console.log("Primes Count API files missing");
+        throw new Error("Primes Count API files missing");
+    }
 
     function factorial(num) {
         num = BigInt(num);
@@ -96,3 +85,4 @@ async function primesFactorial() {
         fastRangeOptimized
     }
 }
+

@@ -9,6 +9,8 @@
 */
 
 
+// const { prime } = require("./primes.js");
+// const { isPrimeConventionalWay, isPrimeSquarerootWay, isPrimeSquarerootWayTwo } = require("./primes_alternate.js");
 const rangejs = require("./range.js");
 const countjs = require("./count.js");
 

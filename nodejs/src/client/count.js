@@ -8,9 +8,15 @@
  * 
 */
 
-async function primesCount() {
 
-    let apiPrimes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/primes.ip.min.js");
+async function primesCount() {
+    let apiPrimes;
+    if (!!primes) {
+        apiPrimes = primes;
+    } else {
+        console.log("Primes API files missing");
+        throw new Error("Primes API files missing");
+    }
     let { isPrimeConventionalWay, isPrimeSquarerootWay, isPrimeSquarerootWayTwo, prime } = apiPrimes();
 
     function alternateWays(start, count, functionName = "isPrimeSquarerootWayTwo") {
@@ -59,10 +65,19 @@ async function primesCount() {
 
     async function alternateWaysOptimized(start, count, functionName = "isPrimeSquarerootWayTwo") {
         let primes = [], counter = 0, i = start;
-        
-        if (start < 10000) { primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/10000.json") }
-        if (start < 100000) { primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/100000.json") };
-        if (start < 1000000) { primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/1000000.json") };
+
+        if (start < 10000) {
+            primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/10000.json");
+            primes = JSON.parse(primes);
+        }
+        if (start < 100000) {
+            primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/100000.json");
+            primes = JSON.parse(primes);
+        };
+        if (start < 1000000) {
+            primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/1000000.json");
+            primes = JSON.parse(primes);
+        };
 
         if (!(start > 1000000)) {
             primes = primes.filter((i) => {
@@ -110,9 +125,18 @@ async function primesCount() {
 
     async function fastOptimized(start, count) {
         let primes = [], counter = 0, i = start;
-        if (start < 10000) { primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/10000.json") }
-        if (start < 100000) { primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/100000.json") };
-        if (start < 1000000) { primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/1000000.json") };
+        if (start < 10000) {
+            primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/10000.json");
+            primes = JSON.parse(primes);
+        }
+        if (start < 100000) {
+            primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/100000.json");
+            primes = JSON.parse(primes);
+        };
+        if (start < 1000000) {
+            primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/1000000.json");
+            primes = JSON.parse(primes);
+        };
 
         if (!(start > 1000000)) {
             primes = primes.filter((i) => {
