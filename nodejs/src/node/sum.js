@@ -15,36 +15,35 @@ const rangejs = require("./range.js");
 const countjs = require("./count.js");
 
 function alternateWaysCount(start, count, functionName = "isPrimeSquarerootWayTwo") {
-    return countjs.alternates(start, count, functionName).primes.reduce((p, i) => { return p + i });
+    return countjs.alternates(start, count, functionName).primes.reduce((p, i) => { return p + i }, 0);
 }
 
 function alternateWaysCountOptimized(start, count, functionName = "isPrimeSquarerootWayTwo") {
-    return countjs.alternatesOptimized(start, count, functionName).primes.reduce((p, i) => { return p + i });
+    return countjs.alternatesOptimized(start, count, functionName).primes.reduce((p, i) => { return p + i }, 0);
 }
 
-
 function alternateWaysRange(start, end, functionName = "isPrimeSquarerootWayTwo") {
-    return rangejs.alternates(start, end, functionName).primes.reduce((p, i) => { return p + i });
+    return rangejs.alternates(start, end, functionName).primes.reduce((p, i) => { return p + i }, 0);
 }
 
 function alternateWaysRangeOptimized(start, end, functionName = "isPrimeSquarerootWayTwo") {
-    return rangejs.alternatesOptimized(start, end, functionName).primes.reduce((p, i) => { return p + i });
+    return rangejs.alternatesOptimized(start, end, functionName).primes.reduce((p, i) => { return p + i }, 0);
 }
 
 function fastCount(start, count) {
-    return countjs.alternates(start, count).primes.reduce((p, i) => { return p + i });
+    return countjs.alternates(start, count).primes.reduce((p, i) => { return p + i }, 0);
 }
 
 function fastCountOptimized(start, count) {
-    return countjs.alternatesOptimized(start, count).primes.reduce((p, i) => { return p + i });
+    return countjs.alternatesOptimized(start, count).primes.reduce((p, i) => { return p + i }, 0);
 }
 
 function fastRange(start, end) {
-    return rangejs.alternates(start, end).primes.reduce((p, i) => { return p + i });
+    return rangejs.alternates(start, end).primes.reduce((p, i) => { return p + i }, 0);
 }
 
 function fastRangeOptimized(start, end) {
-    return rangejs.alternatesOptimized(start, end).primes.reduce((p, i) => { return p + i });
+    return rangejs.alternatesOptimized(start, end).primes.reduce((p, i) => { return p + i }, 0);
 }
 
 module.exports.alternatesRange = alternateWaysRange;

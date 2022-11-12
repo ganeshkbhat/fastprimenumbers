@@ -14,7 +14,7 @@ const { isPrimeConventionalWay, isPrimeSquarerootWay, isPrimeSquarerootWayTwo } 
 
 function alternateWays(start, end, functionName = "isPrimeSquarerootWayTwo") {
     let primes = [];
-    for (let i = start; i < end; i++) {
+    for (let i = start; i <= end; i++) {
         if ((i === 2 || i === 3 || i === 5 || i === 7)) {
             primes.push(i);
             continue;
@@ -52,7 +52,7 @@ function alternateWaysOptimized(start, end, functionName = "isPrimeSquarerootWay
     if (end < 100000) { primes = require("./100000.js") };
     if (end < 1000000) { primes = require("./1000000.js") };
     if (!(end > 1000000)) {
-        primes = primes.filter(i => { return (i > start && i < end) });
+        primes = primes.filter(i => { return (i >= start && i <= end) });
         return { count: primes.length, primes: primes };
     }
     return alternateWays(start, end, functionName);
@@ -90,7 +90,7 @@ function fastOptimized(start, end) {
     if (end < 100000) { primes = require("./100000.js"); };
     if (end < 1000000) { primes = require("./1000000.js") };
     if (!(end > 1000000)) {
-        primes = primes.filter(i => { return (i > start && i < end) });
+        primes = primes.filter(i => { return (i >= start && i <= end) });
         return { count: primes.length, primes: primes };
     }
     return fast(start, end);

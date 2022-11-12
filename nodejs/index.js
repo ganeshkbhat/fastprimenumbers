@@ -33,8 +33,8 @@ const isPrime = {
 module.exports.isPrime = isPrime;
 
 module.exports.range = {
-    alternates: getBetweenRange.alternateWays,
-    alternatesOptimized: getBetweenRange.alternateWaysOptimized,
+    alternates: getBetweenRange.alternates,
+    alternatesOptimized: getBetweenRange.alternatesOptimized,
     fast: getBetweenRange.fast,
     fastOptimized: getBetweenRange.fastOptimized
 }

@@ -81,7 +81,7 @@ function fast(start, count) {
     let apiPrimes = require("./primes");
 
     while (counter != count) {
-        console.log(start, counter, count);
+        // console.log(start, counter, count);
         if ((i === 2 || i === 3 || i === 5 || i === 7)) {
             primes.push(i);
             counter++;
