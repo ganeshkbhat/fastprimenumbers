@@ -138,7 +138,7 @@ function primes() {
     }
 }
 
-async function primesCount() {
+function primesCount() {
     let apiPrimes;
     if (!!primes) {
         apiPrimes = primes;
@@ -146,7 +146,7 @@ async function primesCount() {
         console.log("Primes API files missing");
         throw new Error("Primes API files missing");
     }
-    let { recursive, sqrootExpressive, sqroot, prime } = apiPrimes();
+    var { recursive, sqrootExpressive, sqroot, prime } = apiPrimes();
 
     function alternateWays(start, count, functionName = "sqroot") {
         let primes = [], counter = 0, i = start;
@@ -196,15 +196,22 @@ async function primesCount() {
         let primes = [], counter = 0, i = start;
 
         if (start < 10000) {
-            primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/10000.json");
-            primes = JSON.parse(primes);
+            // primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/client/10000.json");
+            // https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/10000.json
+            primes = (await (fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/10000.json")).body);
+ 
+            console.log("primes.body: ", primes.body().data);
+
+            primes = JSON.parse(primes.body());
         }
         if (start < 100000) {
-            primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/100000.json");
+            // primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/client/100000.json");
+            primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/100000.json");
             primes = JSON.parse(primes);
         };
         if (start < 1000000) {
-            primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/1000000.json");
+            // primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/client/1000000.json");
+            primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/1000000.json");
             primes = JSON.parse(primes);
         };
 
@@ -255,15 +262,19 @@ async function primesCount() {
     async function fastOptimized(start, count) {
         let primes = [], counter = 0, i = start;
         if (start < 10000) {
-            primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/10000.json");
+            // primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/client/10000.json");
+            // https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/10000.json
+            primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/10000.json");
             primes = JSON.parse(primes);
         }
         if (start < 100000) {
-            primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/100000.json");
+            // primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/client/100000.json");
+            primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/100000.json");
             primes = JSON.parse(primes);
         };
         if (start < 1000000) {
-            primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/1000000.json");
+            // primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/client/1000000.json");
+            primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/1000000.json");
             primes = JSON.parse(primes);
         };
 
@@ -291,7 +302,7 @@ async function primesCount() {
     }
 }
 
-async function primesRange() {
+function primesRange() {
 
     let apiPrimes;
     if (!!primes) {
@@ -304,7 +315,7 @@ async function primesRange() {
 
     function alternateWays(start, end, functionName = "sqroot") {
         let primes = [];
-        for (let i = start; i < end; i++) {
+        for (let i = start; i <= end; i++) {
             if ((i === 2 || i === 3 || i === 5 || i === 7)) {
                 primes.push(i);
                 continue;
@@ -340,15 +351,19 @@ async function primesRange() {
         if (start > end) { throw new Error("Start cannot be greater than end. Start: ", start, ", end: ", end); }
 
         if (start < 10000) {
-            primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/10000.json");
+            // primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/client/10000.json");
+            // https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/10000.json
+            primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/10000.json");
             primes = JSON.parse(primes);
         }
         if (start < 100000) {
-            primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/100000.json");
+            // primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/client/100000.json");
+            primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/100000.json");
             primes = JSON.parse(primes);
         };
         if (start < 1000000) {
-            primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/1000000.json");
+            // primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/client/1000000.json");
+            primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/1000000.json");
             primes = JSON.parse(primes);
         };
 
@@ -385,15 +400,19 @@ async function primesRange() {
         if (start > end) { throw new Error("Start cannot be greater than end. Start: ", start, ", end: ", end); }
 
         if (start < 10000) {
-            primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/10000.json");
+            // primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/client/10000.json");
+            // https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/10000.json
+            primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/10000.json");
             primes = JSON.parse(primes);
         }
         if (start < 100000) {
-            primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/100000.json");
+            // primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/client/100000.json");
+            primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/100000.json");
             primes = JSON.parse(primes);
         };
         if (start < 1000000) {
-            primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/1000000.json");
+            // primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/client/1000000.json");
+            primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/1000000.json");
             primes = JSON.parse(primes);
         };
 
@@ -412,7 +431,7 @@ async function primesRange() {
     };
 }
 
-async function primesSum() {
+function primesSum() {
 
     let rangejs, countjs;
     if (!!primesRange) {
@@ -430,35 +449,35 @@ async function primesSum() {
     }
 
     function alternateWaysCount(start, count, functionName = "sqroot") {
-        return countjs.alternates(start, count, functionName).primes.reduce((p, i) => { return p + i });
+        return countjs.alternateWays(start, count, functionName)["primes"].reduce((p, i) => { return p + i }, 0);
     }
 
-    function alternateWaysCountOptimized(start, count, functionName = "sqroot") {
-        return countjs.alternatesOptimized(start, count, functionName).primes.reduce((p, i) => { return p + i });
+    async function alternateWaysCountOptimized(start, count, functionName = "sqroot") {
+        let rs = await countjs.alternateWaysOptimized(start, count, functionName)["primes"].reduce((p, i) => { return p + i }, 0);
     }
 
     function alternateWaysRange(start, end, functionName = "sqroot") {
-        return rangejs.alternates(start, end, functionName).primes.reduce((p, i) => { return p + i });
+        return rangejs.alternateWays(start, end, functionName)["primes"].reduce((p, i) => { return p + i }, 0);
     }
 
-    function alternateWaysRangeOptimized(start, end, functionName = "sqroot") {
-        return rangejs.alternatesOptimized(start, end, functionName).primes.reduce((p, i) => { return p + i });
+    async function alternateWaysRangeOptimized(start, end, functionName = "sqroot") {
+        return await rangejs.alternateWaysOptimized(start, end, functionName)["primes"].reduce((p, i) => { return p + i }, 0);
     }
 
     function fastCount(start, count) {
-        return countjs.alternates(start, count).primes.reduce((p, i) => { return p + i });
+        return countjs.alternateWays(start, count)["primes"].reduce((p, i) => { return p + i }, 0);
     }
 
-    function fastCountOptimized(start, count) {
-        return countjs.alternatesOptimized(start, count).primes.reduce((p, i) => { return p + i });
+    async function fastCountOptimized(start, count) {
+        return await countjs.alternateWaysOptimized(start, count)["primes"].reduce((p, i) => { return p + i }, 0);
     }
 
     function fastRange(start, end) {
-        return rangejs.alternates(start, end).primes.reduce((p, i) => { return p + i });
+        return rangejs.alternateWays(start, end)["primes"].reduce((p, i) => { return p + i }, 0);
     }
 
-    function fastRangeOptimized(start, end) {
-        return rangejs.alternatesOptimized(start, end).primes.reduce((p, i) => { return p + i });
+    async function fastRangeOptimized(start, end) {
+        return await rangejs.alternateWaysOptimized(start, end)["primes"].reduce((p, i) => { return p + i }, 0);
     }
 
     return {
@@ -473,7 +492,7 @@ async function primesSum() {
     }
 }
 
-async function primesFactorial() {
+function primesFactorial() {
 
     let rangejs, countjs;
     if (!!primesRange) {
@@ -496,41 +515,41 @@ async function primesFactorial() {
         if (num < 0) { return false; }
         else if (num === 0) { return false; }
         else {
-            for (i = 1; i <= num; i++) { factorial *= i; }
+            for (let i = BigInt(1); i <= num; i++) { factorial *= i; }
         }
         return factorial;
     }
 
     function alternateWaysCount(start, count, functionName = "sqroot") {
-        return countjs.alternates(start, count, functionName).primes.map(factorial);
+        return countjs.alternateWays(start, count, functionName).primes.map(factorial);
     }
 
-    function alternateWaysCountOptimized(start, count, functionName = "sqroot") {
-        return countjs.alternatesOptimized(start, count, functionName).primes.map(factorial);
+    async function alternateWaysCountOptimized(start, count, functionName = "sqroot") {
+        return await countjs.alternateWaysOptimized(start, count, functionName).primes.map(factorial);
     }
 
     function alternateWaysRange(start, end, functionName = "sqroot") {
-        return rangejs.alternates(start, end, functionName).primes.map(factorial);
+        return rangejs.alternateWays(start, end, functionName).primes.map(factorial);
     }
 
-    function alternateWaysRangeOptimized(start, end, functionName = "sqroot") {
-        return rangejs.alternatesOptimized(start, end, functionName).primes.map(factorial);
+    async function alternateWaysRangeOptimized(start, end, functionName = "sqroot") {
+        return await rangejs.alternateWaysOptimized(start, end, functionName).primes.map(factorial);
     }
 
     function fastCount(start, count) {
         return countjs.fast(start, count).primes.map(factorial);
     }
 
-    function fastCountOptimized(start, count) {
-        return countjs.fastOptimized(start, count).primes.map(factorial);
+    async function fastCountOptimized(start, count) {
+        return await countjs.fastOptimized(start, count).primes.map(factorial);
     }
 
     function fastRange(start, end) {
         return rangejs.fast(start, end).primes.map(factorial);
     }
 
-    function fastRangeOptimized(start, end) {
-        return rangejs.fastOptimized(start, end).primes.map(factorial);
+    async function fastRangeOptimized(start, end) {
+        return await rangejs.fastOptimized(start, end).primes.map(factorial);
     }
 
     function fast() { }
@@ -549,3 +568,4 @@ async function primesFactorial() {
         fastRangeOptimized
     }
 }
+
