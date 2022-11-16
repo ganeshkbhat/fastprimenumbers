@@ -10,15 +10,20 @@
 
 <body onload="onloader()">
     <div>
-        <script src="../../src/client/primes.all.js"></script>
+        <!-- <script src="../../src/client/primes.all.js"></script> -->
+
+        <script src="https://unpkg.com/fast-prime@0.0.62-beta/src/client/primes.all.js"></script>
+
         <!-- 
-        <script src="https://unpkg.com/fast-prime-client@0.0.51/src/primes.all.min.js"></script>    
+
         <script src="https://unpkg.com/fast-prime-client@0.0.51/src/primes.min.js"></script>
         <script src="https://unpkg.com/fast-prime-client@0.0.51/src/count.min.js"></script>
         <script src="https://unpkg.com/fast-prime-client@0.0.51/src/range.min.js"></script>
         <script src="https://unpkg.com/fast-prime-client@0.0.51/src/sum.min.js"></script>
-        <script src="https://unpkg.com/fast-prime-client@0.0.51/src/factorial.min.js"></script> 
+        <script src="https://unpkg.com/fast-prime-client@0.0.51/src/factorial.min.js"></script>  
+
         -->
+
 
         <div id="isPrimefast"></div>
         <div id="isPrimealtconventional"></div>
@@ -52,7 +57,7 @@
                 let countjs = primesCount();
                 console.log("countjs.fast: ", countjs.fast(11, 2));
                 console.log("countjs.alternateWays: ", countjs.alternateWays(11, 2));
-                // console.log("countjs.fastOptimized: ", await countjs.fastOptimized(11, 2));
+                console.log("countjs.fastOptimized: ", await countjs.fastOptimized(11, 2));
                 // console.log("countjs.alternateWaysOptimized: ", await countjs.alternateWaysOptimized(11, 2));
                 return countjs;
             }
@@ -97,51 +102,51 @@
             sumjs();
             factorialjs();
 
-        //     document.getElementById("primesCount").innerHTML = `
-        // prime numbers - count primes in range:  \n
-        // primesCount().alternates(11, 13), primesCount().alternatesOptimized(11, 13),  \n
-        // primesCount().fast(11, 13), primesCount().fastOptimized(11, 13) : \n
-        // ` + JSON.stringify(primesCount().alternateWays(11, 13)) + " , "
-        //         + JSON.stringify(primesCount().alternateWaysOptimized(11, 13)) + " , "
-        //         + JSON.stringify(primesCount().fast(11, 13)) + " , "
-        //         + JSON.stringify(primesCount().fastOptimized(11, 13))
+            //     document.getElementById("primesCount").innerHTML = `
+            // prime numbers - count primes in range:  \n
+            // primesCount().alternates(11, 13), primesCount().alternatesOptimized(11, 13),  \n
+            // primesCount().fast(11, 13), primesCount().fastOptimized(11, 13) : \n
+            // ` + JSON.stringify(primesCount().alternateWays(11, 13)) + " , "
+            //         + JSON.stringify(primesCount().alternateWaysOptimized(11, 13)) + " , "
+            //         + JSON.stringify(primesCount().fast(11, 13)) + " , "
+            //         + JSON.stringify(primesCount().fastOptimized(11, 13))
 
 
-        //     document.getElementById("primesRange").innerHTML = `
-        // prime numbers in range:  \n
-        // primesRange().alternateWays(11, 13), primesRange().alternateWaysOptimized(11, 13), \n
-        // primesRange().fast(11, 13), primesRange().fastOptimized(11, 13) :  \n
-        // ` + JSON.stringify(primesRange().alternateWays(11, 13)) + " , \n"
-        //         + JSON.stringify(primesRange().alternateWaysOptimized(11, 13)) + " , \n"
-        //         + JSON.stringify(primesRange().fast(11, 13)) + " , \n"
-        //         + JSON.stringify(primesRange().fastOptimized(11, 13))
+            //     document.getElementById("primesRange").innerHTML = `
+            // prime numbers in range:  \n
+            // primesRange().alternateWays(11, 13), primesRange().alternateWaysOptimized(11, 13), \n
+            // primesRange().fast(11, 13), primesRange().fastOptimized(11, 13) :  \n
+            // ` + JSON.stringify(primesRange().alternateWays(11, 13)) + " , \n"
+            //         + JSON.stringify(primesRange().alternateWaysOptimized(11, 13)) + " , \n"
+            //         + JSON.stringify(primesRange().fast(11, 13)) + " , \n"
+            //         + JSON.stringify(primesRange().fastOptimized(11, 13))
 
 
-        //     document.getElementById("primesSum").innerHTML = `
-        // prime numbers range, count primesSum -  \n
-        // primesSum().alternateWays(11, 13), primesSum().alternateWaysOptimized(11, 13), \n
-        // primesSum().fast(11, 13), primesSum().fastOptimized(11, 13) :  \n
-        // ` + JSON.stringify(primesSum().alternateWaysCount(11, 13)) + " , \n"
-        //         + JSON.stringify(primesSum().alternateWaysCountOptimized(11, 13)) + " , \n"
-        //         + JSON.stringify(primesSum().alternateWaysRange(11, 13)) + " , \n"
-        //         + JSON.stringify(primesSum().alternateWaysRangeOptimized(11, 13)) + " , \n"
-        //         + JSON.stringify(primesSum().fastCount(11, 13)) + " , \n"
-        //         + JSON.stringify(primesSum().fastCountOptimized(11, 13)) + " , \n "
-        //         + JSON.stringify(primesSum().fastRange(11, 13)) + " , \n"
-        //         + JSON.stringify(primesSum().fastRangeOptimized(11, 13))
+            //     document.getElementById("primesSum").innerHTML = `
+            // prime numbers range, count primesSum -  \n
+            // primesSum().alternateWays(11, 13), primesSum().alternateWaysOptimized(11, 13), \n
+            // primesSum().fast(11, 13), primesSum().fastOptimized(11, 13) :  \n
+            // ` + JSON.stringify(primesSum().alternateWaysCount(11, 13)) + " , \n"
+            //         + JSON.stringify(primesSum().alternateWaysCountOptimized(11, 13)) + " , \n"
+            //         + JSON.stringify(primesSum().alternateWaysRange(11, 13)) + " , \n"
+            //         + JSON.stringify(primesSum().alternateWaysRangeOptimized(11, 13)) + " , \n"
+            //         + JSON.stringify(primesSum().fastCount(11, 13)) + " , \n"
+            //         + JSON.stringify(primesSum().fastCountOptimized(11, 13)) + " , \n "
+            //         + JSON.stringify(primesSum().fastRange(11, 13)) + " , \n"
+            //         + JSON.stringify(primesSum().fastRangeOptimized(11, 13))
 
-        //     document.getElementById("primesFactorial").innerHTML = `
-        // prime numbers range, count primesFactorial -  \n
-        // primesFactorial().alternateWays(11, 13), primesFactorial().alternateWaysOptimized(11, 13), \n
-        // primesFactorial().fast(11, 13), primesFactorial().fastOptimized(11, 13) : \n
-        // ` + (primesFactorial().alternateWaysCount(11, 13)).toString() + " , \n"
-        //         + (primesFactorial().alternateWaysCountOptimized(11, 13)).then((d) => d.toString()) + " , \n"
-        //         + (primesFactorial().alternateWaysRange(11, 13)).toString() + " , \n"
-        //         + (primesFactorial().alternateWaysRangeOptimized(11, 13)).toString() + " , \n"
-        //         + (primesFactorial().fastCount(11, 13)).toString() + " , \n"
-        //         + (primesFactorial().fastCountOptimized(11, 13)).toString() + " , \n "
-        //         + (primesFactorial().fastRange(11, 13)).toString() + " , \n"
-        //         + (primesFactorial().fastRangeOptimized(11, 13)).then((d) => d.toString())
+            //     document.getElementById("primesFactorial").innerHTML = `
+            // prime numbers range, count primesFactorial -  \n
+            // primesFactorial().alternateWays(11, 13), primesFactorial().alternateWaysOptimized(11, 13), \n
+            // primesFactorial().fast(11, 13), primesFactorial().fastOptimized(11, 13) : \n
+            // ` + (primesFactorial().alternateWaysCount(11, 13)).toString() + " , \n"
+            //         + (primesFactorial().alternateWaysCountOptimized(11, 13)).then((d) => d.toString()) + " , \n"
+            //         + (primesFactorial().alternateWaysRange(11, 13)).toString() + " , \n"
+            //         + (primesFactorial().alternateWaysRangeOptimized(11, 13)).toString() + " , \n"
+            //         + (primesFactorial().fastCount(11, 13)).toString() + " , \n"
+            //         + (primesFactorial().fastCountOptimized(11, 13)).toString() + " , \n "
+            //         + (primesFactorial().fastRange(11, 13)).toString() + " , \n"
+            //         + (primesFactorial().fastRangeOptimized(11, 13)).then((d) => d.toString())
         }
     </script>
 </body>

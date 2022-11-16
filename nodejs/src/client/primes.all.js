@@ -199,7 +199,7 @@ function primesCount() {
             // primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/client/10000.json");
             // https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/10000.json
             primes = (await (fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/10000.json")).body);
- 
+
             console.log("primes.body: ", primes.body().data);
 
             primes = JSON.parse(primes.body());
