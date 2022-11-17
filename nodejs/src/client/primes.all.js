@@ -225,7 +225,7 @@ function primesCount() {
                 return { count: counter, primes: primes };
             }
         } catch (e) {
-            console.log("[fast-prime] There was an error trying to fetch ", e.toString());
+            console.log("[fast-prime]: count.js: There was an error trying to fetch ", e.toString());
         }
 
         return alternateWays(start, count, functionName);
@@ -291,7 +291,7 @@ function primesCount() {
                 return { count: counter, primes: primes };
             }
         } catch (e) {
-            console.log("[fast-prime] There was an error trying to fetch ", e.toString());
+            console.log("[fast-prime]: count.js: There was an error trying to fetch ", e.toString());
         }
         return fast(start, count);
     }
