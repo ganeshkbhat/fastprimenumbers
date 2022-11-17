@@ -66,13 +66,14 @@ This same code can be applied in any languages like `Python`, `Go` Lang, `Java`,
 ##### Javascript
 ![Javascript Codebase](https://github.com/ganeshkbhat/fastprimecalculations/blob/main/Fastest_Prime_Number_Calculations_codebase_javascript.jpeg)
 
-        - Access Node code using require("fast-prime")
-        - Access client (browser code) for just basic prime checks using `./node_modules/src/client/primes.js` and `node_modules/src/client/primes.min.js`
-        - Access client (browser code) using `./node_modules/src/client/primes.all.js` and `node_modules/src/client/primes.all.min.js`
-        - Access client (browser code) using cdn `https://unpkg.com/fast-prime@{version}/src/client/primes.all.js`. Example `https://unpkg.com/fast-prime@0.0.64/src/client/primes.all.min.js`
-        - Access client (browser code) smaller non optimised size using `./node_modules/src/client/primes.ip.js` and `node_modules/src/client/primes.ip.min.js`
-        - Access client (browser code) smaller non optimised using cdn `https://unpkg.com/fast-prime@{version}/src/client/primes.ip.js`. Example `https://unpkg.com/fast-prime@0.0.64/src/client/primes.ip.min.js`
-        - [Demos](https://github.com/ganeshkbhat/fastprimenumbers/tree/main/nodejs/demos)
+- Access Node code using require("fast-prime")
+- Access client (browser code) for just basic prime checks using `./node_modules/src/client/primes.js` and `node_modules/src/client/primes.min.js`
+- Access client (browser code) using `./node_modules/src/client/primes.all.js` and `node_modules/src/client/primes.all.min.js`
+- Access client (browser code) using cdn `https://unpkg.com/fast-prime@{version}/src/client/primes.all.js`. Example `https://unpkg.com/fast-prime@0.0.64/src/client/primes.all.min.js`
+- Access client (browser code) smaller non optimised size using `./node_modules/src/client/primes.ip.js` and `node_modules/src/client/primes.ip.min.js`
+- Access client (browser code) smaller non optimised using cdn `https://unpkg.com/fast-prime@{version}/src/client/primes.ip.js`. Example `https://unpkg.com/fast-prime@0.0.64/src/client/primes.ip.min.js`
+- [Demos](https://github.com/ganeshkbhat/fastprimenumbers/tree/main/nodejs/demos)
+
 
 ```
 
