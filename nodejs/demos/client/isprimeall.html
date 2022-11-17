@@ -5,22 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>npm i fast-prime-client</title>
+    <title>npm i fast-prime</title>
 </head>
 
 <body onload="onloader()">
     <div>
         <!-- <script src="../../src/client/primes.all.js"></script> -->
 
-        <script src="https://unpkg.com/fast-prime@0.0.63-beta/src/client/primes.all.js"></script>
+        <!-- <script src="https://unpkg.com/fast-prime@0.0.63/src/client/primes.all.js"></script> -->
+        <script src="../../src/client/primes.all.js"></script>
 
         <!-- 
 
-        <script src="https://unpkg.com/fast-prime-client@0.0.51/src/primes.min.js"></script>
-        <script src="https://unpkg.com/fast-prime-client@0.0.51/src/count.min.js"></script>
-        <script src="https://unpkg.com/fast-prime-client@0.0.51/src/range.min.js"></script>
-        <script src="https://unpkg.com/fast-prime-client@0.0.51/src/sum.min.js"></script>
-        <script src="https://unpkg.com/fast-prime-client@0.0.51/src/factorial.min.js"></script>  
+        <script src="https://unpkg.com/fast-prime@0.0.63/src/primes.min.js"></script>
+        <script src="https://unpkg.com/fast-prime@0.0.63/src/count.min.js"></script>
+        <script src="https://unpkg.com/fast-prime@0.0.63/src/range.min.js"></script>
+        <script src="https://unpkg.com/fast-prime@0.0.63/src/sum.min.js"></script>
+        <script src="https://unpkg.com/fast-prime@0.0.63/src/factorial.min.js"></script>  
 
         -->
 
@@ -53,47 +54,51 @@
             console.log(primes().sqroot(11));
             console.log(primes().sqrootExpressive(11));
 
-            async function countjs() {
+            function countjs() {
                 let countjs = primesCount();
                 console.log("countjs.fast: ", countjs.fast(11, 2));
                 console.log("countjs.alternateWays: ", countjs.alternateWays(11, 2));
-                console.log("countjs.fastOptimized: ", await countjs.fastOptimized(11, 2));
-                // console.log("countjs.alternateWaysOptimized: ", await countjs.alternateWaysOptimized(11, 2));
+                countjs.fastOptimized(11, 2).then(function(r) {
+                    console.log("countjs.fastOptimized: ", r)
+                });
+                countjs.alternateWaysOptimized(11, 2).then(function(r){
+                    console.log("countjs.alternateWaysOptimized: ", r);
+                });
                 return countjs;
             }
 
-            async function rangejs() {
+            function rangejs() {
                 let rangejs = primesRange();
                 console.log("rangejs.fast: ", rangejs.fast(11, 13));
                 console.log("rangejs.alternateWays: ", rangejs.alternateWays(11, 13));
-                // console.log("rangejs.fastOptimized: ", await rangejs.fastOptimized(11, 13));
-                // console.log("rangejs.alternateWaysOptimized: ", await rangejs.alternateWaysOptimized(11, 13));
+                // console.log("rangejs.fastOptimized: ", rangejs.fastOptimized(11, 13));
+                // console.log("rangejs.alternateWaysOptimized: ", rangejs.alternateWaysOptimized(11, 13));
                 return rangejs;
             }
 
-            async function sumjs() {
+            function sumjs() {
                 let sumjs = primesSum();
                 console.log("sumjs.alternateWaysCount: ", sumjs.alternateWaysCount(11, 2));
-                //     console.log("sumjs.alternateWaysCountOptimized: ", await sumjs.alternateWaysCountOptimized(11, 2));
+                //     console.log("sumjs.alternateWaysCountOptimized: ", sumjs.alternateWaysCountOptimized(11, 2));
                 console.log("sumjs.alternateWaysRange: ", sumjs.alternateWaysRange(11, 13));
-                //     console.log("sumjs.alternateWaysRangeOptimized: ", await sumjs.alternateWaysRangeOptimized(11, 13));
+                //     console.log("sumjs.alternateWaysRangeOptimized: ", sumjs.alternateWaysRangeOptimized(11, 13));
                 console.log("sumjs.fastCount: ", sumjs.fastCount(11, 2));
-                //     console.log("sumjs.fastCountOptimized: ", await sumjs.fastCountOptimized(11, 2));
+                //     console.log("sumjs.fastCountOptimized: ", sumjs.fastCountOptimized(11, 2));
                 console.log("sumjs.fastRange: ", sumjs.fastRange(11, 13));
-                //     console.log("sumjs.fastRangeOptimized: ", await sumjs.fastRangeOptimized(11, 13));
+                //     console.log("sumjs.fastRangeOptimized: ", sumjs.fastRangeOptimized(11, 13));
                 return sumjs;
             }
 
-            async function factorialjs() {
+            function factorialjs() {
                 let factorialjs = primesFactorial();
                 console.log("factorialjs.alternateWaysCount: ", factorialjs.alternateWaysCount(11, 2));
-                // console.log("factorialjs.alternateWaysCountOptimized: ", await factorialjs.alternateWaysCountOptimized(11, 2));
+                // console.log("factorialjs.alternateWaysCountOptimized: ", factorialjs.alternateWaysCountOptimized(11, 2));
                 console.log("factorialjs.alternateWaysRange: ", factorialjs.alternateWaysRange(11, 13));
-                // console.log("factorialjs.alternateWaysRangeOptimized: ", await factorialjs.alternateWaysRangeOptimized(11, 13));
+                // console.log("factorialjs.alternateWaysRangeOptimized: ", factorialjs.alternateWaysRangeOptimized(11, 13));
                 console.log("factorialjs.fastCount: ", factorialjs.fastCount(11, 2));
-                // console.log("factorialjs.fastCountOptimized: ", await factorialjs.fastCountOptimized(11, 2));
+                // console.log("factorialjs.fastCountOptimized: ", factorialjs.fastCountOptimized(11, 2));
                 console.log("factorialjs.fastRange: ", factorialjs.fastRange(11, 13));
-                // console.log("factorialjs.fastRangeOptimized: ", await factorialjs.fastRangeOptimized(11, 13));
+                // console.log("factorialjs.fastRangeOptimized: ", factorialjs.fastRangeOptimized(11, 13));
                 return factorialjs;
             }
 

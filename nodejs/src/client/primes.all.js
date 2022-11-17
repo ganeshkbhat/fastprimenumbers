@@ -199,17 +199,17 @@ function primesCount() {
                 primes = await fetch("https://unpkg.com/fast-prime@0.0.63/src/client/10000.json");
                 // https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/10000.json
                 // primes = (await (fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/10000.json")).body);
-                primes = JSON.parse(primes.body());
+                primes = await JSON.parse(primes).data;
             }
             if (start < 100000) {
                 primes = await fetch("https://unpkg.com/fast-prime@0.0.63/src/client/100000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/100000.json");
-                primes = JSON.parse(primes);
+                primes = await JSON.parse(primes).data;
             };
             if (start < 1000000) {
                 primes = await fetch("https://unpkg.com/fast-prime@0.0.63/src/client/1000000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/1000000.json");
-                primes = JSON.parse(primes);
+                primes = await JSON.parse(primes).data;
             };
             if (!(start > 1000000) && !!primes.length) {
                 primes = primes.filter((i) => {
@@ -222,7 +222,7 @@ function primesCount() {
                 if (counter !== count && primes.length !== count) {
                     throw new Error("[fast-prime]: count.js: alternateWaysOptimized: Prime numbers checks issue with the provided function: ");
                 }
-                return { count: counter, primes: primes };
+                return await { count: counter, primes: primes };
             }
         } catch (e) {
             console.log("[fast-prime]: count.js: There was an error trying to fetch ", e.toString());
@@ -265,17 +265,17 @@ function primesCount() {
             if (start < 10000) {
                 primes = await fetch("https://unpkg.com/fast-prime@0.0.63/src/client/10000.json");
                 // primes = (await (fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/10000.json")).body);
-                primes = JSON.parse(primes.body());
+                primes = await JSON.parse(primes).data;
             }
             if (start < 100000) {
                 primes = await fetch("https://unpkg.com/fast-prime@0.0.63/src/client/100000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/100000.json");
-                primes = JSON.parse(primes);
+                primes = await JSON.parse(primes).data;
             };
             if (start < 1000000) {
                 primes = await fetch("https://unpkg.com/fast-prime@0.0.63/src/client/1000000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/1000000.json");
-                primes = JSON.parse(primes);
+                primes = await JSON.parse(primes).data;
             };
             if (!(start > 1000000) && !!primes.length) {
                 primes = primes.filter((i) => {
@@ -286,7 +286,7 @@ function primesCount() {
                     }
                 });
                 if (counter !== count && primes.length !== count) {
-                    throw new Error("[fast-prime]: count.js: alternateWaysOptimized: Prime numbers checks issue with the provided function: ");
+                    throw new Error("[fast-prime]: count.js: fastOptimized: Prime numbers checks issue with the provided function: ");
                 }
                 return { count: counter, primes: primes };
             }
@@ -356,17 +356,17 @@ function primesRange() {
                 primes = await fetch("https://unpkg.com/fast-prime@0.0.63/src/client/10000.json");
                 // https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/10000.json
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/10000.json");
-                primes = JSON.parse(primes);
+                primes = await JSON.parse(primes);
             }
             if (start < 100000) {
                 primes = await fetch("https://unpkg.com/fast-prime@0.0.63/src/client/100000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/100000.json");
-                primes = JSON.parse(primes);
+                primes = await JSON.parse(primes);
             };
             if (start < 1000000) {
                 primes = await fetch("https://unpkg.com/fast-prime@0.0.63/src/client/1000000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/1000000.json");
-                primes = JSON.parse(primes);
+                primes = await JSON.parse(primes);
             };
 
             if (!(end > 1000000) && !!primes.length) {
@@ -374,7 +374,7 @@ function primesRange() {
                 return { count: primes.length, primes: primes };
             }
         } catch (e) {
-            console.log("[fast-prime]: range.js: There was an error trying to fetch ", e.toString());
+            console.log("[fast-prime]: range.js: alternateWaysOptimized: There was an error trying to fetch ", e.toString());
         }
 
         return alternateWays(start, end, functionName);
@@ -409,17 +409,17 @@ function primesRange() {
                 primes = await fetch("https://unpkg.com/fast-prime@0.0.63/src/client/10000.json");
                 // https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/10000.json
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/10000.json");
-                primes = JSON.parse(primes);
+                primes = await JSON.parse(primes);
             }
             if (start < 100000) {
                 primes = await fetch("https://unpkg.com/fast-prime@0.0.63/src/client/100000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/100000.json");
-                primes = JSON.parse(primes);
+                primes = await JSON.parse(primes);
             };
             if (start < 1000000) {
                 primes = await fetch("https://unpkg.com/fast-prime@0.0.63/src/client/1000000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/1000000.json");
-                primes = JSON.parse(primes);
+                primes = await JSON.parse(primes);
             };
 
             if (!(end > 1000000) && !!primes.length) {
@@ -427,7 +427,7 @@ function primesRange() {
                 return { count: primes.length, primes: primes };
             }
         } catch (e) {
-            console.log("[fast-prime]: range.js: There was an error trying to fetch ", e.toString());
+            console.log("[fast-prime]: range.js: fastOptimized: There was an error trying to fetch ", e.toString());
         }
         return fast(start, end);
     }
