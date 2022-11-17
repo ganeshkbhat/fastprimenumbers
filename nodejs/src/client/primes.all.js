@@ -196,19 +196,19 @@ function primesCount() {
         let primes = [], counter = 0, i = start;
         try {
             if (start < 10000) {
-                // primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/client/10000.json");
+                primes = await fetch("https://unpkg.com/fast-prime@0.0.63/src/client/10000.json");
                 // https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/10000.json
-                primes = (await (fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/10000.json")).body);
+                // primes = (await (fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/10000.json")).body);
                 primes = JSON.parse(primes.body());
             }
             if (start < 100000) {
-                // primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/client/100000.json");
-                primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/100000.json");
+                primes = await fetch("https://unpkg.com/fast-prime@0.0.63/src/client/100000.json");
+                // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/100000.json");
                 primes = JSON.parse(primes);
             };
             if (start < 1000000) {
-                // primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/client/1000000.json");
-                primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/1000000.json");
+                primes = await fetch("https://unpkg.com/fast-prime@0.0.63/src/client/1000000.json");
+                // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/1000000.json");
                 primes = JSON.parse(primes);
             };
             if (!(start > 1000000) && !!primes.length) {
@@ -263,18 +263,18 @@ function primesCount() {
         let primes = [], counter = 0, i = start;
         try {
             if (start < 10000) {
-                // primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/client/10000.json");
-                primes = (await (fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/10000.json")).body);
+                primes = await fetch("https://unpkg.com/fast-prime@0.0.63/src/client/10000.json");
+                // primes = (await (fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/10000.json")).body);
                 primes = JSON.parse(primes.body());
             }
             if (start < 100000) {
-                // primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/client/100000.json");
-                primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/100000.json");
+                primes = await fetch("https://unpkg.com/fast-prime@0.0.63/src/client/100000.json");
+                // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/100000.json");
                 primes = JSON.parse(primes);
             };
             if (start < 1000000) {
-                // primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/client/1000000.json");
-                primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/1000000.json");
+                primes = await fetch("https://unpkg.com/fast-prime@0.0.63/src/client/1000000.json");
+                // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/1000000.json");
                 primes = JSON.parse(primes);
             };
             if (!(start > 1000000) && !!primes.length) {
@@ -353,19 +353,19 @@ function primesRange() {
         if (start > end) { throw new Error("Start cannot be greater than end. Start: ", start, ", end: ", end); }
         try {
             if (start < 10000) {
-                // primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/client/10000.json");
+                primes = await fetch("https://unpkg.com/fast-prime@0.0.63/src/client/10000.json");
                 // https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/10000.json
-                primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/10000.json");
+                // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/10000.json");
                 primes = JSON.parse(primes);
             }
             if (start < 100000) {
-                // primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/client/100000.json");
-                primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/100000.json");
+                primes = await fetch("https://unpkg.com/fast-prime@0.0.63/src/client/100000.json");
+                // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/100000.json");
                 primes = JSON.parse(primes);
             };
             if (start < 1000000) {
-                // primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/client/1000000.json");
-                primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/1000000.json");
+                primes = await fetch("https://unpkg.com/fast-prime@0.0.63/src/client/1000000.json");
+                // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/1000000.json");
                 primes = JSON.parse(primes);
             };
 
@@ -406,19 +406,19 @@ function primesRange() {
         if (start > end) { throw new Error("Start cannot be greater than end. Start: ", start, ", end: ", end); }
         try {
             if (start < 10000) {
-                // primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/client/10000.json");
+                primes = await fetch("https://unpkg.com/fast-prime@0.0.63/src/client/10000.json");
                 // https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/10000.json
-                primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/10000.json");
+                // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/10000.json");
                 primes = JSON.parse(primes);
             }
             if (start < 100000) {
-                // primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/client/100000.json");
-                primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/100000.json");
+                primes = await fetch("https://unpkg.com/fast-prime@0.0.63/src/client/100000.json");
+                // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/100000.json");
                 primes = JSON.parse(primes);
             };
             if (start < 1000000) {
-                // primes = await fetch("https://unpkg.com/fast-prime-client@0.0.51/src/client/1000000.json");
-                primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/1000000.json");
+                primes = await fetch("https://unpkg.com/fast-prime@0.0.63/src/client/1000000.json");
+                // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/1000000.json");
                 primes = JSON.parse(primes);
             };
 
