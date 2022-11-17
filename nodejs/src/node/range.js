@@ -51,7 +51,7 @@ function alternateWaysOptimized(start, end, functionName = "isPrimeSquarerootWay
     if (end < 10000) { primes = require("./10000.js") }
     if (end < 100000) { primes = require("./100000.js") };
     if (end < 1000000) { primes = require("./1000000.js") };
-    if (!(end > 1000000)) {
+    if (!(end > 1000000) && !!primes.length) {
         primes = primes.filter(i => { return (i >= start && i <= end) });
         return { count: primes.length, primes: primes };
     }
@@ -89,7 +89,7 @@ function fastOptimized(start, end) {
     if (end < 10000) { primes = require("./10000.js"); }
     if (end < 100000) { primes = require("./100000.js"); };
     if (end < 1000000) { primes = require("./1000000.js") };
-    if (!(end > 1000000)) {
+    if (!(end > 1000000) && !!primes.length) {
         primes = primes.filter(i => { return (i >= start && i <= end) });
         return { count: primes.length, primes: primes };
     }

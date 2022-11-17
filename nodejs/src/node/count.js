@@ -58,7 +58,7 @@ function alternateWaysOptimized(start, count, functionName = "isPrimeSquarerootW
     if (start < 10000) { primesApi = require("./10000") }
     if (start < 100000) { primesApi = require("./100000") };
     if (start < 1000000) { primesApi = require("./1000000") };
-    if (!(start > 1000000)) {
+    if (!(start > 1000000) && !!primes.length) {
         primes = primesApi.filter((i) => {
             if (i >= start && counter < count) {
                 primes.push(i);
@@ -112,7 +112,7 @@ function fastOptimized(start, count) {
     if (start < 10000) { primesApi = require("./10000") }
     if (start < 100000) { primesApi = require("./100000") };
     if (start < 1000000) { primesApi = require("./1000000") };
-    if (!(start > 1000000)) {
+    if (!(start > 1000000) && !!primes.length) {
         primes = primesApi.filter((i) => {
             if (i >= start && counter < count) {
                 primes.push(i);
