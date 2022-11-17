@@ -62,22 +62,51 @@ This same code can be applied in any languages like `Python`, `Go` Lang, `Java`,
 
 ### Code Base 
 
+
 ##### Javascript
 ![Javascript Codebase](https://github.com/ganeshkbhat/fastprimecalculations/blob/main/Fastest_Prime_Number_Calculations_codebase_javascript.jpeg)
 
-        - Access Node code using `npm install fast-prime --save`
-        - Access Browser client code using `npm install fast-prime-client --save`
-        - Access client (browser code) using `./node_modules/src/primes.js` and `node_modules/src/primes.min.js`
+- Access Node code using require("fast-prime")
+- Access client (browser code) for just basic prime checks using `./node_modules/src/client/primes.js` and `node_modules/src/client/primes.min.js`
+- Access client (browser code) using `./node_modules/src/client/primes.all.js` and `node_modules/src/client/primes.all.min.js`
+- Access client (browser code) using cdn `https://unpkg.com/fast-prime@{version}/src/client/primes.all.js`. Example `https://unpkg.com/fast-prime@0.0.64/src/client/primes.all.min.js`
+- Access client (browser code) smaller non optimised size using `./node_modules/src/client/primes.ip.js` and `node_modules/src/client/primes.ip.min.js`
+- Access client (browser code) smaller non optimised using cdn `https://unpkg.com/fast-prime@{version}/src/client/primes.ip.js`. Example `https://unpkg.com/fast-prime@0.0.64/src/client/primes.ip.min.js`
+- [Demos](https://github.com/ganeshkbhat/fastprimenumbers/tree/main/nodejs/demos)
+
 
 ```
 
 
-// Usage API
+// Usage API for node.js
+
+require("fast-prime").fast
+require("fast-prime").prime
+require("fast-prime").recursive
+require("fast-prime").sqrootExpressive
+require("fast-prime").sqroot
+
+
+```
+
+
+```
+
+
+// Usage API for client
+// Check demos folder for usage in the github repos
+// https://github.com/ganeshkbhat/fastprimenumbers/tree/main/nodejs/demos
 
 primes().primes
 primes().recursive
 primes().sqrootExpressive
 primes().sqroot
+primes().isPrime
+primes().sum
+primes().range
+primes().count
+primes().factorial
+
 
 
 ```
@@ -94,4 +123,27 @@ Stack overflow Link for Calculations
 
 ### LICENSE
 
-[`PROPRIETARY LICENSE AGREEMENT ONLY`](https://github.com/ganeshkbhat/fastprimecalculations/blob/main/LICENSE)
+Custom Crediting License [`PROPRIETARY LICENSE AGREEMENT ONLY`](https://github.com/ganeshkbhat/fastprimecalculations/blob/main/LICENSE)
+
+
+### TODO
+
+- Adding following APIs to Javascript, Typescript, Python, Java
+- Adding all APIs to Go, TS (Consider C#, Rust, C, Cpp)
+- Consider adding random prime generator
+- Consider adding generator using generator functions
+- Consider adding fetching primes from remote api for stored primes
+- Consider adding support for very large prime numbers (checks, range, count, sum, factorial, random) and related generators
+- Consider adding support for very large random prime generator
+
+
+```
+
+primes().isPrime
+primes().sum
+primes().range
+primes().count
+primes().factorial
+
+```
+

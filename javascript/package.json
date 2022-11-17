@@ -1,10 +1,10 @@
 {
   "name": "fast-prime-client",
-  "version": "0.0.51",
+  "version": "0.0.66",
   "description": "Fastest Prime Number Calculation (checks) logic",
-  "main": "./src/primes.js",
+  "main": "./src/primes.all.js",
   "scripts": {
-    "test": "mocha --reporter spec --recursive --config ./mocha.test.config.js"
+    "test": "mocha --reporter spec --recursive"
   },
   "keywords": [
     "Fastest",

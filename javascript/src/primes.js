@@ -130,8 +130,9 @@ function primes() {
     }
 
     return {
-        primes: prime,
-        recursive: isPrimeConventionalWay,
+        fast: prime,
+        prime: prime,
+        recurisive: isPrimeConventionalWay,
         sqrootExpressive: isPrimeSquarerootWay,
         sqroot: isPrimeSquarerootWayTwo
     }
