@@ -198,14 +198,12 @@ function primesCount() {
         try {
             if (start < 10000) {
                 primes = stored;
-            }
-            if (start < 100000) {
-                primes = await fetch("https://unpkg.com/fast-prime@0.0.64/src/client/100000.json");
+            } else if (start < 100000) {
+                primes = await fetch("https://unpkg.com/fast-prime@0.0.65/src/client/100000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/100000.json");
                 primes = await JSON.parse(primes).data;
-            };
-            if (start < 1000000) {
-                primes = await fetch("https://unpkg.com/fast-prime@0.0.64/src/client/1000000.json");
+            } else if (start < 1000000) {
+                primes = await fetch("https://unpkg.com/fast-prime@0.0.65/src/client/1000000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/1000000.json");
                 primes = await JSON.parse(primes).data;
             };
@@ -262,14 +260,12 @@ function primesCount() {
         try {
             if (start < 10000) {
                 primes = stored;
-            }
-            if (start < 100000) {
-                primes = await fetch("https://unpkg.com/fast-prime@0.0.64/src/client/100000.json");
+            } else if (start < 100000) {
+                primes = await fetch("https://unpkg.com/fast-prime@0.0.65/src/client/100000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/100000.json");
                 primes = await JSON.parse(primes).data;
-            };
-            if (start < 1000000) {
-                primes = await fetch("https://unpkg.com/fast-prime@0.0.64/src/client/1000000.json");
+            } else if (start < 1000000) {
+                primes = await fetch("https://unpkg.com/fast-prime@0.0.65/src/client/1000000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/1000000.json");
                 primes = await JSON.parse(primes).data;
             };
@@ -350,14 +346,12 @@ function primesRange() {
         try {
             if (start < 10000) {
                 primes = stored;
-            }
-            if (start < 100000) {
-                primes = await fetch("https://unpkg.com/fast-prime@0.0.64/src/client/100000.json");
+            } else if (start < 100000) {
+                primes = await fetch("https://unpkg.com/fast-prime@0.0.65/src/client/100000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/100000.json");
                 primes = await JSON.parse(primes);
-            };
-            if (start < 1000000) {
-                primes = await fetch("https://unpkg.com/fast-prime@0.0.64/src/client/1000000.json");
+            } else if (start < 1000000) {
+                primes = await fetch("https://unpkg.com/fast-prime@0.0.65/src/client/1000000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/1000000.json");
                 primes = await JSON.parse(primes);
             };
@@ -400,14 +394,12 @@ function primesRange() {
         try {
             if (start < 10000) {
                 primes = stored;
-            }
-            if (start < 100000) {
-                primes = await fetch("https://unpkg.com/fast-prime@0.0.64/src/client/100000.json");
+            } else if (start < 100000) {
+                primes = await fetch("https://unpkg.com/fast-prime@0.0.65/src/client/100000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/100000.json");
                 primes = await JSON.parse(primes);
-            };
-            if (start < 1000000) {
-                primes = await fetch("https://unpkg.com/fast-prime@0.0.64/src/client/1000000.json");
+            } else if (start < 1000000) {
+                primes = await fetch("https://unpkg.com/fast-prime@0.0.65/src/client/1000000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/1000000.json");
                 primes = await JSON.parse(primes);
             };
