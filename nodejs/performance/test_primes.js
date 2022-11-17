@@ -53,5 +53,5 @@ function test_primecalculations() {
     return false;
 }
 
-console.log( "Tests Passed: ", test_primecalculations() );
+console.log("Tests Passed: ", test_primecalculations());
 

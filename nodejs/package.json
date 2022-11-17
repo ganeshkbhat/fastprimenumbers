@@ -6,7 +6,7 @@
   "scripts": {
     "test": "node ./tests/test_primes.js",
     "test_primesAlternativeWay": "node ./tests/test_performance_primes.js",
-    "mochatest": "mocha --reporter spec --recursive --config ./mocha.test.config.js"
+    "mochatest": "mocha --reporter spec --recursive"
   },
   "exports": {
     "require": "./index.js",
