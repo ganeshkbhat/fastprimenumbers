@@ -1,16 +1,12 @@
 # Fast Prime Calculations
 
-
-Fastest Prime Number Calculation (checks) logic 
+Fastest Prime Number Calculation logic (checks, random generator, prime range generator, primes count generator, summation of primes, factorial of primes)
 
 `This probably is the BEST solution in the internet as of today 11th March 2022`
 
-
 This same code can be applied in any languages like `Python`, `Go` Lang, `Java`, `PHP`, `Node.js`, `Javascript`, `C`, `C++`, `.NET`, `Rust`, etc with the same logic and have performance benefits. It is pretty fast based on the number of iterations needed. Performance time checks were not consistent across languages (in my local system - to be direct about wordings). I have not seen this implemented before and has been indigenously done. Feedback and usage is welcome.
 
-
 `Max iterations 16666 for n == 100000 instead of 100000 of conventional way`. The `iterations` counts for different ways for Prime number check 100007 can be seen as follows:
-
 
         count: Prime Conventional way for  83 is  81
         Is Prime 83 isPrimeConventionalWay:  True
@@ -59,13 +55,11 @@ This same code can be applied in any languages like `Python`, `Go` Lang, `Java`,
 
         count: Prime AKS - Mersenne primes - Fermat's little theorem or whatever way  300530164787 is  393
         Is Prime 300530164787 isprimeAKSWay:  False
-    
 
-
-### Code Base 
-
+### Code Base
 
 ##### Javascript
+
 ![Javascript Codebase](https://github.com/ganeshkbhat/fastprimecalculations/blob/main/Fastest_Prime_Number_Calculations_codebase_javascript.jpeg)
 
 - Access Node code using require("fast-prime")
@@ -76,36 +70,31 @@ This same code can be applied in any languages like `Python`, `Go` Lang, `Java`,
 - Access client (browser code) smaller non optimised using cdn `https://unpkg.com/fast-prime@{version}/src/client/primes.ip.js`. Example `https://unpkg.com/fast-prime@0.0.64/src/client/primes.ip.min.js`
 - [Demos](https://github.com/ganeshkbhat/fastprimenumbers/tree/main/nodejs/demos)
 
-
-
 ### Features of the Library
 
+- Different ways of prime number checks (isprime)
 
-- Different ways of prime number checks (isprime) 
-        
         - Fast prime (Recommended innovative function)
-        
+
         - Iterative/Recursive (Conventional iterative way)
-        
+
         - SquareRoot (AKS - Mersenne primes - Fermat's little theorem)
 
-
 - Different ways of getting primes (using all above different ways)
-        
-        - Fetch prime between two number range (min - max) 
-        
-        - Fetch counts (numbers) of prime starting from any number
-        
-        - Random prime number generator [TODO]
-        
-        - Optimized function with pre-calculated stored values (< 10000, < 100000, < 1000000)
-        
-                - Stored value calculation Failover to JIT calculation using above formulaes
 
+        - Fetch prime between two number range (min - max)
+
+        - Fetch counts (numbers) of prime starting from any number
+
+        - Random prime number generator [TODO]
+
+        - Optimized function with pre-calculated stored values (< 10000, < 100000, < 1000000)
+
+                - Stored value calculation Failover to JIT calculation using above formulaes
 
 - Different ways of getting summation of primes (using all above different ways)
 
-        - Fetch summation of prime between two number range (min - max) 
+        - Fetch summation of prime between two number range (min - max)
 
         - Fetch summation of counts (numbers) of prime starting from any number
 
@@ -115,10 +104,9 @@ This same code can be applied in any languages like `Python`, `Go` Lang, `Java`,
 
                 - Stored value calculation Failover to JIT calculation using above formulaes
 
-
 - Different ways of getting factorial of primes (using all above different ways)
 
-        - Fetch factorial of prime between two number range (min - max) 
+        - Fetch factorial of prime between two number range (min - max)
 
         - Fetch factorial of counts (numbers) of prime starting from any number
 
@@ -128,7 +116,6 @@ This same code can be applied in any languages like `Python`, `Go` Lang, `Java`,
 
                 - Stored value calculation Failover to JIT calculation using above formulaes
 
-
 ```
 
 
@@ -136,11 +123,12 @@ This same code can be applied in any languages like `Python`, `Go` Lang, `Java`,
 // Check demos folder for usage in the github repos
 // https://github.com/ganeshkbhat/fastprimenumbers/tree/main/nodejs/demos
 
-primes().primes
+
+primes().fast // Recommended or Suggested way
+primes().primes // Recommended or Suggested way
 primes().recursive
 primes().sqrootExpressive
 primes().sqroot
-primes().fast
 
 primesCount().alternateWays
 primesCount().alternateWaysOptimized (async - promise)
@@ -174,9 +162,8 @@ primesFactorial().fastRangeOptimized (async - promise)
 
 ```
 
-
-
 ##### Python
+
 ![Python Codebase](https://github.com/ganeshkbhat/fastprimecalculations/blob/main/Fastest_Prime_Number_Calculations_codebase_python.jpeg)
 
 Stack overflow Link for Calculations
@@ -185,13 +172,9 @@ Stack overflow Link for Calculations
 
 - [Python Codebase](https://stackoverflow.com/questions/1801391/how-to-create-the-most-compact-mapping-n-%e2%86%92-isprimen-up-to-a-limit-n/71438297#71438297)
 
-
-
 ### LICENSE
 
 Custom Crediting License [`PROPRIETARY LICENSE AGREEMENT ONLY`](https://github.com/ganeshkbhat/fastprimecalculations/blob/main/LICENSE)
-
-
 
 ### TODO
 
@@ -207,4 +190,3 @@ Custom Crediting License [`PROPRIETARY LICENSE AGREEMENT ONLY`](https://github.c
 - Adding following (all) APIs to Javascript, Typescript, Python, Java
 - Adding all APIs to Go, TS (Consider C#, Rust, C, Cpp)
 - Consider adding function to library
-
