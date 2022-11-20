@@ -199,11 +199,11 @@ function primesCount() {
             if (start < 10000) {
                 primes = stored;
             } else if (start < 100000) {
-                primes = await fetch("https://unpkg.com/fast-prime@0.0.65/src/client/100000.json");
+                primes = await fetch("https://unpkg.com/fast-prime-client@0.0.7/src/client/100000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/100000.json");
                 primes = await JSON.parse(primes).data;
             } else if (start < 1000000) {
-                primes = await fetch("https://unpkg.com/fast-prime@0.0.65/src/client/1000000.json");
+                primes = await fetch("https://unpkg.com/fast-prime-client@0.0.7/src/client/1000000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/1000000.json");
                 primes = await JSON.parse(primes).data;
             };
@@ -261,11 +261,11 @@ function primesCount() {
             if (start < 10000) {
                 primes = stored;
             } else if (start < 100000) {
-                primes = await fetch("https://unpkg.com/fast-prime@0.0.65/src/client/100000.json");
+                primes = await fetch("https://unpkg.com/fast-prime-client@0.0.7/src/client/100000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/100000.json");
                 primes = await JSON.parse(primes).data;
             } else if (start < 1000000) {
-                primes = await fetch("https://unpkg.com/fast-prime@0.0.65/src/client/1000000.json");
+                primes = await fetch("https://unpkg.com/fast-prime-client@0.0.7/src/client/1000000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/1000000.json");
                 primes = await JSON.parse(primes).data;
             };
@@ -347,11 +347,11 @@ function primesRange() {
             if (start < 10000) {
                 primes = stored;
             } else if (start < 100000) {
-                primes = await fetch("https://unpkg.com/fast-prime@0.0.65/src/client/100000.json");
+                primes = await fetch("https://unpkg.com/fast-prime-client@0.0.7/src/client/100000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/100000.json");
                 primes = await JSON.parse(primes);
             } else if (start < 1000000) {
-                primes = await fetch("https://unpkg.com/fast-prime@0.0.65/src/client/1000000.json");
+                primes = await fetch("https://unpkg.com/fast-prime-client@0.0.7/src/client/1000000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/1000000.json");
                 primes = await JSON.parse(primes);
             };
@@ -395,11 +395,11 @@ function primesRange() {
             if (start < 10000) {
                 primes = stored;
             } else if (start < 100000) {
-                primes = await fetch("https://unpkg.com/fast-prime@0.0.65/src/client/100000.json");
+                primes = await fetch("https://unpkg.com/fast-prime-client@0.0.7/src/client/100000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/100000.json");
                 primes = await JSON.parse(primes);
             } else if (start < 1000000) {
-                primes = await fetch("https://unpkg.com/fast-prime@0.0.65/src/client/1000000.json");
+                primes = await fetch("https://unpkg.com/fast-prime-client@0.0.7/src/client/1000000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/1000000.json");
                 primes = await JSON.parse(primes);
             };

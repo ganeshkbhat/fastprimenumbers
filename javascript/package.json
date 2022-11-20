@@ -1,7 +1,7 @@
 {
   "name": "fast-prime-client",
-  "version": "0.0.66",
-  "description": "Fastest Prime Number Calculation (checks) logic",
+  "version": "0.0.7",
+  "description": "Fastest Prime Number Calculation logic for browser (checks, random generator, prime range generator, primes count generator, summation of primes, factorial of primes)",
   "main": "./src/primes.all.js",
   "scripts": {
     "test": "mocha --reporter spec --recursive"
