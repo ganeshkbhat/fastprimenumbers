@@ -14,20 +14,29 @@ const getBetweenRange = require("./src/node/range");
 const getCount = require("./src/node/count");
 const getSum = require("./src/node/sum");
 const getFactorial = require("./src/node/factorial");
+const getRandom = require("./src/node/random");
+const generator = require("./src/node/generator");
 
-
-module.exports.fast = primes.fast
-module.exports.prime = primes.prime
-module.exports.recursive = primesAlternateWay.isPrimeConventionalWay
-module.exports.sqroot = primesAlternateWay.isPrimeSquarerootWayTwo
-module.exports.sqrootExpressive = primesAlternateWay.isPrimeSquarerootWay
+module.exports.fast = primes.fast;
+module.exports.prime = primes.prime;
+module.exports.fastOld = primes.fastOld;
+module.exports.primeOld = primes.primeOld;
+module.exports.recursive = primesAlternateWay.isPrimeConventionalWay;
+module.exports.sqroot = primesAlternateWay.isPrimeSquarerootWay;
+module.exports.sqrootOptimised = primesAlternateWay.isPrimeSquarerootOptimised;
+module.exports.aks = primesAlternateWay.isPrimeSquarerootWay;
 
 const isPrime = {
+    fastOld: primes.fastOld,
+    primeOld: primes.primeOld,
     fast: primes.fast,
     prime: primes.prime,
     recursive: primesAlternateWay.isPrimeConventionalWay,
-    sqroot: primesAlternateWay.isPrimeSquarerootWayTwo,
-    sqrootExpressive: primesAlternateWay.isPrimeSquarerootWay
+    sqroot: primesAlternateWay.isPrimeSquarerootWay,
+    sqrootOptimised: primesAlternateWay.isPrimeSquarerootOptimised,
+    sqrootPerformance: primesAlternateWay.isPrimeSquarerootWayReturnValue,
+    primePerformance: primes.primeReturnValue,
+    aks: primesAlternateWay.isPrimeSquarerootWay
 }
 
 module.exports.isPrime = isPrime;
@@ -66,6 +75,21 @@ module.exports.factorial = {
     fastCountOptimized: getFactorial.fastCountOptimized,
     fastRange: getFactorial.fastRange,
     fastRangeOptimized: getFactorial.fastRangeOptimized
+}
+
+module.exports.random = {
+    get: getRandom.getRandomInteger,
+    prime: getRandom.randomPrime,
+    primesArray: getRandom.generateRandomPrimes,
+    range: getRandom.generatePrimesinRange,
+    counts: getRandom.generatePrimesinCounts
+}
+
+module.exports.generator = {
+    counts: generator.primesinCounts,
+    range: generator.primesinRange,
+    random: generator.randomPrimes,
+    generatorPrimes: generator.generatorPrimes
 }
 
 module.exports.default = isPrime;

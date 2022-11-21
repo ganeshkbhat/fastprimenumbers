@@ -9,10 +9,10 @@
 */
 
 const { prime } = require("./primes.js");
-const { isPrimeConventionalWay, isPrimeSquarerootWay, isPrimeSquarerootWayTwo } = require("./primes_alternate.js");
+const { isPrimeConventionalWay, isPrimeSquarerootWay } = require("./primes_alternate.js");
 
 
-function alternateWays(start, end, functionName = "isPrimeSquarerootWayTwo") {
+function alternateWays(start, end, functionName = "isPrimeSquarerootWay") {
     let primes = [];
     for (let i = start; i <= end; i++) {
         if ((i === 2 || i === 3 || i === 5 || i === 7)) {
@@ -30,10 +30,6 @@ function alternateWays(start, end, functionName = "isPrimeSquarerootWayTwo") {
             if (isPrimeSquarerootWay(i)) {
                 primes.push(i);
             };
-        } else if (functionName === "isPrimeSquarerootWayTwo") {
-            if (isPrimeSquarerootWayTwo(i)) {
-                primes.push(i);
-            };
         } else if (functionName === "primes") {
             if (prime(i)) {
                 primes.push(i);
@@ -45,7 +41,7 @@ function alternateWays(start, end, functionName = "isPrimeSquarerootWayTwo") {
     return { count: primes.length, primes: primes };
 }
 
-function alternateWaysOptimized(start, end, functionName = "isPrimeSquarerootWayTwo") {
+function alternateWaysOptimized(start, end, functionName = "isPrimeSquarerootWay") {
     let primes = [];
     if (start > end) { throw new Error("Start cannot be greater than end. Start: ", start, ", end: ", end); }
     if (end < 10000) { primes = require("./10000.js") }

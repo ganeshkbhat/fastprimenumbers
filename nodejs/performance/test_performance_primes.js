@@ -6,7 +6,7 @@
 */
 
 const { prime } = require("../src/node/primes.js");
-const { isPrimeConventionalWay, isPrimeSquarerootWay, isPrimeSquarerootWayTwo } = require("../src/node/primes_alternate.js");
+const { isPrimeConventionalWay, isPrimeSquarerootWay, isPrimeSquarerootOptimised } = require("../src/node/primes_alternate.js");
 
 
 let iterations = 10000000;
@@ -63,15 +63,15 @@ function tests_performance_primeArr(iterations){
 console.log( "prime (SUGGESTED): ", tests_performance_primeArr(iterations) );
 
 
-function tests_performance_isPrimeSquarerootWayTwoArr(iterations){
-    let isPrimeSquarerootWayTwoSum = 0;
+function tests_performance_isPrimeSquarerootOptimisedArr(iterations){
+    let isPrimeSquarerootOptimisedSum = 0;
     for (let i = 1; i <= iterations; i++){
         let start = performance.now();
-        isPrimeSquarerootWayTwo(30000239);
+        isPrimeSquarerootOptimised(30000239);
         let end = performance.now();
-        isPrimeSquarerootWayTwoSum += (end - start);
+        isPrimeSquarerootOptimisedSum += (end - start);
     }
-    return isPrimeSquarerootWayTwoSum;
+    return isPrimeSquarerootOptimisedSum;
 }  
-console.log( "isPrimeSquarerootWayTwo: ", tests_performance_isPrimeSquarerootWayTwoArr(iterations) );
+console.log( "isPrimeSquarerootOptimised: ", tests_performance_isPrimeSquarerootOptimisedArr(iterations) );
 

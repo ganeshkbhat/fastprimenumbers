@@ -10,7 +10,7 @@
 
 
 // const { prime } = require("./primes.js");
-// const { isPrimeConventionalWay, isPrimeSquarerootWay, isPrimeSquarerootWayTwo } = require("./primes_alternate.js");
+// const { isPrimeConventionalWay, isPrimeSquarerootWay } = require("./primes_alternate.js");
 const rangejs = require("./range.js");
 const countjs = require("./count.js");
 
@@ -26,19 +26,19 @@ function factorial(num) {
     return factorial;
 }
 
-function alternateWaysCount(start, count, functionName = "isPrimeSquarerootWayTwo") {
+function alternateWaysCount(start, count, functionName = "isPrimeSquarerootWay") {
     return countjs.alternates(start, count, functionName).primes.map(factorial);
 }
 
-function alternateWaysCountOptimized(start, count, functionName = "isPrimeSquarerootWayTwo") {
+function alternateWaysCountOptimized(start, count, functionName = "isPrimeSquarerootWay") {
     return countjs.alternatesOptimized(start, count, functionName).primes.map(factorial);
 }
 
-function alternateWaysRange(start, end, functionName = "isPrimeSquarerootWayTwo") {
+function alternateWaysRange(start, end, functionName = "isPrimeSquarerootWay") {
     return rangejs.alternates(start, end, functionName).primes.map(factorial);
 }
 
-function alternateWaysRangeOptimized(start, end, functionName = "isPrimeSquarerootWayTwo") {
+function alternateWaysRangeOptimized(start, end, functionName = "isPrimeSquarerootWay") {
     return rangejs.alternatesOptimized(start, end, functionName).primes.map(factorial);
 }
 

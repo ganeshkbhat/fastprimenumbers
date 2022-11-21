@@ -5,14 +5,16 @@ console.log(
     primes.fast,
     primes.prime,
     primes.sqroot,
-    primes.sqrootExpressive,
+    primes.sqrootOptimised,
+    primes.aks,
 
     primes.isPrime,
     primes.isPrime.fast,
     primes.isPrime.prime,
     primes.isPrime.recursive,
     primes.isPrime.sqroot,
-    primes.isPrime.sqrootExpressive,
+    primes.isPrime.sqrootOptimised,
+    primes.isPrime.aks,
     
     primes.range,
     primes.range.alternates,

@@ -23,7 +23,7 @@ function primes() {
      * @return {*} 
      * 
      */
-    function prime(n) {
+    function primeOld(n) {
         let count = 0;
         if ((n === 2 || n === 3 || n === 5 || n === 7)) {
             // console.log("count: Prime Unconventional way", count);
@@ -52,6 +52,34 @@ function primes() {
             return true;
         }
         // console.log("count: Prime Unconventional way", count);
+        return false;
+    }
+
+    /**
+     *
+     *
+     * @param {*} n
+     * @return {*} 
+     */
+    function prime(n) {
+        if ((n === 2 || n === 3 || n === 5 || n === 7)) {
+            return true;
+        }
+        if (n === 1 || ((n > 7) && (n % 5 == 0 || n % 7 == 0 || n % 2 == 0 || n % 3 == 0))) {
+            return false;
+        }
+        if ((((n - 1) % 6) === 0) || (((n + 1) % 6) === 0)) {
+            for (let i = 1; i < n; i++) {
+                let factorsix = (i * 6), fivebase = (5 + factorsix), sevenbase = (7 + factorsix);
+                if (((n > fivebase) && ((n % fivebase) === 0)) || ((n > sevenbase) && ((n % sevenbase) === 0))) {
+                    return false;
+                }
+                if (factorsix > n) {
+                    break;
+                }
+            }
+            return true;
+        }
         return false;
     }
 
@@ -93,23 +121,12 @@ function primes() {
      * 
      */
     function isPrimeSquarerootWay(num) {
-        let count = 0;
-        // if not is_number num return false
-        if (num < 2) {
-            // console.log("count: Prime Squareroot way", count);
-            return false;
-        }
-
         for (let i = 2, s = Math.sqrt(num); i <= s; i++) {
-            // Counting Iterations
-            count += 1;
             if (num % i === 0) {
-                // console.log("count: Prime Squareroot way", count);
                 return false;
             }
         }
-        // console.log("count: Prime Squareroot way", count);
-        return true;
+        return num > 1;
     }
 
     /**
@@ -121,7 +138,13 @@ function primes() {
      * @return {*} 
      * 
      */
-    const isPrimeSquarerootWayTwo = num => {
+    const isPrimeSquarerootOptimised = num => {
+        if ((num === 2 || num === 3 || num === 5 || num === 7)) {
+            return true;
+        }
+        if (num === 1 || ((num > 7) && (num % 5 == 0 || num % 7 == 0 || num % 2 == 0 || num % 3 == 0))) {
+            return false;
+        }
         for (let i = 2, s = Math.sqrt(num); i <= s; i++) {
             if (num % i === 0) {
                 return false;
@@ -133,9 +156,11 @@ function primes() {
     return {
         fast: prime,
         prime: prime,
+        primeOld: primeOld,
         recursive: isPrimeConventionalWay,
-        sqrootExpressive: isPrimeSquarerootWay,
-        sqroot: isPrimeSquarerootWayTwo
+        sqrootOptimised: isPrimeSquarerootOptimised,
+        sqroot: isPrimeSquarerootWay,
+        aks: isPrimeSquarerootWay
     }
 }
 
@@ -147,7 +172,7 @@ function primesCount() {
         console.log("Primes API files missing");
         throw new Error("Primes API files missing");
     }
-    var { recursive, sqrootExpressive, sqroot, prime } = apiPrimes();
+    var { recursive, sqrootOptimised, sqroot, prime } = apiPrimes();
 
     function alternateWays(start, count, functionName = "sqroot") {
         let primes = [], counter = 0, i = start;
@@ -169,8 +194,8 @@ function primesCount() {
                     primes.push(i);
                     counter++;
                 };
-            } else if (functionName === "sqrootExpressive") {
-                if (sqrootExpressive(i)) {
+            } else if (functionName === "sqrootOptimised") {
+                if (sqrootOptimised(i)) {
                     primes.push(i);
                     counter++;
                 };
@@ -199,11 +224,11 @@ function primesCount() {
             if (start < 10000) {
                 primes = stored;
             } else if (start < 100000) {
-                primes = await fetch("https://unpkg.com/fast-prime@0.0.7/src/client/100000.json");
+                primes = await fetch("https://unpkg.com/fast-prime@0.1.0/src/client/100000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/100000.json");
                 primes = await JSON.parse(primes).data;
             } else if (start < 1000000) {
-                primes = await fetch("https://unpkg.com/fast-prime@0.0.7/src/client/1000000.json");
+                primes = await fetch("https://unpkg.com/fast-prime@0.1.0/src/client/1000000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/1000000.json");
                 primes = await JSON.parse(primes).data;
             };
@@ -261,11 +286,11 @@ function primesCount() {
             if (start < 10000) {
                 primes = stored;
             } else if (start < 100000) {
-                primes = await fetch("https://unpkg.com/fast-prime@0.0.7/src/client/100000.json");
+                primes = await fetch("https://unpkg.com/fast-prime@0.1.0/src/client/100000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/100000.json");
                 primes = await JSON.parse(primes).data;
             } else if (start < 1000000) {
-                primes = await fetch("https://unpkg.com/fast-prime@0.0.7/src/client/1000000.json");
+                primes = await fetch("https://unpkg.com/fast-prime@0.1.0/src/client/1000000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/1000000.json");
                 primes = await JSON.parse(primes).data;
             };
@@ -305,7 +330,7 @@ function primesRange() {
         console.log("Primes API files missing");
         throw new Error("Primes API files missing");
     }
-    let { recursive, sqrootExpressive, sqroot, prime } = apiPrimes();
+    let { recursive, sqrootOptimised, sqroot, prime } = apiPrimes();
 
     function alternateWays(start, end, functionName = "sqroot") {
         let primes = [];
@@ -321,8 +346,8 @@ function primesRange() {
                 if (recursive(i)) {
                     primes.push(i);
                 };
-            } else if (functionName === "sqrootExpressive") {
-                if (sqrootExpressive(i)) {
+            } else if (functionName === "sqrootOptimised") {
+                if (sqrootOptimised(i)) {
                     primes.push(i);
                 };
             } else if (functionName === "sqroot") {
@@ -347,11 +372,11 @@ function primesRange() {
             if (start < 10000) {
                 primes = stored;
             } else if (start < 100000) {
-                primes = await fetch("https://unpkg.com/fast-prime@0.0.7/src/client/100000.json");
+                primes = await fetch("https://unpkg.com/fast-prime@0.1.0/src/client/100000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/100000.json");
                 primes = await JSON.parse(primes);
             } else if (start < 1000000) {
-                primes = await fetch("https://unpkg.com/fast-prime@0.0.7/src/client/1000000.json");
+                primes = await fetch("https://unpkg.com/fast-prime@0.1.0/src/client/1000000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/1000000.json");
                 primes = await JSON.parse(primes);
             };
@@ -395,11 +420,11 @@ function primesRange() {
             if (start < 10000) {
                 primes = stored;
             } else if (start < 100000) {
-                primes = await fetch("https://unpkg.com/fast-prime@0.0.7/src/client/100000.json");
+                primes = await fetch("https://unpkg.com/fast-prime@0.1.0/src/client/100000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/100000.json");
                 primes = await JSON.parse(primes);
             } else if (start < 1000000) {
-                primes = await fetch("https://unpkg.com/fast-prime@0.0.7/src/client/1000000.json");
+                primes = await fetch("https://unpkg.com/fast-prime@0.1.0/src/client/1000000.json");
                 // primes = await fetch("https://raw.githubusercontent.com/ganeshkbhat/fastprimenumbers/main/nodejs/src/client/1000000.json");
                 primes = await JSON.parse(primes);
             };

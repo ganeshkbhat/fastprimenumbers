@@ -6,7 +6,7 @@
 */
 
 const { prime } = require("../src/node/primes");
-const { isPrimeConventionalWay, isPrimeSquarerootWay, isPrimeSquarerootWayTwo } = require("../src/node/primes_alternate")
+const { isPrimeConventionalWay, isPrimeSquarerootWay, isPrimeSquarerootOptimised } = require("../src/node/primes_alternate")
 
 let iterations = 1000000;
 
@@ -15,7 +15,7 @@ function test_primecalculationssqroot() {
     let count = 0;
     let arr = [];
     for (let i = 1; i <= iterations; i++) {
-        let traditional = isPrimeSquarerootWayTwo(i), newer = prime(i);
+        let traditional = isPrimeSquarerootOptimised(i), newer = prime(i);
         if (traditional == newer) {
             count += 1;
         } else {

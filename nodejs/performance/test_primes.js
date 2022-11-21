@@ -6,7 +6,7 @@
 */
 
 const { prime } = require("../src/node/primes");
-const { isPrimeConventionalWay, isPrimeSquarerootWay, isPrimeSquarerootWayTwo } = require("../src/node/primes_alternate")
+const { isPrimeConventionalWay, isPrimeSquarerootWay, isPrimeSquarerootOptimised } = require("../src/node/primes_alternate")
 
 let iterations = 1000000;
 
@@ -14,25 +14,25 @@ let iterations = 1000000;
 console.log("Is Prime 83: ", isPrimeConventionalWay(83))
 console.log("Is Prime 83: ", isPrimeSquarerootWay(83))
 console.log("Is Prime 83: ", prime(83))
-console.log("Is Prime 83: ", isPrimeSquarerootWayTwo(83))
+console.log("Is Prime 83: ", isPrimeSquarerootOptimised(83))
 
 
 console.log("Is Prime 169: ", isPrimeConventionalWay(169))
 console.log("Is Prime 169: ", isPrimeSquarerootWay(169))
 console.log("Is Prime 169: ", prime(169))
-console.log("Is Prime 169: ", isPrimeSquarerootWayTwo(169))
+console.log("Is Prime 169: ", isPrimeSquarerootOptimised(169))
 
 
 console.log("Is Prime 100007: ", isPrimeConventionalWay(100007))
 console.log("Is Prime 100007: ", isPrimeSquarerootWay(100007))
 console.log("Is Prime 100007: ", prime(100007))
-console.log("Is Prime 100007: ", isPrimeSquarerootWayTwo(100007))
+console.log("Is Prime 100007: ", isPrimeSquarerootOptimised(100007))
 
 
 console.log("Is Prime 300530164787: ", isPrimeConventionalWay(300530164787))
 console.log("Is Prime 300530164787: ", isPrimeSquarerootWay(300530164787))
 console.log("Is Prime 300530164787: ", prime(300530164787))
-console.log("Is Prime 300530164787: ", isPrimeSquarerootWayTwo(300530164787))
+console.log("Is Prime 300530164787: ", isPrimeSquarerootOptimised(300530164787))
 
 
 function test_primecalculations() {

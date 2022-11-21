@@ -17,8 +17,8 @@
 
 'use strict';
 
-import { default as isPrime, sum, range, count, factorial, fast, prime, recursive, sqroot, sqrootExpressive } from './index.js';
+import { default as isPrime, sum, range, count, factorial, random, generator, fast, prime, recursive, sqroot, sqrootOptimised, aks } from './index.js';
 
 export default isPrime;
-export { isPrime, sum, range, count, factorial, fast, prime, recursive, sqroot, sqrootExpressive }
+export { isPrime, sum, range, count, factorial, random, generator, fast, prime, recursive, sqroot, sqrootOptimised, aks }
 

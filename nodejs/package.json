@@ -1,6 +1,6 @@
 {
   "name": "fast-prime",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "Fastest Prime Number Calculation logic for nodejs and browser (checks, random generator, prime range generator, primes count generator, summation of primes, factorial of primes)",
   "main": "index.js",
   "scripts": {
@@ -64,10 +64,22 @@
     "factorial of prime number",
     "factorial of prime numbers",
     "node.js",
+    "prestored primes",
+    "prestored primes in json",
+    "primes dataset",
+    "primes .json dataset",
+    "prestored primes dataset",
+    "prestored primes dataset in json",
     "nodejs",
     "javasript",
     "browser",
-    "client"
+    "client",
+    "aks",
+    "square root",
+    "iterative",
+    "recursive",
+    "Mersenne prime",
+    "Fermat's little theorem"
   ],
   "author": "Ganesh Bhat",
   "license": "MIT"

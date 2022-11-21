@@ -9,10 +9,10 @@
 */
 
 const { prime } = require("./primes.js");
-const { isPrimeConventionalWay, isPrimeSquarerootWay, isPrimeSquarerootWayTwo } = require("./primes_alternate.js");
+const { isPrimeConventionalWay, isPrimeSquarerootWay } = require("./primes_alternate.js");
 
 
-function alternateWays(start, count, functionName = "isPrimeSquarerootWayTwo") {
+function alternateWays(start, count, functionName = "isPrimeSquarerootWay") {
     let primes = [], counter = 0, i = start;
     if (!functionName) {
         throw new Error("[fast-prime]: range.js: AlternateWays: Invalid Option: ", functionName)
@@ -53,7 +53,7 @@ function alternateWays(start, count, functionName = "isPrimeSquarerootWayTwo") {
     return { count: primes.length, primes: primes };
 }
 
-function alternateWaysOptimized(start, count, functionName = "isPrimeSquarerootWayTwo") {
+function alternateWaysOptimized(start, count, functionName = "isPrimeSquarerootWay") {
     let primes = [], counter = 0, i = start;
     if (start < 10000) { primesApi = require("./10000") }
     if (start < 100000) { primesApi = require("./100000") };

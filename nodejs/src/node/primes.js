@@ -38,7 +38,7 @@
  * @return {*} 
  * 
  */
-function prime(n) {
+function primeOld(n) {
     var count = 0;
     if ((n === 2 || n === 3 || n === 5 || n === 7)) {
         // console.log("count: Prime Unconventional way", count);
@@ -71,6 +71,62 @@ function prime(n) {
 }
 
 
+function prime(n) {
+    if ((n === 2 || n === 3 || n === 5 || n === 7)) {
+        return true;
+    }
+    if (n === 1 || ((n > 7) && (n % 5 == 0 || n % 7 == 0 || n % 2 == 0 || n % 3 == 0))) {
+        return false;
+    }
+    if ((((n - 1) % 6) === 0) || (((n + 1) % 6) === 0)) {
+        for (let i = 1; i < n; i++) {
+            let factorsix = (i * 6), fivebase = (5 + factorsix), sevenbase = (7 + factorsix);
+            if (((n > fivebase) && ((n % fivebase) === 0)) || ((n > sevenbase) && ((n % sevenbase) === 0))) {
+                return false;
+            }
+            if (factorsix > n) {
+                break;
+            }
+        }
+        return true;
+    }
+    return false;
+}
+
+
+function primeReturnValue(n) {
+    var count = 0;
+    if ((n === 2 || n === 3 || n === 5 || n === 7)) {
+        // console.log("count: Prime Unconventional way", count);
+        return { number: n, value: true, count: count };
+    }
+    if (n === 1 || ((n > 7) && (n % 5 == 0 || n % 7 == 0 || n % 2 == 0 || n % 3 == 0))) {
+        // console.log("count: Prime Unconventional way", count);
+        return { number: n, value: false, count: count };
+    }
+    if ((Number.isInteger(((n - 1) / 6))) || (Number.isInteger((n + 1) / 6))) {
+        for (let i = 1; i < n; i++) {
+            // Counting Iterations
+            count += 1;
+            let factorsix = (i * 6);
+            let fivebase = n / (5 + factorsix), sevenbase = n / (7 + factorsix);
+            if (((fivebase > 1) && Number.isInteger(fivebase)) || ((sevenbase > 1) && (Number.isInteger(sevenbase)))) {
+                // console.log("count: Prime Unconventional way", count);
+                return { number: n, value: false, count: count };
+            }
+            if (factorsix > n) {
+                // Max iterations 16666 for n == 100000 instead of 100000
+                break;
+            }
+        }
+        // console.log("count: Prime Unconventional way", count);
+        return { number: n, value: true, count: count };
+    }
+    // console.log("count: Prime Unconventional way", count);
+    return { number: n, value: false, count: count };
+}
+
+
 // TODO
 // function generate_primes(from, to) {
 //     let arr = [2, 3, 5, 7];
@@ -79,5 +135,8 @@ function prime(n) {
 // console.log(generate_primes(1, 100))
 
 
-module.exports.prime = prime
-module.exports.fast = prime
+module.exports.primeOld = primeOld;
+module.exports.fastOld = primeOld;
+module.exports.prime = prime;
+module.exports.fast = prime;
+module.exports.primeReturnValue = primeReturnValue;
