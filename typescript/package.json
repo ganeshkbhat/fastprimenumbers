@@ -4,9 +4,9 @@
   "description": "Fastest Prime Number Calculation (checks) logic for node and browser - Typescript version",
   "main": "index.ts",
   "scripts": {
-    "test": "node ./tests/test_primes.ts",
-    "test_primesAlternativeWay": "node ./tests/test_performance_primes.ts",
-    "mochatest": "mocha --reporter spec --recursive --config ./mocha.test.config.js"
+    "test": "node ./test/test_primes.ts",
+    "test_primesAlternativeWay": "node ./test/test_performance_primes.ts",
+    "mochatest": "mocha --reporter spec --recursive"
   },
   "keywords": [
     "Fastest",
@@ -346,9 +346,12 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^18.11.9",
+    "chai": "^4.3.7",
+    "mocha": "^10.1.0",
+    "sinon": "^14.0.2",
     "ts-node": "^10.9.1",
     "tsc": "^2.0.4",
     "typescript": "^4.8.4",
-    "unimported": "^1.22.0"
+    "unimported": "^1.23.0"
   }
 }

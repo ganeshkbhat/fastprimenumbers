@@ -5,8 +5,9 @@
  * Comparision results for correctness for Prime Numbers
 */
 
-import { prime } from '../src/primes';
-import { isPrimeConventionalWay, isPrimeSquarerootWay, isPrimeSquarerootWayTwo } from '../src/primes_alternate_ways';
+import { prime, primeOld, primePrecalculated, primeReturnValue } from "../src/primes";
+import { isPrimeConventionalWay, isPrimeConventionalWayPrecalculated, isPrimeConventionalWayReturnValue, isPrimeSquarerootOptimised, isPrimeSquarerootPrecalculated, isPrimeSquarerootWay, isPrimeSquarerootWayReturnValue } from "../src/primes_alternate_ways";
+
 
 import { performance } from 'perf_hooks';
 
