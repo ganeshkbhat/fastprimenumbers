@@ -13,21 +13,21 @@
  * ALTERNATE WAY 
  * for Calculation of Prime Numbers
  *
- * @param {*} n
+ * @param {*} num
  * @return {*} 
  * 
  */
-function isPrimeConventionalWay(n) {
+function isPrimeConventionalWay(num) {
     var count = 0;
-    if (n <= 1) {
+    if (num <= 1) {
         return false;
     }
-    // Check from 2 to n-1
-    // Max iterations 99998 for n == 100000 
-    for (let i = 2; i < n; i++) {
+    // Check from 2 to num-1
+    // Max iterations 99998 for num == 100000 
+    for (let i = 2; i < num; i++) {
         // Counting Iterations
         count += 1;
-        if (n % i == 0) {
+        if (num % i == 0) {
             // console.log("count: Prime Conventional way", count);
             return false;
         }
@@ -36,23 +36,30 @@ function isPrimeConventionalWay(n) {
     return true;
 }
 
-function isPrimeConventionalWayReturnValue(n) {
-    var count = 0;
-    if (n <= 1) {
-        return { number: n, value: false, count: count };
+function isPrimeConventionalWayPrecalculated(num) {
+    if (num < 1000000) {
+        let primes = [...require("./1000000.js")];
+        if (!!primes.includes(num)) {
+            return true;
+        }
+        return false;
     }
-    // Check from 2 to n-1
-    // Max iterations 99998 for n == 100000 
-    for (let i = 2; i < n; i++) {
-        // Counting Iterations
+    return isPrimeConventionalWay(num);
+}
+
+
+function isPrimeConventionalWayReturnValue(num) {
+    var count = 0;
+    if (num <= 1) {
+        return { number: num, value: false, count: count };
+    }
+    for (let i = 2; i < num; i++) {
         count += 1;
-        if (n % i == 0) {
-            // console.log("count: Prime Conventional way", count);
-            return { number: n, value: false, count: count };
+        if (num % i == 0) {
+            return { number: num, value: false, count: count };
         }
     }
-    // console.log("count: Prime Conventional way", count);
-    return { number: n, value: true, count: count };
+    return { number: num, value: true, count: count };
 }
 
 /**
@@ -63,21 +70,16 @@ function isPrimeConventionalWayReturnValue(n) {
  */
 function isPrimeSquarerootWayReturnValue(num) {
     var count = 0;
-    // if not is_number num return false
     if (num < 2) {
-        // console.log("count: Prime Squareroot way", count);
         return { number: num, value: false, count: count };
     }
 
     for (let i = 2, s = Math.sqrt(num); i <= s; i++) {
-        // Counting Iterations
         count += 1;
         if (num % i === 0) {
-            // console.log("count: Prime Squareroot way", count);
             return { number: num, value: false, count: count };
         }
     }
-    // console.log("count: Prime Squareroot way", count);
     return { number: num, value: true, count: count };
 }
 
@@ -90,7 +92,7 @@ function isPrimeSquarerootWayReturnValue(num) {
  * @return {*} 
  * 
  */
-const isPrimeSquarerootWay = num => {
+function isPrimeSquarerootWay(num) {
     for (let i = 2, s = Math.sqrt(num); i <= s; i++) {
         if (num % i === 0) {
             return false;
@@ -99,7 +101,7 @@ const isPrimeSquarerootWay = num => {
     return num > 1;
 }
 
-const isPrimeSquarerootOptimised = num => {
+function isPrimeSquarerootOptimised(num) {
     if ((num === 2 || num === 3 || num === 5 || num === 7)) {
         return true;
     }
@@ -114,8 +116,21 @@ const isPrimeSquarerootOptimised = num => {
     return num > 1;
 }
 
+function isPrimeSquarerootPrecalculated(num) {
+    if (num < 1000000) {
+        let primes = [...require("./1000000.js")];
+        if (!!primes.includes(num)) {
+            return true;
+        }
+        return false;
+    }
+    return isPrimeSquarerootOptimised(num);
+}
 
-module.exports.isPrimeConventionalWay = isPrimeConventionalWay
-module.exports.isPrimeSquarerootWay = isPrimeSquarerootWay
-module.exports.isPrimeSquarerootOptimised = isPrimeSquarerootOptimised
-module.exports.isPrimeSquarerootWayReturnValue = isPrimeSquarerootWayReturnValue
+module.exports.isPrimeConventionalWay = isPrimeConventionalWay;
+module.exports.isPrimeSquarerootWay = isPrimeSquarerootWay;
+module.exports.isPrimeSquarerootOptimised = isPrimeSquarerootOptimised;
+module.exports.isPrimeSquarerootWayReturnValue = isPrimeSquarerootWayReturnValue;
+
+module.exports.isPrimeConventionalWayPrecalculated = isPrimeConventionalWayPrecalculated;
+module.exports.isPrimeSquarerootPrecalculated = isPrimeSquarerootPrecalculated;

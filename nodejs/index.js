@@ -16,6 +16,8 @@ const getSum = require("./src/node/sum");
 const getFactorial = require("./src/node/factorial");
 const getRandom = require("./src/node/random");
 const generator = require("./src/node/generator");
+const utils = require("./src/node/utils");
+
 
 module.exports.fast = primes.fast;
 module.exports.prime = primes.prime;
@@ -48,6 +50,28 @@ module.exports.range = {
     fastOptimized: getBetweenRange.fastOptimized
 }
 
+module.exports.count = {
+    alternates: getCount.alternates,
+    alternatesOptimized: getCount.alternatesOptimized,
+    fast: getCount.fast,
+    fastOptimized: getCount.fastOptimized
+}
+
+module.exports.random = {
+    get: getRandom.getRandomInteger,
+    prime: getRandom.randomPrime,
+    primesArray: getRandom.generateRandomPrimes,
+    range: getRandom.generatePrimesinRange,
+    counts: getRandom.generatePrimesinCounts
+}
+
+module.exports.utils = {
+    nextPrime: utils.nextPrime,
+    previousPrime: utils.previousPrime,
+    nextPrimeSets: utils.nextPrimeSets,
+    previousPrimeSets: utils.previousPrimeSets
+}
+
 module.exports.sum = {
     alternatesCount: getSum.alternatesCount,
     alternatesCountOptimized: getSum.alternatesCountOptimized,
@@ -59,13 +83,6 @@ module.exports.sum = {
     fastRangeOptimized: getSum.fastRangeOptimized
 }
 
-module.exports.count = {
-    alternates: getCount.alternates,
-    alternatesOptimized: getCount.alternatesOptimized,
-    fast: getCount.fast,
-    fastOptimized: getCount.fastOptimized
-}
-
 module.exports.factorial = {
     alternatesCount: getFactorial.alternatesCount,
     alternatesCountOptimized: getFactorial.alternatesCountOptimized,
@@ -75,14 +92,6 @@ module.exports.factorial = {
     fastCountOptimized: getFactorial.fastCountOptimized,
     fastRange: getFactorial.fastRange,
     fastRangeOptimized: getFactorial.fastRangeOptimized
-}
-
-module.exports.random = {
-    get: getRandom.getRandomInteger,
-    prime: getRandom.randomPrime,
-    primesArray: getRandom.generateRandomPrimes,
-    range: getRandom.generatePrimesinRange,
-    counts: getRandom.generatePrimesinCounts
 }
 
 module.exports.generator = {

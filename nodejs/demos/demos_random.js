@@ -15,7 +15,6 @@ console.log(primes.random.prime(5));
 console.log(primes.random.prime(2));
 console.log(primes.random.prime(8));
 
-
 console.log(primes.random.primesArray(5, 2));
 console.log(primes.random.primesArray(5, 6));
 

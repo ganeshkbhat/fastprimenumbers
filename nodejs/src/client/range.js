@@ -4,7 +4,7 @@
  * Fastest method of Prime Number Calculations
  * Functions and Alternate ways for calculation of Prime Numbers
  * 
- * ** prime(n) ** is the Recommended Way for calculation checks of prime numbers
+ * ** prime(num) ** is the Recommended Way for calculation checks of prime numbers
  * 
 */
 
@@ -18,6 +18,7 @@ function primesRange() {
         console.log("Primes API files missing");
         throw new Error("Primes API files missing");
     }
+
     let { recursive, sqrootOptimized, sqroot, prime } = apiPrimes();
 
     function alternateWays(start, end, functionName = "sqroot") {

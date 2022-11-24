@@ -54,20 +54,18 @@ function alternateWays(start, count, functionName = "isPrimeSquarerootWay") {
 }
 
 function alternateWaysOptimized(start, count, functionName = "isPrimeSquarerootWay") {
-    let primes = [], counter = 0, i = start;
-    if (start < 10000) { primesApi = require("./10000") }
-    if (start < 100000) { primesApi = require("./100000") };
-    if (start < 1000000) { primesApi = require("./1000000") };
+    let primes = [], counter = 0, i = start, primesStored;
+    if (start < 10000) { primesStored = [...require("./10000")] }
+    if (start < 100000) { primesStored = [...require("./100000")] };
+    if (start < 1000000) { primesStored = [...require("./1000000")] };
     if (!(start > 1000000) && !!primes.length) {
-        primes = primesApi.filter((i) => {
+        primes = primesStored.filter((i) => {
             if (i >= start && counter < count) {
                 primes.push(i);
                 counter++;
-                // console.log(i, counter);
                 return i;
             }
         })
-        // console.log({ count: counter, primes: primes });
         if (counter !== count && primes.length !== count) {
             throw new Error("[fast-prime]: count.js: alternateWaysOptimized: Prime numbers checks issue with the provided function: ");
         }
@@ -81,7 +79,6 @@ function fast(start, count) {
     let apiPrimes = require("./primes");
 
     while (counter != count) {
-        // console.log(start, counter, count);
         if ((i === 2 || i === 3 || i === 5 || i === 7)) {
             primes.push(i);
             counter++;
@@ -108,20 +105,18 @@ function fast(start, count) {
 }
 
 function fastOptimized(start, count) {
-    let primes = [], counter = 0, i = start;
-    if (start < 10000) { primesApi = require("./10000") }
-    if (start < 100000) { primesApi = require("./100000") };
-    if (start < 1000000) { primesApi = require("./1000000") };
+    let primes = [], counter = 0, i = start, primesStored;
+    if (start < 10000) { primesStored = [...require("./10000")] }
+    if (start < 100000) { primesStored = [...require("./100000")] };
+    if (start < 1000000) { primesStored = [...require("./1000000")] };
     if (!(start > 1000000) && !!primes.length) {
-        primes = primesApi.filter((i) => {
+        primes = primesStored.filter((i) => {
             if (i >= start && counter < count) {
                 primes.push(i);
                 counter++;
-                // console.log(i, counter);
                 return i;
             }
         })
-        // console.log({ count: counter, primes: primes });
         if (counter !== count && primes.length !== count) {
             throw new Error("[fast-prime]: count.js: fastOptimized: Prime numbers checks issue with the provided function: ");
         }

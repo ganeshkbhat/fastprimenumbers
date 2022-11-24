@@ -4,7 +4,7 @@
  * Fastest method of Prime Number Calculations
  * Functions and Alternate ways for calculation of Prime Numbers
  * 
- * ** prime(n) ** is the Recommended Way for calculation checks of prime numbers
+ * ** prime(num) ** is the Recommended Way for calculation checks of prime numbers
  * 
 */
 
@@ -24,7 +24,7 @@ function primes() {
      * 
      */
     function primeOld(n) {
-        let count = 0;
+        var count = 0;
         if ((n === 2 || n === 3 || n === 5 || n === 7)) {
             // console.log("count: Prime Unconventional way", count);
             return true;
@@ -55,8 +55,11 @@ function primes() {
         return false;
     }
 
+
     /**
-     *
+     * 
+     * RECOMMENDED WAY
+     * for Calculation of Prime Numbers
      *
      * @param {*} n
      * @return {*} 
@@ -83,32 +86,132 @@ function primes() {
         return false;
     }
 
+
+    /**
+     * RECOMMENDED WAY
+     * for Calculation of Prime Numbers (PRE-CALCULATED)
+     *
+     * @param {*} num
+     * @return {*} 
+     */
+    function primePrecalculated(num) {
+        if (num < 10000) {
+            let primes = [...stored];
+            if (!!primes.includes(num)) {
+                return true;
+            }
+            return false;
+        }
+        return prime(num);
+    }
+
+
+    /**
+     * RECOMMENDED WAY with return value
+     * for Calculation of Prime Numbers (PRE-CALCULATED)
+     *
+     * @param {*} n
+     * @return {*} 
+     */
+    function primeReturnValue(n) {
+        var count = 0;
+        if ((n === 2 || n === 3 || n === 5 || n === 7)) {
+            return { number: n, value: true, count: count };
+        }
+        if (n === 1 || ((n > 7) && (n % 5 == 0 || n % 7 == 0 || n % 2 == 0 || n % 3 == 0))) {
+            return { number: n, value: false, count: count };
+        }
+        if ((Number.isInteger(((n - 1) / 6))) || (Number.isInteger((n + 1) / 6))) {
+            for (let i = 1; i < n; i++) {
+                count += 1;
+                let factorsix = (i * 6);
+                let fivebase = n / (5 + factorsix), sevenbase = n / (7 + factorsix);
+                if (((fivebase > 1) && Number.isInteger(fivebase)) || ((sevenbase > 1) && (Number.isInteger(sevenbase)))) {
+                    return { number: n, value: false, count: count };
+                }
+                if (factorsix > n) {
+                    break;
+                }
+            }
+            return { number: n, value: true, count: count };
+        }
+        return { number: n, value: false, count: count };
+    }
+
+
     /**
      * 
      * ALTERNATE WAY 
      * for Calculation of Prime Numbers
      *
-     * @param {*} n
+     * @param {*} num
      * @return {*} 
      * 
      */
-    function isPrimeConventionalWay(n) {
-        let count = 0;
-        if (n <= 1) {
+    function isPrimeConventionalWay(num) {
+        var count = 0;
+        if (num <= 1) {
             return false;
         }
-        // Check from 2 to n-1
-        // Max iterations 99998 for n == 100000 
-        for (let i = 2; i < n; i++) {
+        // Check from 2 to num-1
+        // Max iterations 99998 for num == 100000 
+        for (let i = 2; i < num; i++) {
             // Counting Iterations
             count += 1;
-            if (n % i == 0) {
+            if (num % i == 0) {
                 // console.log("count: Prime Conventional way", count);
                 return false;
             }
         }
         // console.log("count: Prime Conventional way", count);
         return true;
+    }
+
+    function isPrimeConventionalWayPrecalculated(num) {
+        if (num < 10000) {
+            let primes = [...stored];
+            if (!!primes.includes(num)) {
+                return true;
+            }
+            return false;
+        }
+        return isPrimeConventionalWay(num);
+    }
+
+
+    function isPrimeConventionalWayReturnValue(num) {
+        var count = 0;
+        if (num <= 1) {
+            return { number: num, value: false, count: count };
+        }
+        for (let i = 2; i < num; i++) {
+            count += 1;
+            if (num % i == 0) {
+                return { number: num, value: false, count: count };
+            }
+        }
+        return { number: num, value: true, count: count };
+    }
+
+    /**
+     *
+     *
+     * @param {*} num
+     * @return {*} 
+     */
+    function isPrimeSquarerootWayReturnValue(num) {
+        var count = 0;
+        if (num < 2) {
+            return { number: num, value: false, count: count };
+        }
+
+        for (let i = 2, s = Math.sqrt(num); i <= s; i++) {
+            count += 1;
+            if (num % i === 0) {
+                return { number: num, value: false, count: count };
+            }
+        }
+        return { number: num, value: true, count: count };
     }
 
     /**
@@ -129,16 +232,7 @@ function primes() {
         return num > 1;
     }
 
-    /**
-     * 
-     * ALTERNATE WAY 
-     * for Calculation of Prime Numbers
-     *
-     * @param {*} num
-     * @return {*} 
-     * 
-     */
-    const isPrimeSquarerootOptimised = num => {
+    function isPrimeSquarerootOptimised(num) {
         if ((num === 2 || num === 3 || num === 5 || num === 7)) {
             return true;
         }
@@ -153,13 +247,27 @@ function primes() {
         return num > 1;
     }
 
+    function isPrimeSquarerootPrecalculated(num) {
+        if (num < 10000) {
+            let primes = [...stored];
+            if (!!primes.includes(num)) {
+                return true;
+            }
+            return false;
+        }
+        return isPrimeSquarerootOptimised(num);
+    }
+
     return {
         fast: prime,
         prime: prime,
         primeOld: primeOld,
+        fastOld: primeOld,
         recursive: isPrimeConventionalWay,
         sqrootOptimised: isPrimeSquarerootOptimised,
         sqroot: isPrimeSquarerootWay,
-        aks: isPrimeSquarerootWay
+        aks: isPrimeSquarerootWay,
+        primeReturnValue: primeReturnValue,
+        primePrecalculated: primePrecalculated
     }
 }

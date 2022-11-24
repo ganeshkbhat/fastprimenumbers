@@ -12,7 +12,7 @@
 const primes = require("./primes");
 const range = require("./range");
 const countjs = require("./count");
-
+const utils = require("./utils.js");
 
 /**
  *
@@ -22,10 +22,10 @@ const countjs = require("./count");
  * @return {*} 
  */
 function getRandomInteger(start, end) {
-    if (!!start && !!end) {
-        return Math.floor(Math.random() * (end - start)) + start;
+    if (!start || !end) {
+        return Math.floor(Math.random() * 1000);
     }
-    return Math.random();
+    return Math.floor(Math.random() * (end - start)) + start;
 }
 
 
@@ -37,13 +37,7 @@ function getRandomInteger(start, end) {
  */
 function randomPrime(digits = 2) {
     let rand = getRandomInteger(Math.pow(10, digits - 1), Math.pow(10, digits))
-    while (true) {
-        if (primes.prime(rand)) {
-            break;
-        }
-        rand++;
-    }
-    return rand;
+    return utils.nextPrime(rand);
 }
 
 
@@ -55,7 +49,7 @@ function randomPrime(digits = 2) {
  * @return {*} 
  */
 function generateRandomPrimes(count = 1, digits = 2) {
-    let primesArray = []
+    let primesArray = [];
     for (let i = 0; i < count; i++) {
         primesArray.push(randomPrime(digits));
     }
