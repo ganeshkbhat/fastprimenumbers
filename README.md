@@ -1,6 +1,6 @@
 # Fast Prime Calculations
 
-Fastest Prime Number Calculation logic (checks, random generator, prime range generator, primes count generator, summation of primes, factorial of primes)
+Fastest Prime Number Calculation logic (checks, random generator, prime range generator, primes count generator, summation of primes, factorial of primes, primes generator)
 
 `This probably is the BEST solution in the internet as of today 11th March 2022`
 
@@ -86,7 +86,7 @@ This same code can be applied in any languages like `Python`, `Go` Lang, `Java`,
 
         - Fetch counts (numbers) of prime starting from any number
 
-        - Random prime number generator [TODO]
+        - Random prime number generator
 
         - Optimized function with pre-calculated stored values (< 10000, < 100000, < 1000000)
 

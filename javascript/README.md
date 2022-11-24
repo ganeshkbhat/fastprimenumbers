@@ -1,6 +1,6 @@
 # Fast Prime Calculations
 
-Fastest Prime Number Calculation logic (checks, random generator, prime range generator, primes count generator, summation of primes, factorial of primes)
+Fastest Prime Number Calculation logic (checks, random generator, prime range generator, primes count generator, summation of primes, factorial of primes, primes generator)
 
 `This probably is the BEST solution in the internet as of today 11th March 2022`
 
