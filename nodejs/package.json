@@ -4,9 +4,9 @@
   "description": "Fastest Prime Number Calculation logic for nodejs and browser (checks, random generator, prime range generator, primes count generator, summation of primes, factorial of primes)",
   "main": "index.js",
   "scripts": {
-    "test": "node ./tests/test_primes.js",
+    "testprimes": "node ./tests/test_primes.js",
     "test_primesAlternativeWay": "node ./tests/test_performance_primes.js",
-    "mochatest": "mocha --reporter spec --recursive"
+    "test": "mocha --reporter spec --recursive"
   },
   "exports": {
     "require": "./index.js",
