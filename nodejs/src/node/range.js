@@ -19,7 +19,7 @@ function alternateWays(start, end, functionName = "isPrimeSquarerootWay") {
             primes.push(i);
             continue;
         }
-        if (i === 1 || ((i > 7) && (i % 5 == 0 || i % 7 == 0 || i % 2 == 0 || i % 3 == 0))) {
+        if (i === 1 || ((i > 7) && (i % 5 === 0 || i % 7 === 0 || i % 2 === 0 || i % 3 === 0))) {
             continue;
         }
         if (functionName === "isPrimeConventionalWay") {
@@ -63,7 +63,7 @@ function fast(start, end) {
             primes.push(i);
             continue;
         }
-        if (i === 1 || ((i > 7) && (i % 5 == 0 || i % 7 == 0 || i % 2 == 0 || i % 3 == 0))) {
+        if (i === 1 || ((i > 7) && (i % 5 === 0 || i % 7 === 0 || i % 2 === 0 || i % 3 === 0))) {
             continue;
         }
         if ((Number.isInteger(((i - 1) / 6))) || (Number.isInteger((i + 1) / 6))) {

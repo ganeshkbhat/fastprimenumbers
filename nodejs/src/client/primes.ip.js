@@ -31,7 +31,7 @@ function primes() {
             // console.log("count: Prime Unconventional way", count);
             return true;
         }
-        if (n === 1 || ((n > 7) && (n % 5 == 0 || n % 7 == 0 || n % 2 == 0 || n % 3 == 0))) {
+        if (n === 1 || ((n > 7) && (n % 5 === 0 || n % 7 === 0 || n % 2 === 0 || n % 3 === 0))) {
             // console.log("count: Prime Unconventional way", count);
             return false;
         }
@@ -70,7 +70,7 @@ function primes() {
         if ((n === 2 || n === 3 || n === 5 || n === 7)) {
             return true;
         }
-        if (n === 1 || ((n > 7) && (n % 5 == 0 || n % 7 == 0 || n % 2 == 0 || n % 3 == 0))) {
+        if (n === 1 || ((n > 7) && (n % 5 === 0 || n % 7 === 0 || n % 2 === 0 || n % 3 === 0))) {
             return false;
         }
         if ((((n - 1) % 6) === 0) || (((n + 1) % 6) === 0)) {
@@ -120,7 +120,7 @@ function primes() {
         if ((n === 2 || n === 3 || n === 5 || n === 7)) {
             return { number: n, value: true, count: count };
         }
-        if (n === 1 || ((n > 7) && (n % 5 == 0 || n % 7 == 0 || n % 2 == 0 || n % 3 == 0))) {
+        if (n === 1 || ((n > 7) && (n % 5 === 0 || n % 7 === 0 || n % 2 === 0 || n % 3 === 0))) {
             return { number: n, value: false, count: count };
         }
         if ((Number.isInteger(((n - 1) / 6))) || (Number.isInteger((n + 1) / 6))) {
@@ -238,7 +238,7 @@ function primes() {
         if ((num === 2 || num === 3 || num === 5 || num === 7)) {
             return true;
         }
-        if (num === 1 || ((num > 7) && (num % 5 == 0 || num % 7 == 0 || num % 2 == 0 || num % 3 == 0))) {
+        if (num === 1 || ((num > 7) && (num % 5 === 0 || num % 7 === 0 || num % 2 === 0 || num % 3 === 0))) {
             return false;
         }
         for (let i = 2, s = Math.sqrt(num); i <= s; i++) {
