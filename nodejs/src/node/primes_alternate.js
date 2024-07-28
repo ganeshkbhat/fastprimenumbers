@@ -264,5 +264,10 @@ module.exports.isPrimeSquarerootWay = isPrimeSquarerootWay;
 module.exports.isPrimeSquarerootOptimised = isPrimeSquarerootOptimised;
 module.exports.isPrimeSquarerootWayReturnValue = isPrimeSquarerootWayReturnValue;
 
+module.exports.isPrimeFermetWay = isPrimeFermetWay
+module.exports.isPrimeFermetWayES = isPrimeFermetWayES
+module.exports.isPrimeMixedWay = isPrimeMixedWay
+module.exports.isPrimeFermetWayConfirmed = isPrimeFermetWayConfirmed
+
 module.exports.isPrimeConventionalWayPrecalculated = isPrimeConventionalWayPrecalculated;
 module.exports.isPrimeSquarerootPrecalculated = isPrimeSquarerootPrecalculated;

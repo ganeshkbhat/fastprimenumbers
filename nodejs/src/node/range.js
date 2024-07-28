@@ -9,7 +9,7 @@
 */
 
 const { prime } = require("./primes.js");
-const { isPrimeConventionalWay, isPrimeSquarerootWay } = require("./primes_alternate.js");
+const { isPrimeConventionalWay, isPrimeSquarerootWay, isPrimeFermetWay } = require("./primes_alternate.js");
 
 
 function alternateWays(start, end, functionName = "isPrimeSquarerootWay") {
@@ -76,6 +76,24 @@ function fast(start, end) {
     return { count: primes.length, primes: primes };
 }
 
+
+/**
+ *
+ *
+ * @param {*} r (range)
+ * @return {*} 
+ */
+function fermet(r) {
+    let primes = [2];
+    for (let i = 1; i < r; i++) {
+        if (isPrimeFermetWay(i)) {
+            primes.push(i);
+        }
+    }
+    return primes;
+}
+
+
 // ERROR
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
 function fastOptimized(start, end) {
@@ -91,6 +109,7 @@ function fastOptimized(start, end) {
     return fast(start, end);
 }
 
+module.exports.fermet = fermet;
 module.exports.fast = fast;
 module.exports.fastOptimized = fastOptimized;
 module.exports.alternates = alternateWays;
