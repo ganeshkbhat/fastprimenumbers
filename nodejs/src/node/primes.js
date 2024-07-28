@@ -79,6 +79,37 @@ function primeOld(n) {
  * @param {*} n
  * @return {*} 
  */
+function primeOldTwo(n) {
+    if ((n === 2 || n === 3 || n === 5 || n === 7)) {
+        return true;
+    }
+    if (n === 1 || ((n > 7) && (n % 5 === 0 || n % 7 === 0 || n % 2 === 0 || n % 3 === 0))) {
+        return false;
+    }
+    if ((((n - 1) % 6) === 0) || (((n + 1) % 6) === 0)) {
+        for (let i = 1; i < n; i++) {
+            let factorsix = (i * 6), fivebase = (5 + factorsix), sevenbase = (7 + factorsix);
+            if (((n > fivebase) && ((n % fivebase) === 0)) || ((n > sevenbase) && ((n % sevenbase) === 0))) {
+                return false;
+            }
+            if (factorsix > n) {
+                break;
+            }
+        }
+        return true;
+    }
+    return false;
+}
+
+
+/**
+ * 
+ * RECOMMENDED WAY
+ * for Calculation of Prime Numbers
+ *
+ * @param {*} n
+ * @return {*} 
+ */
 function prime(n) {
     if ((n === 2 || n === 3 || n === 5 || n === 7)) {
         return true;

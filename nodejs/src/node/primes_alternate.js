@@ -84,6 +84,52 @@ function isPrimeSquarerootWayReturnValue(num) {
 }
 
 /**
+ *
+ *
+ * @param {*} num
+ * @return {*} 
+ */
+function isPrimeAKSAlternate(num) {
+    if (num % 2 === 0 || num % 3 === 0) {
+        return true;
+    }
+    let i = 5;
+    while (i * i <= num) {
+        if ((num % i !== 0) || (num % (i + 2) !== 0)) {
+            return false;
+        }
+        i += 6;
+    }
+    return true;
+}
+
+/**
+ *
+ *
+ * @param {*} num
+ * @return {*} 
+ */
+function isComposite(num) {
+    if (num <= 1) {
+        return true;
+    }
+    if (num <= 3) {
+        return false;
+    }
+    if (num % 2 === 0 || num % 3 === 0) {
+        return true;
+    }
+    let i = 5;
+    while (i * i <= num) {
+        if (num % i === 0 || num % (i + 2) === 0) {
+            return true;
+        }
+        i += 6;
+    }
+    return false;
+}
+
+/**
  * 
  * ALTERNATE WAY 
  * for Calculation of Prime Numbers
@@ -101,6 +147,12 @@ function isPrimeSquarerootWay(num) {
     return num > 1;
 }
 
+/**
+ *
+ *
+ * @param {*} num
+ * @return {*} 
+ */
 function isPrimeSquarerootOptimised(num) {
     if ((num === 2 || num === 3 || num === 5 || num === 7)) {
         return true;
@@ -116,6 +168,12 @@ function isPrimeSquarerootOptimised(num) {
     return num > 1;
 }
 
+/**
+ *
+ *
+ * @param {*} num
+ * @return {*} 
+ */
 function isPrimeSquarerootPrecalculated(num) {
     if (num < 1000000) {
         let primes = [...require("./1000000.js")];
@@ -125,6 +183,80 @@ function isPrimeSquarerootPrecalculated(num) {
         return false;
     }
     return isPrimeSquarerootOptimised(num);
+}
+
+/**
+ *
+ *
+ * @param {*} num
+ */
+function isPrimeFermetWay(num) {
+    if (num < 2) return false;
+    if ((num === 2 || num === 3 || num === 5 || num === 7)) {
+        return true;
+    }
+    if (num === 1 || ((num > 7) && (num % 2 === 0 || num % 3 === 0 || num % 5 === 0 || num % 7 === 0))) {
+        return false;
+    }
+    if (Math.pow(2, num - 1) % num === 1) return true;
+    return false;
+}
+
+/**
+ *
+ *
+ * @param {*} num
+ */
+function isPrimeFermetWayES(num) {
+    if (num < 2) return false;
+    if ((num === 2 || num === 3 || num === 5 || num === 7)) {
+        return true;
+    }
+    if (num === 1 || ((num > 7) && (num % 2 === 0 || num % 3 === 0 || num % 5 === 0 || num % 7 === 0))) {
+        return false;
+    }
+    if ((2**(num - 1)) % num === 1) return true;
+    return false;
+}
+
+/**
+ *
+ *
+ * @param {*} num
+ */
+function isPrimeMixedWay(num) {
+    
+}
+
+/**
+ *
+ *
+ * @param {*} r (range)
+ * @return {*} 
+ */
+function isPrimeFermetWayRange(r) {
+    let primes = [2];
+    for (let i = 1; i < r; i++) {
+        if (isPrimeFermetWay(i)) {
+            primes.push(i);
+        }
+    }
+    return primes;
+}
+
+/**
+ *
+ *
+ * @param {*} num
+ */
+function isPrimeFermetWayConfirmed(num) {
+    if (!!isPrimeFermetWay(num)) {
+        if (!!isComposite(num)) {
+            return false;
+        }
+        return true;
+    }
+    return false;
 }
 
 module.exports.isPrimeConventionalWay = isPrimeConventionalWay;
