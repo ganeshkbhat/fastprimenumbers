@@ -8,7 +8,7 @@ This same code can be applied in any languages like `Python`, `Go` Lang, `Java`,
 
 `Max iterations 16666 for n == 100000 instead of 100000 of conventional way`. The `iterations` counts for different ways for Prime number check 100007 can be seen as follows:
 
-#### Prime Unconventional way is the SUGGESTED and my provided/ recommended way
+#### Prime Unconventional way is the SUGGESTED and my Provided/ Recommended way
 
         count: Prime Conventional way for  83 is  81
         Is Prime 83 isPrimeConventionalWay:  True
